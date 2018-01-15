@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//projekt stworzony przez Dominik Grzybowski Marcin Zuber Micha³ Szyl Sebastian Przelios
 
 int main()
 {

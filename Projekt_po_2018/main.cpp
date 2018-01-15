@@ -2,10 +2,13 @@
 
 using namespace std;
 
-//projekt stworzony przez Dominik Grzybowski Marcin Zuber Micha³ Szyl Sebastian Przelios
+//projekt stworzony przez Dominik Grzybowski Marcin Zuber MichaÂ³ Szyl Sebastian Przelios
+
 //test
+
 int main()
 {
 
 	return 0;
 }
+

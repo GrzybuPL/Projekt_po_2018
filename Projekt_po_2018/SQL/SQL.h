@@ -1,13 +1,6 @@
 #pragma once
-#include "sqlite3.h"
-#include "TabelaKlient.h"
-#include "TabelaOfert.h"
-#include "TabelaPromocji.h"
-#include "TabelaRezerwacji.h"
-
 //interface SQL
 //proste mini menu, mozliwosc wprowadzania danych
-
 
 class SQL
 {

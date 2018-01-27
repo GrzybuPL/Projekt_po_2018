@@ -3,6 +3,7 @@
 #include <string>
 
 using namespace std;
+class BazaDanych;
 
 class TabelaKlient : public BazaDanych {
 

@@ -34,7 +34,9 @@ bool menu(SQL* &baze)
 
 void welcome()
 {
-	cout << endl;
+	system("cls");
+	cout << endl << "==================System Podru¿y=================" << endl << endl;
+
 
 }
 

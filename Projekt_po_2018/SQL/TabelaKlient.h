@@ -32,15 +32,4 @@ public:
 
 };
 
-static int callback(void *NotUsed, int argc, char **argv, char **azColName)
-{
-	int i;
-	cout << "Number of args= " << argc << endl;
-
-	for (i = 0; i<argc; i++)
-	{
-		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
-	}
-	cout << endl;
-	return 0;
-}
+static int callback(void *NotUsed, int argc, char **argv, char **azColName);

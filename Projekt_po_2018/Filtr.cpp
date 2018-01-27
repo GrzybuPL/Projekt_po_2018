@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Filter.h"
+#include "Filtr.h"
 #include <conio.h>
 
 using namespace std;
 
-Filter::Filter()
+Filtr::Filtr()
 {
 	idOferty = -1;
 	kosztDo = -1;
@@ -13,11 +13,11 @@ Filter::Filter()
 	dataPobytuDo.setData(-1, -1, -1);
 	dlugoscPobytuOd = -1;
 	dlugoscPobytuDo = -1;
-	edycja = false;
+	czAktywny = false;
 }
 
 
-void Filter::edytuj()
+void Filtr::edytuj()
 {
 	int d, m, y;
 

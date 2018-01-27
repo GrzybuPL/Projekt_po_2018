@@ -3,7 +3,7 @@
 using namespace std;
 
 
-class Filter
+class Filtr
 {
 	int idOferty;
 	float kosztDo;
@@ -12,9 +12,9 @@ class Filter
 	Data dataPobytuDo;
 	int dlugoscPobytuOd;
 	int dlugoscPobytuDo;
-	bool edycja;
+	bool czAktywny;
 public:
-	Filter();//wartosci domyslne to -1
+	Filtr();//wartosci domyslne to -1
 
 	void edytuj();
 

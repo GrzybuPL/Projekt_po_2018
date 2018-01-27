@@ -15,7 +15,7 @@ public:
 	//zwracaj wszytko string
 	//uogulnienie wszytystkich baz
 	
-	SQL(const char* nazwaBazy_);
+	SQL(const char* nazwaBazy_ = "BiuroPodrozy.db");
 	~SQL();
 
 

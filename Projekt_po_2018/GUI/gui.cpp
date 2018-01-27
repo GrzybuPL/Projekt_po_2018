@@ -6,12 +6,6 @@
 using namespace std;
 
 
-//SQL* baza-nullptr;
-
-
-//wczytaj(baza);
-
-
 void help(int i=0)			//Wyswietlenie pomocy
 {
 	if (i==-1) cout << "ERROR!" << endl;
@@ -29,7 +23,6 @@ bool menu(SQL* &baze)
 	cout << "2. Zarzadzaj ofertami" << endl;
 	cout << "3. Zarzadzaj promocjami" << endl;
 	cout << "4. Przejdz do rezerwacji" << endl;
-//...
 	cout << "0. exit" << endl;
 
 	while (open)
@@ -56,9 +49,7 @@ bool menu(SQL* &baze)
 		default:
 			break;
 		}
-
 	}
-
 	return true;
 }
 

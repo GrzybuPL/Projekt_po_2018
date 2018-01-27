@@ -1,5 +1,14 @@
 #pragma once
+#include "sqlite3.h"
+#include "BazaDanych.h"
+#include "TabelaKlient.h"
+#include "TabelaOfert.h"
+#include "TabelaPromocji.h"
+#include "TabelaRezerwacji.h"
+#include "../Filtr.h"
+
 //interface SQL
+
 //proste mini menu, mozliwosc wprowadzania danych
 
 class SQL
@@ -9,6 +18,7 @@ class SQL
 	TabelaOfert *oferty;
 	TabelaPromocji *promocje;
 	TabelaRezerwacji *rezerwacje;
+	Filtr *filtr;
 	BazaDanych* wsk;
 public:
 	//wszytkie g³ówne metody jak zadaj puytanie->po czym mam  czukac->zwruc szukan¹ wartosc

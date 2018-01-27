@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string>
-#include "sqlite3.h"
-#include "TabelaKlient.h"
-#include "TabelaOfert.h"
-#include "TabelaPromocji.h"
-#include "TabelaRezerwacji.h"
+
 #include "SQL.h"
 
 using namespace std;

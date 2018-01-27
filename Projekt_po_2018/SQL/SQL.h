@@ -25,6 +25,7 @@ public:
 };
 
 void menuKlient(SQL * &baze);
+void menuOfert(SQL * &baze);
 void menuPromo(SQL * &baze);
 void menuRezer(SQL * &baze);
 

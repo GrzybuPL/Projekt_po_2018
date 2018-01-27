@@ -20,17 +20,6 @@ void help(int i=0)			//Wyswietlenie pomocy
 	cout << "Podaj parametr -b aby wprowadziæ nazwê bazy danych" << endl;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 bool menu(SQL* &baze)
 {
 	bool open=true;
@@ -79,16 +68,14 @@ void welcome()
 	system("cls");
 	cout << endl << "================== System biura podrozy ==================" << endl;
 	cout << endl << "======================== Witamy ==========================" << endl << endl;
-
-
 }
 
 
-void loopProgram(const char* nazwa_= "BiuroPodrozy.db")		//glowna petla programu
+void loopProgram()		//glowna petla programu
 {
 	bool strat = true;
 
-	SQL *baze=new SQL(nazwa_);  //obiekt bazy danych
+	SQL *baze=new SQL();  //obiekt bazy danych
 
 	while (strat)
 	{

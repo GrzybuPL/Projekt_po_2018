@@ -19,13 +19,27 @@ Filter::Filter()
 
 void Filter::edytuj()
 {
+	int d, m, y;
+
 	system("cls");
 	cout << "obecny wygl¹d filtru:" << endl;
 	if (idOferty > -1) { cout << "id oferty: " << idOferty << endl; }
 	if (kosztDo > -1) { cout << "koszt DO: " << kosztDo << endl; }
 	if (kosztOd > -1) { cout << "Kost OD: " << kosztOd << endl; }
-	if (idOferty > -1) { cout << "id oferty: " << idOferty << endl; }
-	if (idOferty > -1) { cout << "id oferty: " << idOferty << endl; }
+	if (dataPobytuOd.getDate() == "0-0-0") 
+	{
+		cout << "data Pobytu Od: \ndnia:";
+		cin >> d;
+		cout << "miesiac: ";
+		cin >> m;
+		cout << "rok: ";
+		cin >> y;
+
+
+		<< dataPobytuOd.setData(atoi(), atoi(cin >> .c_str()), atoi((cin).c_str()) << endl; 
+	
+	}
+	if (dataPobytuDo.getDate() == "0-0-0") { cout << "data Pobytu Do: " << idOferty << endl; }
 
 	cout << "czy chcesz edytowaæ filtr ?(y/n): ";
 	cout << endl;

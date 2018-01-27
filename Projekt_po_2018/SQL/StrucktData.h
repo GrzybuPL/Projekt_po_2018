@@ -40,7 +40,7 @@ struct Data//struktura daty :d-m-y  |dla -1 -1 -1  wynik 0-0-0
 
 	string getDate()
 	{
-		return to_string(day) + " - " + to_string(mounth) + " - " + to_string(year);
+		return to_string(day) + "-" + to_string(mounth) + "-" + to_string(year);
 	}
 
 };

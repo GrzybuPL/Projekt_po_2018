@@ -21,6 +21,16 @@ void help(int i=0)			//Wyswietlenie pomocy
 }
 
 
+
+
+
+
+
+
+
+
+
+
 bool menu(SQL* &baze)
 {
 	bool open=true;
@@ -35,7 +45,6 @@ bool menu(SQL* &baze)
 
 	while (open)
 	{
-
 		switch (getch())
 		{
 		case '1':		//Przejscie do menu klienta
@@ -49,7 +58,7 @@ bool menu(SQL* &baze)
 			//...
 		case '0':
 			cout << "Czy napewno chcesz wyjsc z programu (y/n): ";
-			if (getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; }
+			if (getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; return false; }
 			break;			
 		default:
 			break;

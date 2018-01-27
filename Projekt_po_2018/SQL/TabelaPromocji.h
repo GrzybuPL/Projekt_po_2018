@@ -17,7 +17,7 @@ class TabelaPromocji : public BazaDanych {
 public:
 
 	virtual void odczyt();
-	virtual void zapis();
+	virtual void zapisAdd();
 	virtual void edytuj();
 	virtual void zapisNew();
 

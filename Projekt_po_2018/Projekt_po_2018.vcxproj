@@ -115,11 +115,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="gui.cpp" />
+    <ClCompile Include="GUI\gui.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SQL\BazaDanych.cpp" />
+    <ClCompile Include="SQL\main.cpp" />
+    <ClCompile Include="SQL\SQL.cpp" />
+    <ClCompile Include="SQL\sqlite3.c" />
+    <ClCompile Include="SQL\TabelaKlient.cpp" />
+    <ClCompile Include="SQL\TabelaOfert.cpp" />
+    <ClCompile Include="SQL\TabelaPromocji.cpp" />
+    <ClCompile Include="SQL\TabelaRezerwacji.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gui.h" />
+    <ClInclude Include="GUI\gui.h" />
+    <ClInclude Include="SQL\BazaDanych.h" />
+    <ClInclude Include="SQL\SQL.h" />
+    <ClInclude Include="SQL\sqlite3.h" />
+    <ClInclude Include="SQL\sqlite3ext.h" />
+    <ClInclude Include="SQL\StrucktData.h" />
+    <ClInclude Include="SQL\TabelaKlient.h" />
+    <ClInclude Include="SQL\TabelaOfert.h" />
+    <ClInclude Include="SQL\TabelaPromocji.h" />
+    <ClInclude Include="SQL\TabelaRezerwacji.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

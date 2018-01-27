@@ -18,12 +18,63 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gui.cpp">
+    <ClCompile Include="SQL\sqlite3.c">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL\BazaDanych.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL\SQL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL\TabelaKlient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL\TabelaOfert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL\TabelaPromocji.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SQL\TabelaRezerwacji.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gui.h">
+    <ClInclude Include="GUI\gui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\BazaDanych.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\SQL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\sqlite3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\sqlite3ext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\StrucktData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\TabelaKlient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\TabelaOfert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\TabelaPromocji.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQL\TabelaRezerwacji.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

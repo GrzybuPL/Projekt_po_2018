@@ -4,6 +4,11 @@
 
 using namespace std;
 
+/*
+	DOPISANE
+	static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+*/
+
 class TabelaKlient : public BazaDanych {
 
 	int idKlienta;
@@ -15,7 +20,6 @@ class TabelaKlient : public BazaDanych {
 	bool edycja;  // true -false
 
 public:
-
 	virtual void odczyt();
 	virtual void zapis() ;
 	virtual void edytuj() ;
@@ -26,3 +30,16 @@ public:
 
 
 };
+
+static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+{
+	int i;
+	cout << "Number of args= " << argc << endl;
+
+	for (i = 0; i<argc; i++)
+	{
+		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
+	}
+	cout << endl;
+	return 0;
+}

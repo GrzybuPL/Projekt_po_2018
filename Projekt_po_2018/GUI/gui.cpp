@@ -6,8 +6,6 @@
 using namespace std;
 
 
-//int argc, char** argv
-
 //SQL* baza-nullptr;
 
 
@@ -29,22 +27,18 @@ bool menu(SQL* &baze)
 	cout << "menu" << endl;
 
 	cout << "1. pp..." << endl;
-
-
+//...
 	cout << "0. exit" << endl;
-
-
 
 	while (open)
 	{
 
-		getch();
-
 		switch (getch())
 		{
 		case '1':
-
 			break;
+
+
 			//...
 		case '0':
 			cout << "Czy napewno chwsz wyjsc z programu (y/n): ";
@@ -55,13 +49,6 @@ bool menu(SQL* &baze)
 		}
 
 	}
-
-	
-
-
-
-
-
 
 	return true;
 }
@@ -76,7 +63,7 @@ void welcome()
 }
 
 
-void loopProgram(const char* nazwa_= "BiuroPodrozy.db")
+void loopProgram(const char* nazwa_= "BiuroPodrozy.db")//glowna petla programu
 {
 	bool strat = true;
 
@@ -84,20 +71,18 @@ void loopProgram(const char* nazwa_= "BiuroPodrozy.db")
 
 	while (strat)
 	{
+		welcome();
 
 		//funkcja powitanie
 
 		//funkcja  strat= menu(*baze)
 
-		if (menu(baze));
-
-
-
+		if (menu(baze)) strat =false;
 	}
 }
 
 
-void paraMain(int &argc, char** argv)
+void paraMain(int &argc, char** argv)//menu parametrów
 {
 	string buf;
 

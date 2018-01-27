@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "StrucktData.h"
+#include "BazaDanych.h"
 
 using namespace std;
-class BazaDanych;
 
 class TabelaOfert : public BazaDanych {
 	int idOferty;

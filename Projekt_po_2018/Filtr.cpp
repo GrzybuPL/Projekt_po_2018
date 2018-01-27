@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Filtr.h"
 #include <conio.h>
+#include "Filtr.h"
 
 using namespace std;
 
@@ -34,8 +34,40 @@ void Filtr::edytuj()
 
 	if (getch() == 'y')
 	{
+		system("cls");
+		cout << "Czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";
+		cout << endl;
 
-		cout << "no to yolo";
+		if (getch() == 'y')
+		{
+			cout << "edycja id oferty?(y/n): ";
+			if (getch() == 'y') { cin >> imie; edycja = true; }
+			cout << endl;
+			cout << "edycja kosztow, od?(y/n): ";
+			if (getch() == 'y') { cin >> nazwisko; edycja = true; }
+			cout << endl;
+			cout << "edycja kosztow, do?(y/n): ";
+			if (getch() == 'y') { cin >> adresZamieszkania; edycja = true; }
+			cout << endl;
+			cout << "edycja daty pobytu, od?(y/n): ";
+			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+			cout << endl;
+			cout << "edycja daty pobytu, do?(y/n): ";
+			if (getch() == 'y') { cin >> eMail; edycja = true; }
+			cout << endl;
+			cout << "edycja daty pobytu, od?(y/n): ";
+			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+			cout << endl;
+			cout << "edycja dlugosci czasu pobytu, od?(y/n): ";
+			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+			cout << endl;
+			cout << "edycja dlugosci czasu pobytu, od?(y/n): ";
+			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+			cout << endl;
+			cout << "edycja zakonczona." << endl;
+			system("pause");
+		}
 
+		if (czyAktywny) this->zapis();		//zapis po edycji
 	}
 }

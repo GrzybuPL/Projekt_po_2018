@@ -26,30 +26,8 @@ void Filter::edytuj()
 	if (idOferty > -1) { cout << "id oferty: " << idOferty << endl; }
 	if (kosztDo > -1) { cout << "koszt DO: " << kosztDo << endl; }
 	if (kosztOd > -1) { cout << "Kost OD: " << kosztOd << endl; }
-	if (dataPobytuOd.getDate() == "0-0-0") 
-	{
-		cout << "data Pobytu Od: \ndnia:";
-		cin >> d;
-		cout << "miesiac: ";
-		cin >> m;
-		cout << "rok: ";
-		cin >> y;
-
-		dataPobytuOd.setData(d, m, y);
-		cout << dataPobytuOd.getDate() << endl;
-	}
-	if (dataPobytuDo.getDate() == "0-0-0") 
-	{
-		cout << "data Pobytu Do: \ndnia:";
-		cin >> d;
-		cout << "miesiac: ";
-		cin >> m;
-		cout << "rok: ";
-		cin >> y;
-
-		dataPobytuDo.setData(d, m, y);
-		cout << dataPobytuDo.getDate() << endl;
-	}
+	if (dataPobytuOd.getDate() != "0-0-0") { cout << dataPobytuOd.getDate() << endl; }
+	if (dataPobytuDo.getDate() != "0-0-0") { cout << dataPobytuDo.getDate() << endl; }
 
 	cout << "czy chcesz edytowaæ filtr ?(y/n): ";
 	cout << endl;
@@ -57,13 +35,7 @@ void Filter::edytuj()
 	if (getch() == 'y')
 	{
 
-		cout<<""
-
-
-
+		cout << "no to yolo";
 
 	}
-
-
-
 }

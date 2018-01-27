@@ -3,8 +3,7 @@
 #include <string>
 
 using namespace std;
-//class BazaDanych;
-
+class BazaDanych;
 
 class TabelaOfert : public BazaDanych {
 	int idOferty;

@@ -24,9 +24,12 @@ void help(int i=0)			//Wyswietlenie pomocy
 bool menu(SQL* &baze)
 {
 	bool open=true;
-	cout << "menu" << endl;
-
-	cout << "1. pp..." << endl;
+	cout << "Menu" << endl;
+	cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
+	cout << "1. Zarzadzaj klientami" << endl;
+	cout << "2. Zarzadzaj ofertami" << endl;
+	cout << "3. Zarzadzaj promocjami" << endl;
+	cout << "4. Przejdz do rezerwacji" << endl;
 //...
 	cout << "0. exit" << endl;
 
@@ -35,14 +38,18 @@ bool menu(SQL* &baze)
 
 		switch (getch())
 		{
-		case '1':
+		case '1':		//Przejscie do menu klienta
 			break;
-
-
+		case '2':		//Przejscie do menu ofert
+			break;
+		case '3':		//Przejscie do menu promocji
+			break;
+		case '4':		//Przejscie do menu rezerwacji
+			break;
 			//...
 		case '0':
-			cout << "Czy napewno chwsz wyjsc z programu (y/n): ";
-			if (getch() == 'y') { open = false; cout << "Trwa wylanczanie systemu" << endl; }
+			cout << "Czy napewno chcesz wyjsc z programu (y/n): ";
+			if (getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; }
 			break;			
 		default:
 			break;
@@ -57,13 +64,14 @@ bool menu(SQL* &baze)
 void welcome()
 {
 	system("cls");
-	cout << endl << "==================System Podru¿y=================" << endl << endl;
+	cout << endl << "================== System biura podrozy ==================" << endl;
+	cout << endl << "======================== Witamy ==========================" << endl << endl;
 
 
 }
 
 
-void loopProgram(const char* nazwa_= "BiuroPodrozy.db")//glowna petla programu
+void loopProgram(const char* nazwa_= "BiuroPodrozy.db")		//glowna petla programu
 {
 	bool strat = true;
 
@@ -71,9 +79,7 @@ void loopProgram(const char* nazwa_= "BiuroPodrozy.db")//glowna petla programu
 
 	while (strat)
 	{
-		welcome();
-
-		//funkcja powitanie
+		welcome();		//funkcja powitanie
 
 		//funkcja  strat= menu(*baze)
 

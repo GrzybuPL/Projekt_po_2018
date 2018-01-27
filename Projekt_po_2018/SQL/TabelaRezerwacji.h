@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class TabelaPromocji : public BazaDanych {
+class TabelaRezerwacji : public BazaDanych {
 
 	int idPromocji;
 	int idOferty;//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
@@ -15,9 +15,9 @@ class TabelaPromocji : public BazaDanych {
 public:
 
 	virtual void odczyt();
-	virtual void zapis() ;
+	virtual void zapis();
 	virtual void edytuj();
-	virtual void zapisNew() ;
+	virtual void zapisNew();
 
 
 };

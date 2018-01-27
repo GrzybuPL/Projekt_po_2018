@@ -35,11 +35,21 @@ void Filter::edytuj()
 		cout << "rok: ";
 		cin >> y;
 
-
-		<< dataPobytuOd.setData(atoi(), atoi(cin >> .c_str()), atoi((cin).c_str()) << endl; 
-	
+		dataPobytuOd.setData(d, m, y);
+		cout << dataPobytuOd.getDate() << endl;
 	}
-	if (dataPobytuDo.getDate() == "0-0-0") { cout << "data Pobytu Do: " << idOferty << endl; }
+	if (dataPobytuDo.getDate() == "0-0-0") 
+	{
+		cout << "data Pobytu Do: \ndnia:";
+		cin >> d;
+		cout << "miesiac: ";
+		cin >> m;
+		cout << "rok: ";
+		cin >> y;
+
+		dataPobytuDo.setData(d, m, y);
+		cout << dataPobytuDo.getDate() << endl;
+	}
 
 	cout << "czy chcesz edytowaæ filtr ?(y/n): ";
 	cout << endl;

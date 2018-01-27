@@ -47,13 +47,17 @@ bool menu(SQL* &baze)
 	{
 		switch (getch())
 		{
-		case '1':		//Przejscie do menu klienta
+		case '1':		
+			menuKlient(baze);//Przejscie do menu klienta
 			break;
-		case '2':		//Przejscie do menu ofert
+		case '2':		
+			menuOfert(baze);//Przejscie do menu ofert
 			break;
-		case '3':		//Przejscie do menu promocji
+		case '3':		
+			menuPromo(baze);//Przejscie do menu promocji
 			break;
-		case '4':		//Przejscie do menu rezerwacji
+		case '4':		
+			menuRezer(baze);//Przejscie do menu rezerwacji
 			break;
 			//...
 		case '0':
@@ -94,6 +98,7 @@ void loopProgram(const char* nazwa_= "BiuroPodrozy.db")		//glowna petla programu
 
 		if (menu(baze)) strat =false;
 	}
+	delete baze;
 }
 
 

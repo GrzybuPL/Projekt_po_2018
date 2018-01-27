@@ -10,7 +10,7 @@ class SQL
 	TabelaKlient *klient;
 	TabelaOfert *oferty;
 	TabelaPromocji *promocje;
-
+	TabelaRezerwacji *rezerwacje;
 public:
 	//wszytkie g³ówne metody jak zadaj puytanie->po czym mam  czukac->zwruc szukan¹ wartosc
 	//zwracaj wszytko string
@@ -25,6 +25,9 @@ public:
 
 };
 
+void menuKlient(SQL * &baze);
+void menuPromo(SQL * &baze);
+void menuRezer(SQL * &baze);
 
 
 void wczydaj_bazy(SQL *&);//tworzy klasy otwiera pliki itd

@@ -4,13 +4,26 @@
 #include "StrucktData.h"
 #include "BazaDanych.h"
 #include "TabelaKlient.h"
+#include "SQL.h"
 
+static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+{
+	int i;
+	cout << "Number of args= " << argc << endl;
+
+	for (i = 0; i<argc; i++)
+	{
+		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
+	}
+	cout << endl;
+	return 0;
+}
 
 void TabelaKlient::odczyt()
 {
 	if (edycja)
 	{
-		sqlite3 *db; //Tymczasowo bo nie wiem gdzie bedzie deklarowany "haczyk" na baze
+		sqlite3 *db;
 		char *zErrMsg = 0;
 
 		int rc = sqlite3_open("BiuroPodrozy.db", &db);
@@ -31,8 +44,6 @@ void TabelaKlient::odczyt()
 			cerr << "Blad zapytania: " << zErrMsg << endl;
 			sqlite3_free(zErrMsg);
 		}
-
-		sqlite3_close(db);
 	}
 
 }
@@ -57,7 +68,7 @@ void TabelaKlient::zapis()
 {
 	if (edycja)
 	{
-		sqlite3 *db; //Tymczasowo bo nie wiem gdzie bedzie deklarowany "haczyk" na baze
+		sqlite3 *db;
 		sqlite3_stmt *stmt;
 		char * zErrMsg = 0;
 
@@ -66,7 +77,6 @@ void TabelaKlient::zapis()
 		if (rc)
 		{
 			cerr << "Can't open database: " << sqlite3_errmsg(db) << endl;
-			sqlite3_close(db);
 			exit(1);
 		}
 

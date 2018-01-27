@@ -11,20 +11,16 @@ using namespace std;
 //SQL* baza-nullptr;
 
 
-//wcztraj(baza);
+//wczytaj(baza);
 
 
-
-//======================obs³uga parametrów z cmd
-//help
-
-void paraMain(int &argc, char** argv)
+void help()			//Wyswietlenie pomocy
 {
-
-
-	//wywo³ywanie programuz nazwa bazy danych -b <nazwa_bazy>
-
+	cout << "Pomoc programu biura obslugi klienta" << endl;
+	cout << "Podaj parametr -h w celu wyœwietlenia tej pomocy" << endl;
+	cout << "Podaj parametr -b aby wprowadziæ nazwê bazy danych" << endl;
 }
+
 
 bool menu(SQL* &baze)
 {
@@ -35,11 +31,12 @@ bool menu(SQL* &baze)
 }
 
 
-void welkom()
+void welcome()
 {
 	cout << endl;
 
 }
+
 
 void loopProgram(const char* nazwa_= "BiuroPodrozy.db")
 {
@@ -50,7 +47,7 @@ void loopProgram(const char* nazwa_= "BiuroPodrozy.db")
 	while (strat)
 	{
 
-		// funkcja powitanie
+		//funkcja powitanie
 
 		//funkcja  strat= menu(*baze)
 
@@ -61,4 +58,35 @@ void loopProgram(const char* nazwa_= "BiuroPodrozy.db")
 	}
 }
 
+
+void paraMain(int &argc, char** argv)
+{
+	string buf;
+	for (int i = 1; i < argc; i++)
+	{
+		buf = argv[i];
+		switch (buf[0])
+		{
+		case '-':
+			if (buf.length() < 3)
+			{
+				switch (buf[i])
+				{
+				case 'h':		//Wyswietlenie pomocy
+					help();
+					break;
+				case 'b':		//Podanie nazwy bazy danych
+				default:
+					loopProgram(buf[i + 1]); i++;
+					break;
+				}
+			}
+			else
+				break;
+		default:
+			help();
+			break;
+		}
+	}
+}
 

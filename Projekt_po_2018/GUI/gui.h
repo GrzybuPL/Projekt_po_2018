@@ -9,4 +9,4 @@ void paraMain(int &argc, char** argv);		//Obsluga parametrow wprowadzanych z kon
 
 void loopProgram(const char* nazwa_ = "BiuroPodrozy.db");		//glowna petla programu
 
-void help();
+void help(int i=0);

@@ -14,6 +14,18 @@ using namespace std;
 //wcztraj(baza);
 
 
+
+//======================obs³uga parametrów z cmd
+//help
+
+void paraMain(int &argc, char** argv)
+{
+
+
+	//wywo³ywanie programuz nazwa bazy danych -b <nazwa_bazy>
+
+}
+
 bool menu(SQL* &baze)
 {
 
@@ -23,19 +35,26 @@ bool menu(SQL* &baze)
 }
 
 
-void loopProgram()
+void welkom()
+{
+	cout << endl;
+
+}
+
+void loopProgram(const char* nazwa_= "BiuroPodrozy.db")
 {
 	bool strat = true;
 
-//	SQL *baze=new SQL("databaze.db");  //obiekt bazy danych
+	SQL *baze=new SQL(nazwa_);  //obiekt bazy danych
 
 	while (strat)
 	{
+
 		// funkcja powitanie
 
 		//funkcja  strat= menu(*baze)
 
-
+		if(menu(baze)) 
 
 
 

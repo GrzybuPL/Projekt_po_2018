@@ -1,11 +1,20 @@
 #include <iostream>
-
+#include "gui.h"
 using namespace std;
 
-//projekt stworzony przez Dominik Grzybowski Marcin Zuber Micha³ Szyl Sebastian Przelios
-//
-int main()
+
+int main(int argc, char** argv)
 {
+
+	if (argc > 1)
+	{
+		paraMain(argc, argv);
+	}
+	else
+	{
+		loopProgram();
+	}
+
 
 	return 0;
 }

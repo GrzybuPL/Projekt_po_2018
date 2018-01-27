@@ -6,15 +6,15 @@ using namespace std;
 class Filtr
 {
 	int idOferty;
-	float kosztDo;
 	float kosztOd;
+	float kosztDo;
 	Data dataPobytuOd;
 	Data dataPobytuDo;
 	int dlugoscPobytuOd;
 	int dlugoscPobytuDo;
-	bool czAktywny;
+	bool czyAktywny;		//Czy filtr zostal uzyty
 public:
-	Filtr();//wartosci domyslne to -1
+	Filtr();		//wartosci domyslne to -1
 
 	void edytuj();
 

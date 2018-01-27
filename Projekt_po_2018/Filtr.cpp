@@ -13,7 +13,7 @@ Filtr::Filtr()
 	dataPobytuDo.setData(-1, -1, -1);
 	dlugoscPobytuOd = -1;
 	dlugoscPobytuDo = -1;
-	czAktywny = false;
+	czyAktywny = false;
 }
 
 
@@ -24,8 +24,8 @@ void Filtr::edytuj()
 	system("cls");
 	cout << "obecny wygl¹d filtru:" << endl;
 	if (idOferty > -1) { cout << "id oferty: " << idOferty << endl; }
+	if (kosztOd > -1) { cout << "Koszt OD: " << kosztOd << endl; }
 	if (kosztDo > -1) { cout << "koszt DO: " << kosztDo << endl; }
-	if (kosztOd > -1) { cout << "Kost OD: " << kosztOd << endl; }
 	if (dataPobytuOd.getDate() != "0-0-0") { cout << dataPobytuOd.getDate() << endl; }
 	if (dataPobytuDo.getDate() != "0-0-0") { cout << dataPobytuDo.getDate() << endl; }
 
@@ -35,36 +35,32 @@ void Filtr::edytuj()
 	if (getch() == 'y')
 	{
 		system("cls");
-		cout << "Czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";
 		cout << endl;
 
 		if (getch() == 'y')
 		{
 			cout << "edycja id oferty?(y/n): ";
-			if (getch() == 'y') { cin >> imie; edycja = true; }
+			if (getch() == 'y') { cin >> idOferty; czyAktywny = true; }
 			cout << endl;
 			cout << "edycja kosztow, od?(y/n): ";
-			if (getch() == 'y') { cin >> nazwisko; edycja = true; }
+			if (getch() == 'y') { cin >> kosztOd; czyAktywny = true; }
 			cout << endl;
 			cout << "edycja kosztow, do?(y/n): ";
-			if (getch() == 'y') { cin >> adresZamieszkania; edycja = true; }
+			if (getch() == 'y') { cin >> kosztDo; czyAktywny = true; }
 			cout << endl;
 			cout << "edycja daty pobytu, od?(y/n): ";
-			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+			if (getch() == 'y') { cin >> dataPobytuOd; czyAktywny = true; }
 			cout << endl;
 			cout << "edycja daty pobytu, do?(y/n): ";
-			if (getch() == 'y') { cin >> eMail; edycja = true; }
+			if (getch() == 'y') { cin >> dataPobytuDo; czyAktywny = true; }
 			cout << endl;
 			cout << "edycja daty pobytu, od?(y/n): ";
-			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+			if (getch() == 'y') { cin >> dlugoscPobytuOd; czyAktywny = true; }
 			cout << endl;
-			cout << "edycja dlugosci czasu pobytu, od?(y/n): ";
-			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+			cout << "edycja dlugosci czasu pobytu, dd?(y/n): ";
+			if (getch() == 'y') { cin >> dlugoscPobytuDo; czyAktywny = true; }
 			cout << endl;
-			cout << "edycja dlugosci czasu pobytu, od?(y/n): ";
-			if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
-			cout << endl;
-			cout << "edycja zakonczona." << endl;
+			cout << "edycja zakonczona" << endl;
 			system("pause");
 		}
 

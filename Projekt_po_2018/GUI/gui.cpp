@@ -1,7 +1,7 @@
 #include <iostream>
 #include "gui.h"//Dominik Grzyboweski  interface uzytkownika
 #include "../SQL/SQL.h"//Marcin Zuber oprracje na bazie danych 
-
+#include <conio.h>
 
 using namespace std;
 
@@ -25,6 +25,41 @@ void help(int i=0)			//Wyswietlenie pomocy
 
 bool menu(SQL* &baze)
 {
+	bool open=true;
+	cout << "menu" << endl;
+
+	cout << "1. pp..." << endl;
+
+
+	cout << "0. exit" << endl;
+
+
+
+	while (open)
+	{
+
+		getch();
+
+		switch (getch())
+		{
+		case '1':
+
+			break;
+			//...
+		case '0':
+			cout << "Czy napewno chwsz wyjsc z programu (y/n): ";
+			if (getch() == 'y') { open = false; cout << "Trwa wylanczanie systemu" << endl; }
+			break;			
+		default:
+			break;
+		}
+
+	}
+
+	
+
+
+
 
 
 

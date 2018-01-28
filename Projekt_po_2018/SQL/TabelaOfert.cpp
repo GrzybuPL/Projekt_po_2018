@@ -112,7 +112,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 		}
 
 		string quest = "INSERT INTO dane_oferty (id_oferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu) VALUES(NULL, '" + koszt + "', '" + miejsce + "', '" + odDnia.getDate() + "', '" + dlugoscPobytu + "', '" + transport + "');";
-		const char * sql = quest.c_str();
+		const char * sql = quest.c_str(); 
 
 		const char **Ogon = nullptr;
 

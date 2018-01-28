@@ -6,11 +6,9 @@
 using namespace std;
 class BazaDanych;
 
-/*	DODANE
-pobierzDane(int id_Klienta, int id_Oferty, bool Czy_Zaplacone);
-*/
 class TabelaRezerwacji : public BazaDanych {
 
+	int idRezerwacji;
 	int idPromocji;
 	int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
 	int idKlienta;

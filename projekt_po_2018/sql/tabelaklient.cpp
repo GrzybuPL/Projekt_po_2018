@@ -185,7 +185,6 @@ void TabelaKlient::zapisAdd(sqlite3 *db)
 
 		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	}
-
 }
 
 void TabelaKlient::edytuj(sqlite3 *db)

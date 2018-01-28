@@ -7,6 +7,8 @@
 #include "BazaDanych.h"
 #include "SQL.h"
 
+void pobierzDane(int idKlien)
+
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja wyswietla dane pobrane z bazy
 {
 	int i;
@@ -62,7 +64,6 @@ void TabelaRezerwacji::odczyt(sqlite3 *db)
 
 void TabelaRezerwacji::zapisNew(sqlite3 *db)
 {
-	idK = odczytIdKlient();
 	if (edycja)
 	{
 		sqlite3_stmt *stmt;
@@ -165,63 +166,4 @@ bool TabelaRezerwacji::edytuj(sqlite3 *db)
 	}
 
 	if (edycja) this->zapisAdd(db);//zapis po edycji
-}
-
-
-int odczytIdKlient()
-{
-	sqlite3 *db;
-	char *zErrMsg = 0;
-
-	int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-	if (rc)
-	{
-		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-		sqlite3_close(db);
-		exit(1);
-	}
-
-	string quest = "SELECT id_klienta FORM klienci WHERE Imie = '" + imie + "' AND Nazwisko = '" + nazwisko + "'";
-	const char * sql = quest.c_str();
-
-	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	if (rc != SQLITE_OK)
-	{
-		cerr << "Blad zapytania: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-
-		return 0;
-	}
-
-	return rc;
-}
-
-int odczytIdOferty() //Moze void???
-{
-	sqlite3 *db;
-	char *zErrMsg = 0;
-
-	int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-	if (rc)
-	{
-		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-		sqlite3_close(db);
-		exit(1);
-	}
-
-	string quest = "SELECT id_oferty FORM dane_rezerwacji WHERE Koszt = '" + koszt + "' AND Gdzie = '" + TabelaOfert::miejscje + "' AND DataPobytuOd = '" + TabelaOfert::dlugoscPobytu + "' AND RodzajTransportu = '" + TabelaKlient::transport + "';";//Tymczasowe nazewnictwo
-	const char * sql = quest.c_str();
-
-	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	if (rc != SQLITE_OK)
-	{
-		cerr << "Blad zapytania: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-
-		return 0;
-	}
-
-	return rc;
 }

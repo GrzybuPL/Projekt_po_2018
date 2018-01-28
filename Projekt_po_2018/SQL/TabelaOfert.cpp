@@ -62,7 +62,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "INSERT INTO klienci VALUES(NULL, " + imie + ", " + nazwisko + ", " + adresZamieszkania + ", " + nr_Tel + ", " + eMail + ");";
+		string quest = "INSERT INTO dane_oferty (id_oferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu) VALUES(NULL, '" + koszt + "', '" + miejsce + "', '" + odDnia + "', '" + dlugoscPobytu + "', '" + transport + "');";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -99,7 +99,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_dferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce +"', DataPobytuOd = '" + odDnia + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE Imie = 'stareImie' AND Nazwisko = 'stareNazwisko' ";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_dferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce +"', DataPobytuOd = '" + odDnia.getDate() + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE Imie = 'stareImie' AND Nazwisko = 'stareNazwisko' ";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;

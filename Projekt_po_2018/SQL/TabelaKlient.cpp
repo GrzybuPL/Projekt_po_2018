@@ -76,31 +76,6 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 	return 0;
 }
 
-void TabelaKlient::odczytPoId(int id, sqlite3 *db)
-{
-	char *zErrMsg = 0;
-
-	int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-	if (rc)
-	{
-		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-		sqlite3_close(db);
-		exit(1);
-	}
-
-	string quest = "SELECT * FORM klienci WHERE id_klienta = '" + id + "';";
-	const char * sql = quest.c_str();
-
-	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	if (rc != SQLITE_OK)
-	{
-		cerr << "Blad zapytania: " << zErrMsg << endl;
-		sqlite3_free(zErrMsg);
-		zerowanie();
-	}
-}
-
 void TabelaKlient::odczyt(sqlite3 *db)
 {
 	void *NotUsed; int argc; char **argv; char **azColName;
@@ -190,7 +165,7 @@ void TabelaKlient::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE klienci SET Imie = 'noewImie', Nazwisko = 'noweNazwisko', AdresZamieszkania = 'nowyAdresZamieszkania', NrTel = 'nowyNrTel', EMail = 'nowyEMail' WHERE Imie = 'stareImie'; ";
+		string quest = "UPDATE klienci SET Imie = 'noewImie', Nazwisko = 'noweNazwisko', AdresZamieszkania = 'nowyAdresZamieszkania', NrTel = 'nowyNrTel', EMail = 'nowyEMail' WHERE Imie = 'stareImie' ";
 		const char * sql = quest.c_str();
 		
 		const char **Ogon = nullptr;

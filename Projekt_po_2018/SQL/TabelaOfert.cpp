@@ -5,7 +5,6 @@
 #include "StrucktData.h"
 #include "TabelaOfert.h"
 #include "BazaDanych.h"
-#include "SQL.h"
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 {

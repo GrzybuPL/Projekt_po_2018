@@ -20,6 +20,18 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 	return 0;
 }
 
+static int callbackReturnedValues(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja pobiera idKlienta i idOferty
+{
+	int i;
+	cout << "Number of args= " << argc << endl;
+
+	TabelaRezerwacji::idKlienta = argv[2];
+	TabelaRezerwacji::idOferty = argv[2];
+	
+	cout << endl;
+	return 0;
+}
+
 void TabelaRezerwacji::odczyt(sqlite3 *db)
 {
 	if (edycja)
@@ -50,6 +62,7 @@ void TabelaRezerwacji::odczyt(sqlite3 *db)
 
 void TabelaRezerwacji::zapisNew(sqlite3 *db)
 {
+	idK = odczytIdKlient();
 	if (edycja)
 	{
 		sqlite3_stmt *stmt;
@@ -63,7 +76,8 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 			exit(1);
 		}
 		//Trzeba wywolac funkcje pobierajaca id klienta. Oraz funkcje pobierajaca id_oferty+++++++++++++++++==================+++++++++++++++++================
-		string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + odczytIdKlient() + "', '" + odczytIdOferty() + "', '" + CzyZaplacone+ "');";
+		callbackReturnedValues();
+		string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + idKlienta + "', '" + idOferty + "', '" + CzyZaplacone + "');";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -197,7 +211,7 @@ int odczytIdOferty() //Moze void???
 		exit(1);
 	}
 
-	string quest = "SELECT id_oferty FORM klienci WHERE Koszt = '" + koszt + "' AND Gdzie = '" + TabelaOfert::miejscje + "' AND DataPobytuOd = '" + TabelaOfert::dlugoscPobytu + "' AND RodzajTransportu = '" + TabelaKlient::transport + "';";//Tymczasowe nazewnictwo
+	string quest = "SELECT id_oferty FORM dane_rezerwacji WHERE Koszt = '" + koszt + "' AND Gdzie = '" + TabelaOfert::miejscje + "' AND DataPobytuOd = '" + TabelaOfert::dlugoscPobytu + "' AND RodzajTransportu = '" + TabelaKlient::transport + "';";//Tymczasowe nazewnictwo
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

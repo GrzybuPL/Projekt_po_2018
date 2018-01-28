@@ -13,18 +13,18 @@ int odczytIdKlient();
 class TabelaRezerwacji : public BazaDanych {
 
 	int idPromocji;
-	int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
-	int idKlienta;
+	//int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
+	//int idKlienta;
 	bool CzyZaplacone;
 	bool edycja;
 
 public:
-
+	int idOferty;
+	int idKlienta;
 	virtual void odczyt();
 	virtual void zapisAdd();
 	virtual void edytuj();
 	virtual void zapisNew();
-
 
 };
 

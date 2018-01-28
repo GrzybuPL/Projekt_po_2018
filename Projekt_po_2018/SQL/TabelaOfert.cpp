@@ -56,7 +56,7 @@ void TabelaOfert::odczytPoId(int id, sqlite3 *db)
 		exit(1);
 	}
 
-	string quest = "SELECT * FROM dane_oferty WHERE id_oferty = '" + to_string(id) + "';";
+	string quest = "SELECT * FORM klienci WHERE id_klienta = '" + to_string(id) + "';";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

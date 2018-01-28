@@ -113,7 +113,7 @@ void TabelaRezerwacji::odczyt(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "SELECT * FORM dane_rezerwacji, klienci,  WHERE dane_oferty.id_Klienta = klienci.id_klienta";
+		string quest = "SELECT * FORM dane_rezerwacji";
 		const char * sql = quest.c_str();
 
 		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

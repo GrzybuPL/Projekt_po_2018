@@ -30,5 +30,6 @@ public:
 	bool WyszukajKlienta(string imie, string nazwisko, sqlite3 *db);
 	static int callback(void *NotUsed, int argc, char **argv, char **azColName);
 	void zerowanie();
+	void odczytPoId(sqlite3 *db);
 
 };

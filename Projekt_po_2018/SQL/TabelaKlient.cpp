@@ -62,7 +62,7 @@ bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
 		exit(1);
 	}
 
-	string quest = "SELECT * FORM klienci WHERE Imie = '" + imie + "' AND Nazwisko = '" + nazwisko + "'";
+	string quest = "SELECT * FROM klienci WHERE Imie = '" + imie + "' AND Nazwisko = '" + nazwisko + "'";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
@@ -90,7 +90,7 @@ void TabelaKlient::odczytPoId(int id, sqlite3 *db)
 		exit(1);
 	}
 
-	string quest = "SELECT * FORM klienci WHERE id_klienta = '" + to_string(id) + "';";
+	string quest = "SELECT * FROM klienci WHERE id_klienta = '" + to_string(id) + "';";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

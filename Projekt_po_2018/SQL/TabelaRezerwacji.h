@@ -6,12 +6,16 @@
 using namespace std;
 class BazaDanych;
 
+/*	DODANE
+int odczytIdKlient();
+
+*/
 class TabelaRezerwacji : public BazaDanych {
 
 	int idPromocji;
 	int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
-	string nowaCena;
-	string opis;
+	int idKlienta;
+	bool CzyZaplacone;
 	bool edycja;
 
 public:
@@ -24,3 +28,4 @@ public:
 
 };
 
+int odczytIdKlient();

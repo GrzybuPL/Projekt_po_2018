@@ -30,7 +30,7 @@ void TabelaKlient::odczyt()
 
 		if (rc)
 		{
-			cerr << "Can't open database: " << sqlite3_errmsg(db) << endl;
+			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
 			sqlite3_close(db);
 			exit(1);
 		}
@@ -60,7 +60,7 @@ void TabelaKlient::zapisNew()
 
 		if (rc)
 		{
-			cerr << "Can't open database: " << sqlite3_errmsg(db) << endl;
+			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
 			exit(1);
 		}
 
@@ -98,7 +98,7 @@ void TabelaKlient::zapisAdd()
 
 		if (rc)
 		{
-			cerr << "Can't open database: " << sqlite3_errmsg(db) << endl;
+			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
 			exit(1);
 		}
 

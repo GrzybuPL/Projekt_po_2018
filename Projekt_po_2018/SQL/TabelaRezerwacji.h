@@ -18,8 +18,6 @@ class TabelaRezerwacji : public BazaDanych {
 	bool edycja;
 
 public:
-	int idKlienta;
-	int idOferty;
 	virtual void odczyt(sqlite3 *db);
 	virtual void zapisAdd(sqlite3 *db);
 	virtual void edytuj(sqlite3 *db);

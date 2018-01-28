@@ -82,10 +82,10 @@ void menuOfert(SQL * &baze)
 		system("cls");
 		cout << "Menu" << endl;
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
-		cout << "1. Znajdz oferta" << endl;
-		cout << "2. Stworz oferta" << endl;
-		cout << "3. Zmien oferta" << endl;
-		cout << "4. Usun oferta" << endl;
+		cout << "1. Znajdz oferte" << endl;
+		cout << "2. Stworz oferte" << endl;
+		cout << "3. Zmien oferte" << endl;
+		cout << "4. Usun oferte" << endl;
 		cout << "0. exit" << endl;
 		cout << "----------------------------------------------------------" << endl;
 
@@ -169,7 +169,7 @@ void menuRezer(SQL * &baze)
 		cout << "Menu" << endl;
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Dokonaj rezerwacji" << endl;
-		cout << "2. Edytuj rezerwacjami" << endl;
+		cout << "2. Edytuj rezerwacje" << endl;
 		cout << "3. Anuluj rezerwacje" << endl;
 		cout << "0. exit" << endl;
 

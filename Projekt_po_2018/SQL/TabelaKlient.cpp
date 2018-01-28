@@ -52,12 +52,35 @@ void TabelaKlient::zapisNew()
 {
 	if (edycja)
 	{
-		string quest1 = "Select";
-		string quest = "INSERT INTO klienci VALUES(NULL, " + imie + ", " + nazwisko + ", " + adresZamieszkania + ", " + nr_Tel + ", " + eMail + ");";
-		const char * sql = quest.c_str();
 		sqlite3 *db;
+		sqlite3_stmt *stmt;
 		char * zErrMsg = 0;
 
+		int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+		if (rc)
+		{
+			cerr << "Can't open database: " << sqlite3_errmsg(db) << endl;
+			exit(1);
+		}
+
+		string quest = "INSERT INTO klienci VALUES(NULL, " + imie + ", " + nazwisko + ", " + adresZamieszkania + ", " + nr_Tel + ", " + eMail + ");";
+		const char * sql = quest.c_str();
+
+		const char **Ogon = nullptr;
+
+		if (sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, Ogon) != SQLITE_OK) {
+			cerr << "Blad bazy: " << sqlite3_errmsg(db) << endl;
+		}
+
+		if (stmt) {
+			sqlite3_step(stmt);
+			sqlite3_finalize(stmt);
+			sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
+		}
+		else {
+			cerr << "Blad stmt jest NULLem" << endl;
+		}
 
 		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
 	}
@@ -80,7 +103,7 @@ void TabelaKlient::zapisAdd()
 			exit(1);
 		}
 
-		string quest = "INSERT INTO klienci VALUES(NULL, " + imie + ", " + nazwisko + ", " + adresZamieszkania + ", " + nr_Tel + ", " + eMail + ");";
+		string quest = "UPDATE klienci SET ";
 		const char * sql = quest.c_str();
 		
 		const char **Ogon = nullptr;

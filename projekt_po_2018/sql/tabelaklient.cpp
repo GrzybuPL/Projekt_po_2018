@@ -28,6 +28,27 @@ void TabelaKlient::zerowanie()
 	edycja = false;
 }
 
+static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+{
+	int i;
+	cout << "Number of args= " << argc << endl;
+
+	for (i = 0; i<argc; i++)
+	{
+		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
+	}
+
+	//idKlienta = atoi(argv[1]);
+	//imie = argv[2];
+	//nazwisko = argv[3];
+	//adresZamieszkania = argv[4];
+	//nr_Tel = argv[5];
+	//eMail = argv[6];
+
+	cout << endl;
+	return 0;
+}
+
 bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
 {
 	char *zErrMsg = 0;
@@ -54,27 +75,6 @@ bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
 	}
 
 	return 1;
-}
-
-static int callback(void *NotUsed, int argc, char **argv, char **azColName)
-{
-	int i;
-	cout << "Number of args= " << argc << endl;
-
-	for (i = 0; i<argc; i++)
-	{
-		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
-	}
-
-	idKlienta = atoi(argv[1]);
-	imie = argv[2];
-	nazwisko = argv[3];
-	adresZamieszkania = argv[4];
-	nr_Tel = argv[5];
-	eMail = argv[6];
-
-	cout << endl;
-	return 0;
 }
 
 void TabelaKlient::odczytPoId(int id, sqlite3 *db)

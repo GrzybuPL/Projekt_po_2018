@@ -62,7 +62,7 @@ void welcome()
 }
 
 
-void loopProgram()		//glowna petla programu
+void loopProgram(const char* nazwa_= "BiuroPodrozy.db")		//glowna petla programu
 {
 	bool strat = true;
 

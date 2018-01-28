@@ -7,7 +7,7 @@
 #include "BazaDanych.h"
 #include "SQL.h"
 
-static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+static int callback(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja wyswietla dane pobrane z bazy
 {
 	int i;
 	cout << "Number of args= " << argc << endl;
@@ -25,8 +25,8 @@ static int callbackReturnedValues(void *NotUsed, int argc, char **argv, char **a
 	int i;
 	cout << "Number of args= " << argc << endl;
 
-	TabelaRezerwacji::idKlienta = argv[2];
-	TabelaRezerwacji::idOferty = argv[2];
+	TabelaRezerwacji::idKlienta = argv[3];
+	TabelaRezerwacji::idOferty = argv[4];
 	
 	cout << endl;
 	return 0;
@@ -50,7 +50,7 @@ void TabelaRezerwacji::odczyt(sqlite3 *db)
 		string quest = "SELECT * FORM dane_rezerwacji, klienci,  WHERE dane_oferty.id_Klienta = klienci.id_klienta";
 		const char * sql = quest.c_str();
 
-		rc = sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 		if (rc != SQLITE_OK)
 		{
 			cerr << "Blad zapytania: " << zErrMsg << endl;
@@ -77,7 +77,7 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 		}
 		//Trzeba wywolac funkcje pobierajaca id klienta. Oraz funkcje pobierajaca id_oferty+++++++++++++++++==================+++++++++++++++++================
 		callbackReturnedValues();
-		string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + idKlienta + "', '" + idOferty + "', '" + CzyZaplacone + "');";
+		string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + CzyZaplacone + "');";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;

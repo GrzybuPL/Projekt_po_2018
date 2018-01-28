@@ -32,7 +32,7 @@ bool TabelaPromocji::usunPromocje(int id_Promocji, sqlite3 *db)
 		exit(1);
 	}
 
-	string quest = "DELETE FROM promocja WHERE id_promocji = '" + id_Promocji + "';";
+	string quest = "DELETE FROM promocja WHERE id_promocji = '" + to_string(id_Promocji) + "';";
 	const char * sql = quest.c_str();
 
 	const char **Ogon = nullptr;
@@ -136,7 +136,7 @@ void TabelaPromocji::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_promocji SET CenaPromocji = '" + nowaCena + "', ZasadyPromocji = '" + opis + "' CzasTrwaniaPromocji = '" + czasTrwania.c_str() + "' WHERE id_promocji = '" + idPromocji + "';";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_promocji SET CenaPromocji = '" + nowaCena + "', ZasadyPromocji = '" + opis + "' CzasTrwaniaPromocji = '" + czasTrwania + "' WHERE id_promocji = '" + to_string(idPromocji) + "';";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -159,28 +159,49 @@ void TabelaPromocji::zapisAdd(sqlite3 *db)
 
 }
 
-bool TabelaPromocji::edytuj(sqlite3 *db)
+
+
+/*
+
+int idPromocji;
+int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
+string nowaCena;
+string opis;
+string czasTrwania;
+bool edycja;
+
+*/
+
+void TabelaPromocji::edytuj(sqlite3 *db)
 {
 	system("cls");
-	cout << "czy chcesz edytowac/dodac dane oferty " << imie << " " << nazwisko << "(y/n): ";
+
+	cout << "id Promocji: " << idPromocji << endl;
+	cout << "id Oferty: " << idOferty << endl;
+	cout << "nowa Cena: " << nowaCena << endl;
+	cout << "opis:  " << opis << endl;
+	cout << "czasTrwania: " << czasTrwania << endl;
+
+
+	cout << "czy chcesz edytowac/dodac dane oferty (y/n): ";
 	cout << endl;
 
 	if (_getch() == 'y')
 	{
-		cout << "edycja imienia?(y/n): ";
-		if (_getch() == 'y') { cin >> imie; edycja = true; }
+		cout << "edycja id Promocji?(y/n): ";
+		if (_getch() == 'y') { cin >> idPromocji; edycja = true; }
 		cout << endl;
-		cout << "edycja nazwiska?(y/n): ";
-		if (_getch() == 'y') { cin >> nazwisko; edycja = true; }
+		cout << "edycja idOferty?(y/n): ";
+		if (_getch() == 'y') { cin >> idOferty; edycja = true; }
 		cout << endl;
-		cout << "edycja adres zamieszkania?(y/n): ";
-		if (_getch() == 'y') { cin >> adresZamieszkania; edycja = true; }
+		cout << "edycja nowaCena?(y/n): ";
+		if (_getch() == 'y') { cin >> nowaCena; edycja = true; }
 		cout << endl;
-		cout << "edycja numeru telefonu?(y/n): ";
-		if (_getch() == 'y') { cin >> nr_Tel; edycja = true; }
+		cout << "edycja  opis?(y/n): ";
+		if (_getch() == 'y') { cin >> opis; edycja = true; }
 		cout << endl;
-		cout << "edycja eMail?(y/n): ";
-		if (_getch() == 'y') { cin >> eMail; edycja = true; }
+		cout << "edycja czasTrwania?(y/n): ";
+		if (_getch() == 'y') { cin >> czasTrwania; edycja = true; }
 		cout << endl;
 		cout << "edycja zakonczona." << endl;
 		system("pause");

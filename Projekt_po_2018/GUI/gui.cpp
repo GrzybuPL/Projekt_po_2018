@@ -1,13 +1,13 @@
 #include <iostream>
-#include "gui.h"//Dominik Grzyboweski  interface uzytkownika
-#include "../SQL/SQL.h"//Marcin Zuber oprracje na bazie danych 
+#include "gui.h"	
+#include "../SQL/SQL.h"
 #include <conio.h>
 #include <string>
 
 using namespace std;
 
 
-void help(int i)			//Wyswietlenie pomocy
+void help(int i)			//Wyswietlanie pomocy
 {
 	if (i==-1) cout << "ERROR!" << endl;
 	cout << "Pomoc programu biura obslugi klienta" << endl;
@@ -15,7 +15,7 @@ void help(int i)			//Wyswietlenie pomocy
 	cout << "Podaj parametr -b aby wprowadziæ nazwê bazy danych" << endl;
 }
 
-bool menu(SQL* &baze)
+bool menu(SQL* &baze)		//Glowne menu programu
 {
 	bool open=true;
 	cout << "Menu" << endl;
@@ -31,16 +31,16 @@ bool menu(SQL* &baze)
 		switch (_getch())
 		{
 		case '1':		
-			menuKlient(baze);//Przejscie do menu klienta
+			menuKlient(baze);		//Przejscie do menu klienta
 			break;
 		case '2':		
-			menuOfert(baze);//Przejscie do menu ofert
+			menuOfert(baze);		//Przejscie do menu ofert
 			break;
 		case '3':		
-			menuPromo(baze);//Przejscie do menu promocji
+			menuPromo(baze);		//Przejscie do menu promocji
 			break;
 		case '4':		
-			menuRezer(baze);//Przejscie do menu rezerwacji
+			menuRezer(baze);		//Przejscie do menu rezerwacji
 			break;
 			//...
 		case '0':
@@ -55,7 +55,7 @@ bool menu(SQL* &baze)
 }
 
 
-void welcome()
+void welcome()		//Przywitanie uzytkownika
 {
 	system("cls");
 	cout << endl << "================== System biura podrozy ==================" << endl;
@@ -81,8 +81,8 @@ void loopProgram(const char* nazwa_)		//glowna petla programu
 }
 
 
-void paraMain(int &argc, char** argv)//menu parametrów
-{
+void paraMain(int &argc, char** argv)		//Obsluga parametrow wprowadzanych z konsoli 
+{											//przy uruchomieniu programu
 	string buf;
 
 	for (int i = 1; i < argc; i++)
@@ -109,7 +109,7 @@ void paraMain(int &argc, char** argv)//menu parametrów
 					{
 						help(-1);
 					}
-					i = argc;//konczenie dalszych dzia³an
+					i = argc;		//konczenie dalszych dzialan
 					break;
 				}
 			}

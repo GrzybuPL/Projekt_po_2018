@@ -102,7 +102,7 @@ void TabelaKlient::zapisAdd()
 			exit(1);
 		}
 
-		string quest = "UPDATE klienci SET ";
+		string quest = "UPDATE klienci SET Imie = 'noewImie', Nazwisko = 'noweNazwisko', AdresZamieszkania = 'nowyAdresZamieszkania', NrTel = 'nowyNrTel', EMail = 'nowyEMail' WHERE Imie = 'stareImie' ";
 		const char * sql = quest.c_str();
 		
 		const char **Ogon = nullptr;

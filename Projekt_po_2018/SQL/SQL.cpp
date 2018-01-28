@@ -7,7 +7,7 @@ using namespace std;
 
 //trzeba przetestowac czy sie wogle otwozy baza i bêdzie otwarta ale powinno jak si eieusuibie obiektu SQL;
 
-SQL::SQL(const char* nazwaBazy_="BiuroPodrozy.db")
+SQL::SQL(const char* nazwaBazy_)
 {
 
 	if (sqlite3_open(nazwaBazy_, &db)) {

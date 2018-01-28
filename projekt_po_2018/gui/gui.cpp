@@ -2,11 +2,12 @@
 #include "gui.h"//Dominik Grzyboweski  interface uzytkownika
 #include "../SQL/SQL.h"//Marcin Zuber oprracje na bazie danych 
 #include <conio.h>
+#include <string>
 
 using namespace std;
 
 
-void help(int i=0)			//Wyswietlenie pomocy
+void help(int i)			//Wyswietlenie pomocy
 {
 	if (i==-1) cout << "ERROR!" << endl;
 	cout << "Pomoc programu biura obslugi klienta" << endl;
@@ -27,7 +28,7 @@ bool menu(SQL* &baze)
 
 	while (open)
 	{
-		switch (getch())
+		switch (_getch())
 		{
 		case '1':		
 			menuKlient(baze);//Przejscie do menu klienta
@@ -44,7 +45,7 @@ bool menu(SQL* &baze)
 			//...
 		case '0':
 			cout << "Czy napewno chcesz wyjsc z programu (y/n): ";
-			if (getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; return false; }
+			if (_getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; return false; }
 			break;			
 		default:
 			break;
@@ -62,7 +63,7 @@ void welcome()
 }
 
 
-void loopProgram(const char* nazwa_= "BiuroPodrozy.db")		//glowna petla programu
+void loopProgram(const char* nazwa_)		//glowna petla programu
 {
 	bool strat = true;
 

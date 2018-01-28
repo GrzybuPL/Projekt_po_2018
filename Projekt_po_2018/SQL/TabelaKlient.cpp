@@ -84,7 +84,6 @@ void TabelaKlient::zapisNew()
 
 		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
 	}
-
 }
 
 void TabelaKlient::zapisAdd()
@@ -132,26 +131,26 @@ void TabelaKlient::edytuj()
 	cout << "czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";
 	cout << endl;
 
-	if (getch() == 'y')
+	if (_getch() == 'y')
 	{
 		cout << "edycja imienia?(y/n): ";
-		if (getch() == 'y') { cin >> imie; edycja = true; }
+		if (_getch() == 'y') { cin >> imie; edycja = true; }
 		cout << endl;
 		cout << "edycja nazwiska?(y/n): ";
-		if (getch() == 'y') { cin >> nazwisko; edycja = true; }
+		if (_getch() == 'y') { cin >> nazwisko; edycja = true; }
 		cout << endl;
 		cout << "edycja adres zamieszkania?(y/n): ";
-		if (getch() == 'y') { cin >> adresZamieszkania; edycja = true; }
+		if (_getch() == 'y') { cin >> adresZamieszkania; edycja = true; }
 		cout << endl;
 		cout << "edycja numeru telefonu?(y/n): ";
-		if (getch() == 'y') { cin >> nr_Tel; edycja = true; }
+		if (_getch() == 'y') { cin >> nr_Tel; edycja = true; }
 		cout << endl;
 		cout << "edycja eMail?(y/n): ";
-		if (getch() == 'y') { cin >> eMail; edycja = true; }
+		if (_getch() == 'y') { cin >> eMail; edycja = true; }
 		cout << endl;
 		cout << "edycja zakonczona." << endl;
 		system("pause");
 	}
 
-	if (edycja) this->zapis();//zapis po edycji
+	if (edycja) this->zapisAdd();//zapis po edycji
 }

@@ -43,10 +43,10 @@ bool menu(SQL* &baze)		//Glowne menu programu
 		switch (_getch())
 		{
 		case '1':		
-			//menuKlient(baze);		//Przejscie do menu klienta
+			menuKlient(baze);		//Przejscie do menu klienta
 			break;
 		case '2':		
-			//menuOfert(baze);		//Przejscie do menu ofert
+			menuOfert(baze);		//Przejscie do menu ofert
 			break;
 		case '3':		
 			menuPromo(baze);		//Przejscie do menu promocji

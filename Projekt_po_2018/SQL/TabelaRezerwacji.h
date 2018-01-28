@@ -7,8 +7,7 @@ using namespace std;
 class BazaDanych;
 
 /*	DODANE
-int odczytIdKlient();
-
+pobierzDane(int id_Klienta, int id_Oferty, bool Czy_Zaplacone);
 */
 class TabelaRezerwacji : public BazaDanych {
 
@@ -25,7 +24,7 @@ public:
 	virtual void zapisAdd(sqlite3 *db);
 	virtual void edytuj(sqlite3 *db);
 	virtual void zapisNew(sqlite3 *db);
-
+	virtual void pobierzDane(int id_Klienta, int id_Oferty, bool Czy_Zaplacone);
 };
 
 int odczytIdKlient();

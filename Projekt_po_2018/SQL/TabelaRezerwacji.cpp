@@ -7,7 +7,39 @@
 #include "BazaDanych.h"
 #include "SQL.h"
 
-void pobierzDane(int idKlien)
+void TabelaRezerwacji::pobierzDane(int id_Klienta, int id_Oferty, bool Czy_Zaplacone, sqlite3 *db)
+{
+	sqlite3_stmt *stmt;
+	char * zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
+	{
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		exit(1);
+	}
+
+	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + id_Klienta + "', '" + id_Oferty + "', '" + Czy_Zaplacone + "');";
+	const char * sql = quest.c_str();
+
+	const char **Ogon = nullptr;
+
+	if (sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, Ogon) != SQLITE_OK) {
+		cerr << "Blad przy otwieraniu bazy : " << sqlite3_errmsg(db) << endl;
+	}
+
+	if (stmt) {
+		sqlite3_step(stmt);
+		sqlite3_finalize(stmt);
+		sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
+	}
+	else {
+		cerr << "Blad stmt jest NULLem" << endl;
+	}
+
+	sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+}
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja wyswietla dane pobrane z bazy
 {
@@ -73,7 +105,7 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 
 		if (rc)
 		{
-			cerr << "Can't open database: " << sqlite3_errmsg(db) << endl;
+			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
 			exit(1);
 		}
 		//Trzeba wywolac funkcje pobierajaca id klienta. Oraz funkcje pobierajaca id_oferty+++++++++++++++++==================+++++++++++++++++================

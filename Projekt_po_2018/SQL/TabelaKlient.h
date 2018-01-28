@@ -26,10 +26,6 @@ public:
 	virtual void edytuj() ;
 	virtual void zapisNew();
 
-
-
-
-
 };
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName);

@@ -21,16 +21,16 @@ class SQL
 	Filtr *filtr;
 	BazaDanych* wsk;
 public:
-	//wszytkie g³ówne metody jak zadaj puytanie->po czym mam  czukac->zwruc szukan¹ wartosc
+	//wszytkie g³ówne metody jak zadaj pytanie->po czym mam  szukac->zwroc szukana wartosc
 	//zwracaj wszytko string
-	//uogulnienie wszytystkich baz
+	//uogolnienie wszytkich baz
 	
 	SQL(const char* nazwaBazy_ = "BiuroPodrozy.db");
 	~SQL();
 
 
 
-	bool znajdzi_klienta();//pyta cie po czym ma szukac
+	bool znajdz_klienta();		//pyta po czym ma szukac
 
 };
 
@@ -40,5 +40,5 @@ void menuPromo(SQL * &baze);
 void menuRezer(SQL * &baze);
 
 
-void wczydaj_bazy(SQL *&);//tworzy klasy otwiera pliki itd
+void wczydaj_bazy(SQL *&);		//tworzy klasy, otwiera pliki, itd.
 

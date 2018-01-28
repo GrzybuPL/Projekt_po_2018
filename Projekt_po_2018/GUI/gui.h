@@ -6,4 +6,4 @@ void paraMain(int &argc, char** argv);		//Obsluga parametrow wprowadzanych z kon
 
 void loopProgram(const char *nazwaBazy_ ="BiuroPodrozy.db");		//glowna petla programu
 
-void help(int i=0);
+void help(int i=0);			//Pomoc dla uzytkownika

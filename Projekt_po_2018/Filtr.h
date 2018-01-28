@@ -2,7 +2,6 @@
 #include "SQL/StrucktData.h"
 using namespace std;
 
-
 class Filtr
 {
 	int idOferty;
@@ -12,10 +11,9 @@ class Filtr
 	Data dataPobytuDo;
 	int dlugoscPobytuOd;
 	int dlugoscPobytuDo;
-	bool czyAktywny;		//Czy filtr zostal uzyty
+	bool czyAktywny;		//Informacja czy filtr zostal uzyty
 public:
 	Filtr();		//wartosci domyslne to -1
-
 	void edytuj();
 
 

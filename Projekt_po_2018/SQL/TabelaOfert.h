@@ -16,7 +16,7 @@ class TabelaOfert : public BazaDanych {
 	Data odDnia;
 	Data doDnia;
 	bool edycja;
-	int idPromocji;//-1 dla braku promocji
+	int idPromocji;		//-1 dla braku promocji
 public:
 
 	virtual void odczyt();

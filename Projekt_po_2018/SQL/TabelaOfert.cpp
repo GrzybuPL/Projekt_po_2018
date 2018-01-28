@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "sqlite3.h"
 #include "StrucktData.h"
 #include "TabelaOfert.h"
@@ -62,7 +63,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "INSERT INTO klienci VALUES(NULL, " + imie + ", " + nazwisko + ", " + adresZamieszkania + ", " + nr_Tel + ", " + eMail + ");";
+		string quest = "INSERT INTO dane_oferty (id_oferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu) VALUES(NULL, '" + koszt + "', '" + miejsce + "', '" + odDnia + "', '" + dlugoscPobytu + "', '" + transport + "');";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -122,7 +123,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 
 }
 
-void TabelaOfert::edytuj()
+void TabelaOfert::edytuj(sqlite3 *db)
 {
 	system("cls");
 	cout << "czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";
@@ -149,5 +150,5 @@ void TabelaOfert::edytuj()
 		system("pause");
 	}
 
-	if (edycja) this->zapisAdd();//zapis po edycji
+	if (edycja) this->zapisAdd(db);//zapis po edycji
 }

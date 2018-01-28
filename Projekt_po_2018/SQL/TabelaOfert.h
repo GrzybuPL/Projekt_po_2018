@@ -14,15 +14,14 @@ class TabelaOfert : public BazaDanych {
 	string dlugoscPobytu;
 	string transport;
 	Data odDnia;
-	Data doDnia;
 	bool edycja;
 	int idPromocji;		//-1 dla braku promocji
 public:
 
-	virtual void odczyt();
-	virtual void zapisAdd() ;
-	virtual void edytuj() ;
-	virtual void zapisNew() ;
+	virtual void odczyt(sqlite3 *db);
+	virtual void zapisAdd(sqlite3 *db) ;
+	virtual void edytuj(sqlite3 *db);
+	virtual void zapisNew(sqlite3 *db) ;
 
 
 

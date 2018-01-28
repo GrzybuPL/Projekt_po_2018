@@ -35,7 +35,7 @@ void TabelaOfert::odczyt(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "SELECT * FORM dane_oferty WHERE Koszt = '" + koszt + "' Gdzie = '" + miejsce + "' DataPobytuOd = '" + odDnia + "' DlugoscPobytu = '" + dlugoscPobytu + "' RodzajTranspotru = '" + transport + "' ";
+		string quest = "SELECT * FORM dane_oferty WHERE Koszt = '" + koszt + "' Gdzie = '" + miejsce + "' DataPobytuOd = '" + odDnia.getDate() + "' DlugoscPobytu = '" + dlugoscPobytu + "' RodzajTranspotru = '" + transport + "' ";
 		const char * sql = quest.c_str();
 
 		rc = sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
@@ -63,7 +63,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "INSERT INTO dane_oferty (id_oferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu) VALUES(NULL, '" + koszt + "', '" + miejsce + "', '" + odDnia + "', '" + dlugoscPobytu + "', '" + transport + "');";
+		string quest = "INSERT INTO dane_oferty (id_oferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu) VALUES(NULL, '" + koszt + "', '" + miejsce + "', '" + odDnia.getDate() + "', '" + dlugoscPobytu + "', '" + transport + "');";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -123,7 +123,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 
 }
 
-void TabelaOfert::edytuj()
+void TabelaOfert::edytuj(sqlite3 *db)
 {
 	system("cls");
 	cout << "czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";
@@ -150,5 +150,5 @@ void TabelaOfert::edytuj()
 		system("pause");
 	}
 
-	if (edycja) this->zapisAdd();//zapis po edycji
+	if (edycja) this->zapisAdd(db);//zapis po edycji
 }

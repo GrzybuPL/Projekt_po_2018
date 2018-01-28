@@ -1,1 +1,8 @@
-﻿  Projekt_po_2018.vcxproj -> C:\Users\Marvi\Desktop\BiuroPodrozy\BP\x64\Debug\Projekt_po_2018.exe
+﻿  TabelaOfert.cpp
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(119): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(156): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  SQL.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  gui.cpp
+  Projekt_po_2018.vcxproj -> C:\Users\Marvi\Desktop\BiuroPodrozy\BP\x64\Debug\Projekt_po_2018.exe

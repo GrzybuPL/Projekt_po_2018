@@ -99,7 +99,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE klienci SET Imie = 'noewImie', Nazwisko = 'noweNazwisko', AdresZamieszkania = 'nowyAdresZamieszkania', NrTel = 'nowyNrTel', EMail = 'nowyEMail' WHERE Imie = 'stareImie' ";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_dferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce +"', DataPobytuOd = '" + odDnia + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE Imie = 'stareImie' AND Nazwisko = 'stareNazwisko' ";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;

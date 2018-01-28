@@ -6,6 +6,32 @@
 #include "TabelaKlient.h"
 #include "SQL.h"
 
+bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
+{
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
+	{
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
+	}
+
+	string quest = "SELECT * FORM klienci WHERE Imie = '" + imie + "' AND Nazwisko = '" + nazwisko + "'";
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+		return 0;
+	}
+	return 1;
+}
+
 static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 {
 	int i;
@@ -19,11 +45,10 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 	return 0;
 }
 
-void TabelaKlient::odczyt()
+void TabelaKlient::odczyt(sqlite3 *db)
 {
 	if (edycja)
 	{
-		sqlite3 *db;
 		char *zErrMsg = 0;
 
 		int rc = sqlite3_open("BiuroPodrozy.db", &db);
@@ -35,7 +60,7 @@ void TabelaKlient::odczyt()
 			exit(1);
 		}
 
-		string quest = "SELECT * FORM klienci WHERE Imie = '" + imie + "' AND Nazwisko = '" + nazwisko + "'";
+		string quest = "SELECT * FORM klienci";
 		const char * sql = quest.c_str();
 		
 		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
@@ -48,11 +73,10 @@ void TabelaKlient::odczyt()
 
 }
 
-void TabelaKlient::zapisNew()
+void TabelaKlient::zapisNew(sqlite3 *db)
 {
 	if (edycja)
 	{
-		sqlite3 *db;
 		sqlite3_stmt *stmt;
 		char * zErrMsg = 0;
 
@@ -86,11 +110,10 @@ void TabelaKlient::zapisNew()
 	}
 }
 
-void TabelaKlient::zapisAdd()
+void TabelaKlient::zapisAdd(sqlite3 *db)
 {
 	if (edycja)
 	{
-		sqlite3 *db;
 		sqlite3_stmt *stmt;
 		char * zErrMsg = 0;
 
@@ -125,7 +148,7 @@ void TabelaKlient::zapisAdd()
 
 }
 
-void TabelaKlient::edytuj()
+void TabelaKlient::edytuj(sqlite3 *db)
 {
 	system("cls");
 	cout << "czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";

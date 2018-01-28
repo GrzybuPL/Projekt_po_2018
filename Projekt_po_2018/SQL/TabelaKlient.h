@@ -21,10 +21,12 @@ class TabelaKlient : public BazaDanych {
 	bool edycja;  // true -false
 
 public:
-	virtual void odczyt();
-	virtual void zapisAdd() ;
-	virtual void edytuj() ;
-	virtual void zapisNew();
+	virtual void odczyt(sqlite3 *db;);
+	virtual void zapisAdd(sqlite3 *db;) ;
+	virtual void edytuj(sqlite3 *db;) ;
+	virtual void zapisNew(sqlite3 *db;);
+
+	bool WyszukajKlienta(string imie, string nazwisko, sqlite3 *db);
 
 };
 

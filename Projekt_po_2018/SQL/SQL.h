@@ -30,15 +30,15 @@ public:
 	~SQL();
 
 	//=============================tabela klientuw
-	bool znajdz_klienta(string im, string naz);	//pyta po czym ma szukac
-	void addklient();
-	void editklient();
-	void showallklient();
+	bool znajdz_Klienta(string im, string naz);	//pyta po czym ma szukac
+	void addKlient();
+	void editKlient();
+	void showAllKlient();
 
 	//===================tabela ofert
 
-	void znajdz_oferte();
-
+	void znajdz_Oferte();
+	void showAllOferty();
 };
 
 void menuKlient(SQL * &baze);

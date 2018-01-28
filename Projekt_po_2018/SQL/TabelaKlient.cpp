@@ -98,14 +98,12 @@ void TabelaKlient::odczytPoId(int id, sqlite3 *db)
 	{
 		cerr << "Blad zapytania: " << zErrMsg << endl;
 		sqlite3_free(zErrMsg);
-		zerowanie();
+		this->zerowanie();
 	}
 }
 
 void TabelaKlient::odczyt(sqlite3 *db)
 {
-	void *NotUsed; int argc; char **argv; char **azColName;
-
 	if (edycja)
 	{
 		char *zErrMsg = 0;
@@ -128,15 +126,7 @@ void TabelaKlient::odczyt(sqlite3 *db)
 			cerr << "Blad zapytania: " << zErrMsg << endl;
 			sqlite3_free(zErrMsg);
 		}
-
-		idKlienta = atoi(argv[1]);
-		imie = argv[2];
-		nazwisko = argv[3];
-		adresZamieszkania = argv[4];
-		nr_Tel = argv[5];
-		eMail = argv[6];
 	}
-
 }
 
 void TabelaKlient::zapisNew(sqlite3 *db)

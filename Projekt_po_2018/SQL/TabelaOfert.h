@@ -23,7 +23,7 @@ public:
 	virtual void edytuj(sqlite3 *db);
 	virtual void zapisNew(sqlite3 *db) ;
 	void odczytPoId(int id, sqlite3 *db);
-
+	void zerowanie();
 
 };
 

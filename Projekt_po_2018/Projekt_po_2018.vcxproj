@@ -118,7 +118,6 @@
     <ClCompile Include="GUI\gui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SQL\BazaDanych.cpp" />
-    <ClCompile Include="SQL\main.cpp" />
     <ClCompile Include="SQL\SQL.cpp" />
     <ClCompile Include="SQL\sqlite3.c" />
     <ClCompile Include="SQL\TabelaKlient.cpp" />

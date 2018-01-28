@@ -1,0 +1,6 @@
+﻿  sqlite3.c
+gui.obj : error LNK2019: unresolved external symbol "void __cdecl menuKlient(class SQL * &)" (?menuKlient@@YAXAEAPEAVSQL@@@Z) referenced in function "bool __cdecl menu(class SQL * &)" (?menu@@YA_NAEAPEAVSQL@@@Z)
+gui.obj : error LNK2019: unresolved external symbol "void __cdecl menuOfert(class SQL * &)" (?menuOfert@@YAXAEAPEAVSQL@@@Z) referenced in function "bool __cdecl menu(class SQL * &)" (?menu@@YA_NAEAPEAVSQL@@@Z)
+gui.obj : error LNK2019: unresolved external symbol "void __cdecl menuPromo(class SQL * &)" (?menuPromo@@YAXAEAPEAVSQL@@@Z) referenced in function "bool __cdecl menu(class SQL * &)" (?menu@@YA_NAEAPEAVSQL@@@Z)
+gui.obj : error LNK2019: unresolved external symbol "void __cdecl menuRezer(class SQL * &)" (?menuRezer@@YAXAEAPEAVSQL@@@Z) referenced in function "bool __cdecl menu(class SQL * &)" (?menu@@YA_NAEAPEAVSQL@@@Z)
+C:\Users\Marvi\Desktop\BiuroPodrozy\BP\x64\Debug\Projekt_po_2018.exe : fatal error LNK1120: 4 unresolved externals

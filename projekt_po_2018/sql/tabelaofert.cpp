@@ -122,7 +122,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 
 		if (stmt) {
 			sqlite3_step(stmt);
-			sqlite3_finalize(stmt);
+			sqlite3_finalize(stmt); 
 			sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
 		}
 		else {

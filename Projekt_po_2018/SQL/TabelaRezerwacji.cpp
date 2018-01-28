@@ -16,8 +16,31 @@ TabelaRezerwacji::TabelaRezerwacji()
 	edycja = false;
 }
 
-void TabelaRezerwacji::zapisNew(int id_Klienta_, int id_Oferty_, bool czy_Zaplacone_, sqlite3 *db)
+
+
+void TabelaRezerwacji::wpiszDaneDoRezerwacji(int idk, int ido,bool czyz)
 {
+	if (idKlienta == -1 || idOferty == -1 || idk == -1 || ido == -1)
+	{
+		cout << "Podaj id Klienta: ";
+		cin >> idk;
+		cout << "Podaj id Oferty: ";
+		cin >> ido;
+		cout << "czy zaplacono(y/n): ";
+		if (_getch() == 'y')czyz = true;
+		else czyz = false;
+		idKlienta = idk;
+		idOferty = ido;
+		czyZaplacone = czyz;
+	}
+
+
+}
+
+void TabelaRezerwacji::zapisNew(sqlite3 *db)
+{
+	wpiszDaneDoRezerwacji();
+
 	sqlite3_stmt *stmt;
 	char * zErrMsg = 0;
 
@@ -29,7 +52,7 @@ void TabelaRezerwacji::zapisNew(int id_Klienta_, int id_Oferty_, bool czy_Zaplac
 		exit(1);
 	}
 
-	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(id_Klienta_) + "','" + to_string(id_Oferty_) + "', '" + to_string(czy_Zaplacone_) + "');";
+	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "','" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
 	const char * sql = quest.c_str();
 
 	const char **Ogon = nullptr;

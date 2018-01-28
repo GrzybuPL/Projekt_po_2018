@@ -28,7 +28,7 @@ bool menu(SQL* &baze)
 
 	while (open)
 	{
-		switch (getch())
+		switch (_getch())
 		{
 		case '1':		
 			menuKlient(baze);//Przejscie do menu klienta
@@ -45,7 +45,7 @@ bool menu(SQL* &baze)
 			//...
 		case '0':
 			cout << "Czy napewno chcesz wyjsc z programu (y/n): ";
-			if (getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; return false; }
+			if (_getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; return false; }
 			break;			
 		default:
 			break;

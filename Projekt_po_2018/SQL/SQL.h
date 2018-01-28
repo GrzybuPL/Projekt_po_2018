@@ -19,8 +19,8 @@ class SQL
 	TabelaPromocji promocje;
 	TabelaRezerwacji rezerwacje;
 	Filtr *filtr;
-	BazaDanych* wsk;
 public:
+	BazaDanych * wsk;
 	//wszytkie g³ówne metody jak zadaj pytanie->po czym mam  szukac->zwroc szukana wartosc
 	//zwracaj wszytko string
 	//uogolnienie wszytkich baz

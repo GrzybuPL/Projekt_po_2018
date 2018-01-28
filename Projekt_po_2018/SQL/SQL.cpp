@@ -71,8 +71,8 @@ void menuKlient(SQL * &baze)
 		}
 
 	}
-
 }
+
 void menuOfert(SQL * &baze)
 {
 	bool open = true;

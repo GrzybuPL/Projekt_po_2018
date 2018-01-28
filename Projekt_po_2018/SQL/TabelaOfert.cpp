@@ -6,6 +6,19 @@
 #include "TabelaOfert.h"
 #include "BazaDanych.h"
 
+
+TabelaOfert::TabelaOfert()
+{
+	idOferty = -1;
+	nazwa = "";
+	koszt = "";
+	miejsce = "";
+	transport = "";
+	odDnia.setData(-1, -1, -1);
+	edycja = false;
+	idPromocji = -1;
+}
+
 static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 {
 	int i;

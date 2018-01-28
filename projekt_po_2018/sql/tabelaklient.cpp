@@ -5,6 +5,19 @@
 #include "BazaDanych.h"
 #include "TabelaKlient.h"
 
+
+TabelaKlient::TabelaKlient()
+{
+	idKlienta = -1;
+	imie = "";
+	nazwisko = "";
+	adresZamieszkania = "";
+	nr_Tel = "";
+	eMail = "";
+	edycja = false;
+}
+
+
 bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
 {
 	char *zErrMsg = 0;

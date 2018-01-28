@@ -33,6 +33,89 @@ SQL::~SQL()
 	sqlite3_close(db);		//zamkniecie bazy danych
 }
 
+void menuKlient(SQL * &baze)
+{
+	bool open = true;
+
+	while (open)
+	{
+		system("cls");
+		cout << "Menu" << endl;
+		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
+		cout << "1. Znajdz klienta" << endl;
+		cout << "2. Stworz klienta" << endl;
+		cout << "3. Zmien klienta" << endl;
+		cout << "4. Usun klienta" << endl;
+		cout << "0. exit" << endl;
+
+		switch (_getch())
+		{
+		case '1':
+			;
+			break;
+		case '2':
+			//zapisNew(baze);
+			break;
+		case '3':
+			//edytuj(baze);
+			break;
+		case '4':
+			//usunPromocje(baze);
+			break;
+			//...
+		case '0':
+			open = false;
+			break;
+		default:
+			break;
+		}
+
+	}
+
+}
+void menuOfert(SQL * &baze)
+{
+	bool open = true;
+
+	while (open)
+	{
+		system("cls");
+		cout << "Menu" << endl;
+		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
+		cout << "1. Znajdz oferta" << endl;
+		cout << "2. Stworz oferta" << endl;
+		cout << "3. Zmien oferta" << endl;
+		cout << "4. Usun oferta" << endl;
+		cout << "0. exit" << endl;
+
+		switch (_getch())
+		{
+		case '1':
+			;
+			break;
+		case '2':
+			//zapisNew(baze);
+			break;
+		case '3':
+			//edytuj(baze);
+			break;
+		case '4':
+			//usunPromocje(baze);
+			break;
+			//...
+		case '0':
+			open = false;
+			break;
+		default:
+			break;
+		}
+
+	}
+
+}
+
+
+
 void menuPromo(SQL * &baze)
 {
 	bool open = true;

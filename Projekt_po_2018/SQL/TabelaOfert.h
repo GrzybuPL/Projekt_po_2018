@@ -17,7 +17,7 @@ class TabelaOfert : public BazaDanych {
 	bool edycja;
 	int idPromocji;		//-1 dla braku promocji
 public:
-
+	TabelaOfert();
 	virtual void odczyt(sqlite3 *db);
 	virtual void zapisAdd(sqlite3 *db) ;
 	virtual void edytuj(sqlite3 *db);

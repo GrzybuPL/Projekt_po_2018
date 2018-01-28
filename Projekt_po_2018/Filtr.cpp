@@ -64,5 +64,4 @@ void Filtr::edytuj()
 		cout << "Edycja zakonczona" << endl;
 		system("pause");
 	}
-
 }

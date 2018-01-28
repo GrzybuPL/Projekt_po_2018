@@ -24,7 +24,7 @@ public:
 	virtual void zapisAdd(sqlite3 *db);
 	virtual void edytuj(sqlite3 *db);
 	virtual void zapisNew(sqlite3 *db);
-	virtual void pobierzDane(int id_Klienta, int id_Oferty, bool Czy_Zaplacone);
+	virtual void pobierzDane(int id_Klienta, int id_Oferty, bool Czy_Zaplacone, sqlite3 *db);
 };
 
 int odczytIdKlient();

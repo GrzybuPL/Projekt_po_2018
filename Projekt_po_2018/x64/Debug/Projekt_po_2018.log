@@ -2,80 +2,104 @@
   main.cpp
 c1xx : fatal error C1083: Cannot open source file: 'SQL\main.cpp': No such file or directory
   TabelaRezerwacji.cpp
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(28): error C2597: illegal reference to non-static member 'TabelaRezerwacji::idKlienta'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(28): note: see declaration of 'TabelaRezerwacji::idKlienta'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(29): error C2597: illegal reference to non-static member 'TabelaRezerwacji::idOferty'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(29): note: see declaration of 'TabelaRezerwacji::idOferty'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(36): error C2511: 'void TabelaRezerwacji::odczyt(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(37): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(64): error C2511: 'void TabelaRezerwacji::zapisNew(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(65): error C2065: 'idK': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(66): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(79): error C2660: 'callbackReturnedValues': function does not take 0 arguments
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(80): error C2597: illegal reference to non-static member 'TabelaRezerwacji::idKlienta'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(80): error C3867: 'TabelaRezerwacji::idKlienta': non-standard syntax; use '&' to create a pointer to member
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(80): error C2568: '+': unable to resolve function overload
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(85): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2511: 'void TabelaRezerwacji::zapisAdd(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(104): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(117): error C2597: illegal reference to non-static member 'TabelaRezerwacji::CzyZaplacone'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(117): error C3867: 'TabelaRezerwacji::CzyZaplacone': non-standard syntax; use '&' to create a pointer to member
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(117): error C2568: '+': unable to resolve function overload
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(122): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(141): error C2511: 'bool TabelaRezerwacji::edytuj(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(143): error C2065: 'imie': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(143): error C2065: 'nazwisko': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(149): error C2065: 'imie': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(149): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(152): error C2065: 'nazwisko': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(152): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(155): error C2065: 'adresZamieszkania': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(155): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(158): error C2065: 'nr_Tel': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(158): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(161): error C2065: 'eMail': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(161): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(167): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(167): error C2671: 'TabelaRezerwacji::edytuj': static member functions do not have 'this' pointers
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(167): error C2227: left of '->zapisAdd' must point to class/struct/union/generic type
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(185): error C2065: 'imie': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(23): error C2110: '+': cannot add two pointers
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(28): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(62): error C2597: illegal reference to non-static member 'TabelaRezerwacji::idKlienta'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(62): note: see declaration of 'TabelaRezerwacji::idKlienta'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(63): error C2597: illegal reference to non-static member 'TabelaRezerwacji::idOferty'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(63): note: see declaration of 'TabelaRezerwacji::idOferty'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(112): error C2660: 'callbackReturnedValues': function does not take 0 arguments
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2782: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(std::basic_string<_Elem,_Traits,_Alloc> &&,const _Elem)': template parameter '_Elem' is ambiguous
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3866): note: see declaration of 'std::operator +'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): note: could be 'bool'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): note: or       'char'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(std::basic_string<_Elem,_Traits,_Alloc> &&,const _Elem)': could not deduce template argument for 'const _Elem' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3866): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(std::basic_string<_Elem,_Traits,_Alloc> &&,const _Elem *const )': could not deduce template argument for 'const _Elem *const ' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3856): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const _Elem,std::basic_string<_Elem,_Traits,_Alloc> &&)': could not deduce template argument for 'std::basic_string<_Elem,_Traits,_Alloc> &&' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3845): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const _Elem *const ,std::basic_string<_Elem,_Traits,_Alloc> &&)': could not deduce template argument for 'const _Elem *const ' from 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3835): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(std::basic_string<_Elem,_Traits,_Alloc> &&,std::basic_string<_Elem,_Traits,_Alloc> &&)': could not deduce template argument for 'std::basic_string<_Elem,_Traits,_Alloc> &&' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3821): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(std::basic_string<_Elem,_Traits,_Alloc> &&,const std::basic_string<_Elem,_Traits,_Alloc> &)': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3811): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const std::basic_string<_Elem,_Traits,_Alloc> &,std::basic_string<_Elem,_Traits,_Alloc> &&)': could not deduce template argument for 'std::basic_string<_Elem,_Traits,_Alloc> &&' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3801): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2782: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem)': template parameter '_Elem' is ambiguous
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3787): note: see declaration of 'std::operator +'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): note: could be 'bool'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): note: or       'char'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem)': could not deduce template argument for 'const _Elem' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3787): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const )': could not deduce template argument for 'const _Elem *const ' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3771): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const _Elem,const std::basic_string<_Elem,_Traits,_Alloc> &)': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3757): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &)': could not deduce template argument for 'const _Elem *const ' from 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3741): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::basic_string<_Elem,_Traits,_Alloc> std::operator +(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &)': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(3727): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::_String_iterator<_Mystr> std::operator +(_String_iterator<_Mystr>::difference_type,std::_String_iterator<_Mystr>)': could not deduce template argument for 'std::_String_iterator<_Mystr>' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(1490): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::_String_const_iterator<_Mystr> std::operator +(_String_const_iterator<_Mystr>::difference_type,std::_String_const_iterator<_Mystr>)': could not deduce template argument for 'std::_String_const_iterator<_Mystr>' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xstring(1372): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::move_iterator<_RanIt> std::operator +(move_iterator<_RanIt>::difference_type,const std::move_iterator<_RanIt> &)': could not deduce template argument for 'const std::move_iterator<_RanIt> &' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xutility(2269): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::_Array_iterator<_Ty,_Size> std::operator +(ptrdiff_t,std::_Array_iterator<_Ty,_Size>)': could not deduce template argument for 'std::_Array_iterator<_Ty,_Size>' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xutility(2120): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::_Array_const_iterator<_Ty,_Size> std::operator +(ptrdiff_t,std::_Array_const_iterator<_Ty,_Size>)': could not deduce template argument for 'std::_Array_const_iterator<_Ty,_Size>' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xutility(1990): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2784: 'std::reverse_iterator<_RanIt> std::operator +(reverse_iterator<_RanIt>::difference_type,const std::reverse_iterator<_RanIt> &)': could not deduce template argument for 'const std::reverse_iterator<_RanIt> &' from 'bool'
+  d:\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.12.25827\include\xutility(1404): note: see declaration of 'std::operator +'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(113): error C2676: binary '+': 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' does not define this operator or a conversion to a type acceptable to the predefined operator
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(118): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(150): error C2110: '+': cannot add two pointers
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(155): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(174): error C2556: 'bool TabelaRezerwacji::edytuj(sqlite3 *)': overloaded function differs only by return type from 'void TabelaRezerwacji::edytuj(sqlite3 *)'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(25): note: see declaration of 'TabelaRezerwacji::edytuj'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(173): error C2371: 'TabelaRezerwacji::edytuj': redefinition; different basic types
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(25): note: see declaration of 'TabelaRezerwacji::edytuj'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(176): error C2065: 'imie': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(176): error C2065: 'nazwisko': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(182): error C2065: 'imie': undeclared identifier
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(185): error C2065: 'nazwisko': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(214): error C2065: 'koszt': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(214): error C2039: 'miejscje': is not a member of 'TabelaOfert'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.h(9): note: see declaration of 'TabelaOfert'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(214): error C2065: 'miejscje': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(214): error C2039: 'transport': is not a member of 'TabelaKlient'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaklient.h(13): note: see declaration of 'TabelaKlient'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(214): error C2065: 'transport': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(188): error C2065: 'adresZamieszkania': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(191): error C2065: 'nr_Tel': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(194): error C2065: 'eMail': undeclared identifier
   TabelaOfert.cpp
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(108): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(156): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(148): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\conio.h(452): note: see declaration of 'getch'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(159): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(151): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\conio.h(452): note: see declaration of 'getch'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(162): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(154): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\conio.h(452): note: see declaration of 'getch'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(165): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(157): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\conio.h(452): note: see declaration of 'getch'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(168): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(160): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\conio.h(452): note: see declaration of 'getch'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(181): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(163): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\conio.h(452): note: see declaration of 'getch'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(184): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(166): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\conio.h(452): note: see declaration of 'getch'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(196): error C2065: 'imie': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(196): error C2065: 'nazwisko': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(202): error C2065: 'imie': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(205): error C2065: 'nazwisko': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(208): error C2065: 'adresZamieszkania': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(211): error C2065: 'nr_Tel': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(214): error C2065: 'eMail': undeclared identifier
+  TabelaKlient.cpp
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaklient.cpp(96): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaklient.cpp(133): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaklient.cpp(178): error C2660: 'TabelaKlient::zapisAdd': function does not take 0 arguments
   SQL.cpp
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(18): error C2259: 'TabelaKlient': cannot instantiate abstract class
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(18): note: due to following members:
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(18): note: 'void BazaDanych::odczyt(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(9): note: see declaration of 'BazaDanych::odczyt'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(18): note: 'void BazaDanych::zapisAdd(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(10): note: see declaration of 'BazaDanych::zapisAdd'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(18): note: 'void BazaDanych::edytuj(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(11): note: see declaration of 'BazaDanych::edytuj'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(18): note: 'void BazaDanych::zapisNew(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(12): note: see declaration of 'BazaDanych::zapisNew'
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(19): error C2259: 'TabelaOfert': cannot instantiate abstract class
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(19): note: due to following members:
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(19): note: 'void BazaDanych::odczyt(void)': is abstract
@@ -86,4 +110,15 @@ c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(19): error C2
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(11): note: see declaration of 'BazaDanych::edytuj'
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(19): note: 'void BazaDanych::zapisNew(void)': is abstract
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(12): note: see declaration of 'BazaDanych::zapisNew'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(21): error C2259: 'TabelaRezerwacji': cannot instantiate abstract class
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(21): note: due to following members:
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(21): note: 'void BazaDanych::odczyt(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(9): note: see declaration of 'BazaDanych::odczyt'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(21): note: 'void BazaDanych::zapisAdd(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(10): note: see declaration of 'BazaDanych::zapisAdd'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(21): note: 'void BazaDanych::edytuj(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(11): note: see declaration of 'BazaDanych::edytuj'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(21): note: 'void BazaDanych::zapisNew(void)': is abstract
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(12): note: see declaration of 'BazaDanych::zapisNew'
+  gui.cpp
   Generating Code...

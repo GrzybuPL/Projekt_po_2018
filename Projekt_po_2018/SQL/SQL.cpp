@@ -98,15 +98,19 @@ void menuKlient(SQL * &baze)
 			cout << "podja imie: "; cin >> buf1;
 			cout << "podja nazwisko: "; cin >> buf2;
 			baze->znajdz_klienta(buf1, buf2);
+			system("pause");
 			break;
 		case '2':
 			baze->addklient();
+			system("pause");
 			break;
 		case '3':
 			baze->editklient();
+			system("pause");
 			break;
 		case '4':
 			baze->showallklient();
+			system("pause");
 			break;
 		case '0':
 			open = false;
@@ -138,19 +142,24 @@ void menuOfert(SQL * &baze)
 		{
 		case '1':
 			baze->znajdz_oferte();
+			system("pause");
 			break;
 		case '2':
 			//zapisNew(baze);
+			system("pause");
 			break;
 		case '3':
 			//edytuj(baze);
+			system("pause");
 			break;
 		case '4':
 			//usunPromocje(baze);
+			system("pause");
 			break;
 			//...
 		case '0':
 			open = false;
+			system("pause");
 			break;
 		default:
 			break;

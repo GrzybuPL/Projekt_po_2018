@@ -64,7 +64,7 @@ void TabelaKlient::zapisNew()
 
 }
 
-void TabelaKlient::zapis()
+void TabelaKlient::zapisAdd()
 {
 	if (edycja)
 	{

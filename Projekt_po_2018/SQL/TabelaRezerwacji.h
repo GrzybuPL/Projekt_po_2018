@@ -23,3 +23,5 @@ public:
 	virtual void edytuj(sqlite3 *db);
 	virtual void zapisNew(int id_Klienta, int id_Oferty, bool Czy_Zaplacone, sqlite3 *db);
 };
+
+static int callback(void *NotUsed, int argc, char **argv, char **azColName);

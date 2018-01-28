@@ -18,23 +18,25 @@ void help(int i)			//Wyswietlanie pomocy
 bool menu(SQL* &baze)		//Glowne menu programu
 {
 	bool open=true;
-	cout << "Menu" << endl;
-	cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
-	cout << "1. Zarzadzaj klientami" << endl;
-	cout << "2. Zarzadzaj ofertami" << endl;
-	cout << "3. Zarzadzaj promocjami" << endl;
-	cout << "4. Przejdz do rezerwacji" << endl;
-	cout << "0. exit" << endl;
 
 	while (open)
 	{
+		system("cls");
+		cout << "Menu" << endl;
+		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
+		cout << "1. Zarzadzaj klientami" << endl;
+		cout << "2. Zarzadzaj ofertami" << endl;
+		cout << "3. Zarzadzaj promocjami" << endl;
+		cout << "4. Przejdz do rezerwacji" << endl;
+		cout << "0. exit" << endl;
+
 		switch (_getch())
 		{
 		case '1':		
-			menuKlient(baze);		//Przejscie do menu klienta
+			//menuKlient(baze);		//Przejscie do menu klienta
 			break;
 		case '2':		
-			menuOfert(baze);		//Przejscie do menu ofert
+			//menuOfert(baze);		//Przejscie do menu ofert
 			break;
 		case '3':		
 			menuPromo(baze);		//Przejscie do menu promocji

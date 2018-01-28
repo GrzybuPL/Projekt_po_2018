@@ -35,7 +35,9 @@ public:
 	void editklient();
 	void showallklient();
 
+	//===================tabela ofert
 
+	void znajdz_oferte();
 
 };
 

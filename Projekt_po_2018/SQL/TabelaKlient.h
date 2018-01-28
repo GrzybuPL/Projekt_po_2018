@@ -31,6 +31,6 @@ public:
 	bool WyszukajKlienta(string imie, string nazwisko, sqlite3 *db);
 
 	void zerowanie();
-	void odczytPoId(sqlite3 *db);
+	void odczytPoId(int id, sqlite3 *db);
 
 };

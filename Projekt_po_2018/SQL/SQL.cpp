@@ -36,7 +36,16 @@ void SQL::showallklient()
 {
 	klient.odczyt(db);
 }
+//=========================oferty
 
+void SQL::znajdz_oferte()
+{
+	int id;
+
+	cout << "podaj id: "; cin >> id;
+
+	if(id>0)oferty-> odczytPoId(id, db);
+}
 
 
 
@@ -128,7 +137,7 @@ void menuOfert(SQL * &baze)
 		switch (_getch())
 		{
 		case '1':
-			;
+			baze->znajdz_oferte();
 			break;
 		case '2':
 			//zapisNew(baze);

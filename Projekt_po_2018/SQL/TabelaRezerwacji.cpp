@@ -172,29 +172,57 @@ void TabelaRezerwacji::zapisAdd(sqlite3 *db)
 
 }
 
-bool TabelaRezerwacji::edytuj(sqlite3 *db)
+/* int idPromocji;
+int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
+int idKlienta;
+bool czyZaplacone; **/
+
+void TabelaRezerwacji::edytuj(sqlite3 *db)
 {
 	system("cls");
-	cout << "czy chcesz edytowac/dodac dane oferty " << imie << " " << nazwisko << "(y/n): ";
-	cout << endl;
 
+	cout << "id Oferty: " << idOferty << endl;
+	cout << "id Klienta: " << idKlienta << endl;
+	cout << "czy zaplacono:" << czyZaplacone << endl;
+	cout << "czy chcesz edytowac dane(y/n): ";
+	cout << endl;
+	
 	if (_getch() == 'y')
 	{
-		cout << "edycja imienia?(y/n): ";
-		if (_getch() == 'y') { cin >> imie; edycja = true; }
+		cout << "edycja Op³aty?(y/n): ";
+		if (_getch() == 'y') {
+			
+			cout << "Zaplacono(y/n): " << endl;
+				if (_getch() == 'y') czyZaplacone = true;
+				else czyZaplacone = false;	
+				edycja = true;
+		}
 		cout << endl;
-		cout << "edycja nazwiska?(y/n): ";
-		if (_getch() == 'y') { cin >> nazwisko; edycja = true; }
+		cout << "edycja id Oferty?(y/n): ";
+		if (_getch() == 'y') { 
+		
+				do
+				{
+					cout << "podaj numer id: ";
+
+					cin >> idOferty;
+
+				} while (idOferty<0);		
+			edycja = true;
+		}
 		cout << endl;
-		cout << "edycja adres zamieszkania?(y/n): ";
-		if (_getch() == 'y') { cin >> adresZamieszkania; edycja = true; }
-		cout << endl;
-		cout << "edycja numeru telefonu?(y/n): ";
-		if (_getch() == 'y') { cin >> nr_Tel; edycja = true; }
-		cout << endl;
-		cout << "edycja eMail?(y/n): ";
-		if (_getch() == 'y') { cin >> eMail; edycja = true; }
-		cout << endl;
+		cout << "edycja id Klienta?(y/n): ";
+		if (_getch() == 'y') {
+
+			do
+			{
+				cout << "podaj numer id: ";
+
+				cin >> idKlienta;
+
+			} while (idKlienta<0);
+			edycja = true;
+		}
 		cout << "edycja zakonczona." << endl;
 		system("pause");
 	}

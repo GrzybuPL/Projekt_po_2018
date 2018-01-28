@@ -74,7 +74,7 @@ void menuRezer(SQL * &baze)
 
 	while (open)
 	{
-		switch (_getch())
+		switch (_getch())		//
 		{
 		case '1':
 			;

@@ -159,19 +159,6 @@ void TabelaPromocji::zapisAdd(sqlite3 *db)
 
 }
 
-
-
-/*
-
-int idPromocji;
-int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
-string nowaCena;
-string opis;
-string czasTrwania;
-bool edycja;
-
-*/
-
 void TabelaPromocji::edytuj(sqlite3 *db)
 {
 	system("cls");

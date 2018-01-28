@@ -144,25 +144,25 @@ void TabelaOfert::edytuj(sqlite3 *db)
 	cout << endl;
 
 
-	if (getch() == 'y')
+	if (_getch() == 'y')
 	{
 		cout << "Edycja nazwa?(y/n): ";
-		if (getch() == 'y') { cin >> nazwa; edycja = true; }
+		if (_getch() == 'y') { cin >> nazwa; edycja = true; }
 		cout << endl;
 		cout << "Edycja ceny(y/n): ";
-		if (getch() == 'y') { cin >> koszt; edycja = true; }
+		if (_getch() == 'y') { cin >> koszt; edycja = true; }
 		cout << endl;
 		cout << "Edycja miejsca?(y/n): ";
-		if (getch() == 'y') { cin >> miejsce; edycja = true; }
+		if (_getch() == 'y') { cin >> miejsce; edycja = true; }
 		cout << endl;
 		cout << "Edycja dlugosci pobytu?(y/n): ";
-		if (getch() == 'y') { cin >> dlugoscPobytu; edycja = true; }
+		if (_getch() == 'y') { cin >> dlugoscPobytu; edycja = true; }
 		cout << endl;
 		cout << "Edycja transport?(y/n): ";
-		if (getch() == 'y') { cin >> transport; edycja = true; }
+		if (_getch() == 'y') { cin >> transport; edycja = true; }
 		cout << endl;
 		cout << "Edycja daty pobytu, od?(y/n): ";
-		if (getch() == 'y')
+		if (_getch() == 'y')
 		{
 			cout << "dzien: ";
 			cin >> d;
@@ -177,6 +177,6 @@ void TabelaOfert::edytuj(sqlite3 *db)
 		cout << "Edycja zakonczona" << endl;
 		system("pause");
 	}
-	if (edycja)this->zapisAdd(db);
+	if (_edycja)this->zapisAdd(db);
 }
 

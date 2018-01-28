@@ -61,7 +61,6 @@ void TabelaKlient::zapisNew()
 
 		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
 	}
-
 }
 
 void TabelaKlient::zapisAdd()
@@ -130,5 +129,5 @@ void TabelaKlient::edytuj()
 		system("pause");
 	}
 
-	if (edycja) this->zapis();//zapis po edycji
+	if (edycja) this->zapisAdd();//zapis po edycji
 }

@@ -38,7 +38,7 @@ void TabelaKlient::odczyt()
 		string quest = "SELECT * FORM klienci WHERE Imie = '" + imie + "' AND Nazwisko = '" + nazwisko + "'";
 		const char * sql = quest.c_str();
 		
-		rc = sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 		if(rc != SQLITE_OK)
 		{
 			cerr << "Blad zapytania: " << zErrMsg << endl;
@@ -82,7 +82,7 @@ void TabelaKlient::zapisNew()
 			cerr << "Blad stmt jest NULLem" << endl;
 		}
 
-		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	}
 }
 
@@ -120,7 +120,7 @@ void TabelaKlient::zapisAdd()
 			cerr << "Blad stmt jest NULLem" << endl;
 		}
 
-		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	}
 
 }

@@ -63,7 +63,7 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 			exit(1);
 		}
 		//Trzeba wywolac funkcje pobierajaca id klienta. Oraz funkcje pobierajaca id_oferty+++++++++++++++++==================+++++++++++++++++================
-		string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + TabelaKlient::idKlienta + "', '" + TabelaOfert::idOferty + "', '" + CzyZaplacone+ "');";
+		string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + odczytIdKlient() + "', '" + odczytIdOferty() + "', '" + CzyZaplacone+ "');";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -100,7 +100,7 @@ void TabelaRezerwacji::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_dferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce + "', DataPobytuOd = '" + odDnia.getDate() + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE Imie = 'stareImie' AND Nazwisko = 'stareNazwisko' ";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_rezerwacji SET CzyZaplacone = '" + CzyZaplacone + "' WHERE id_rezerwacji = 'stareImie' AND Nazwisko = 'stareNazwisko' ;";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -123,7 +123,7 @@ void TabelaRezerwacji::zapisAdd(sqlite3 *db)
 
 }
 
-void TabelaRezerwacji::edytuj(sqlite3 *db)
+bool TabelaRezerwacji::edytuj(sqlite3 *db)
 {
 	system("cls");
 	cout << "czy chcesz edytowac/dodac dane oferty " << imie << " " << nazwisko << "(y/n): ";
@@ -171,7 +171,36 @@ int odczytIdKlient()
 	string quest = "SELECT id_klienta FORM klienci WHERE Imie = '" + imie + "' AND Nazwisko = '" + nazwisko + "'";
 	const char * sql = quest.c_str();
 
-	rc = sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+
+		return 0;
+	}
+
+	return rc;
+}
+
+int odczytIdOferty() //Moze void???
+{
+	sqlite3 *db;
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
+	{
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
+	}
+
+	string quest = "SELECT id_oferty FORM klienci WHERE Koszt = '" + koszt + "' AND Gdzie = '" + TabelaOfert::miejscje + "' AND DataPobytuOd = '" + TabelaOfert::dlugoscPobytu + "' AND RodzajTransportu = '" + TabelaKlient::transport + "';";//Tymczasowe nazewnictwo
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	if (rc != SQLITE_OK)
 	{
 		cerr << "Blad zapytania: " << zErrMsg << endl;

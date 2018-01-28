@@ -29,3 +29,4 @@ public:
 };
 
 int odczytIdKlient();
+int odczytIdOferty();

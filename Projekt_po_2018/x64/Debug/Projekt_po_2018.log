@@ -3,29 +3,22 @@
 c1xx : fatal error C1083: Cannot open source file: 'SQL\main.cpp': No such file or directory
   TabelaRezerwacji.cpp
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(24): error C2511: 'void TabelaRezerwacji::odczyt(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(9): note: see declaration of 'TabelaRezerwacji'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(25): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(52): error C2511: 'void TabelaRezerwacji::zapisNew(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(9): note: see declaration of 'TabelaRezerwacji'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(53): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(66): error C2597: illegal reference to non-static member 'TabelaKlient::idKlienta'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(66): note: see declaration of 'TabelaKlient::idKlienta'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(66): error C3867: 'TabelaKlient::idKlienta': non-standard syntax; use '&' to create a pointer to member
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(66): error C2568: '+': unable to resolve function overload
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(66): error C2110: '+': cannot add two pointers
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(89): error C2511: 'void TabelaRezerwacji::zapisAdd(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(9): note: see declaration of 'TabelaRezerwacji'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(90): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2065: 'koszt': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2065: 'miejsce': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2065: 'odDnia': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2228: left of '.getDate' must have class/struct/union
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): note: type is 'unknown-type'
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2065: 'dlugoscPobytu': undeclared identifier
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2065: 'transport': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2597: illegal reference to non-static member 'TabelaRezerwacji::CzyZaplacone'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C3867: 'TabelaRezerwacji::CzyZaplacone': non-standard syntax; use '&' to create a pointer to member
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(103): error C2568: '+': unable to resolve function overload
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(108): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(127): error C2511: 'void TabelaRezerwacji::edytuj(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
-  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(9): note: see declaration of 'TabelaRezerwacji'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(127): error C2511: 'bool TabelaRezerwacji::edytuj(sqlite3 *)': overloaded member function not found in 'TabelaRezerwacji'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.h(13): note: see declaration of 'TabelaRezerwacji'
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(129): error C2065: 'imie': undeclared identifier
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(129): error C2065: 'nazwisko': undeclared identifier
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(135): error C2065: 'imie': undeclared identifier
@@ -41,6 +34,15 @@ c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(153): error C2597: illegal reference to non-static member 'TabelaRezerwacji::edycja'
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(153): error C2671: 'TabelaRezerwacji::edytuj': static member functions do not have 'this' pointers
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(153): error C2227: left of '->zapisAdd' must point to class/struct/union/generic type
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(171): error C2065: 'imie': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(171): error C2065: 'nazwisko': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(200): error C2065: 'koszt': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(200): error C2039: 'miejscje': is not a member of 'TabelaOfert'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.h(9): note: see declaration of 'TabelaOfert'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(200): error C2065: 'miejscje': undeclared identifier
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(200): error C2039: 'transport': is not a member of 'TabelaKlient'
+  c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaklient.h(13): note: see declaration of 'TabelaKlient'
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(200): error C2065: 'transport': undeclared identifier
   TabelaOfert.cpp
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaofert.cpp(108): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
@@ -76,4 +78,12 @@ c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(19): error C2
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(11): note: see declaration of 'BazaDanych::edytuj'
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\sql.cpp(19): note: 'void BazaDanych::zapisNew(void)': is abstract
   c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\bazadanych.h(12): note: see declaration of 'BazaDanych::zapisNew'
+  Generating Code...
+  Compiling...
+  gui.cpp
+  Generating Code...
+  Compiling...
+  TabelaKlient.cpp
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaklient.cpp(72): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelaklient.cpp(110): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Generating Code...

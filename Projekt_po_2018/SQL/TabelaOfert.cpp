@@ -38,7 +38,7 @@ void TabelaOfert::odczyt(sqlite3 *db)
 		string quest = "SELECT * FORM dane_oferty WHERE Koszt = '" + koszt + "' Gdzie = '" + miejsce + "' DataPobytuOd = '" + odDnia.getDate() + "' DlugoscPobytu = '" + dlugoscPobytu + "' RodzajTranspotru = '" + transport + "' ";
 		const char * sql = quest.c_str();
 
-		rc = sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 		if (rc != SQLITE_OK)
 		{
 			cerr << "Blad zapytania: " << zErrMsg << endl;
@@ -81,7 +81,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 			cerr << "Blad stmt jest NULLem" << endl;
 		}
 
-		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	}
 }
 
@@ -118,7 +118,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 			cerr << "Blad stmt jest NULLem" << endl;
 		}
 
-		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
+		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	}
 
 }

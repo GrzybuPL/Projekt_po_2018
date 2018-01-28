@@ -21,6 +21,7 @@ class TabelaKlient : public BazaDanych {
 	bool edycja;  // true -false
 
 public:
+	TabelaKlient();
 	virtual void odczyt(sqlite3 *db);
 	virtual void zapisAdd(sqlite3 *db) ;
 	virtual void edytuj(sqlite3 *db) ;

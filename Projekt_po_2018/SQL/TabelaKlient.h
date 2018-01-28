@@ -28,7 +28,7 @@ public:
 	virtual void zapisNew(sqlite3 *db);
 
 	bool WyszukajKlienta(string imie, string nazwisko, sqlite3 *db);
+	static int callback(void *NotUsed, int argc, char **argv, char **azColName);
+	void zerowanie();
 
 };
-
-static int callback(void *NotUsed, int argc, char **argv, char **azColName);

@@ -35,8 +35,9 @@ void menuPromo(SQL * &baze)
 	cout << "Menu" << endl;
 	cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 	cout << "1. Znajdz promocje" << endl;
-	cout << "2. Zatwierdz wybor promocji" << endl;
+	cout << "2. Stworz promocje" << endl;
 	cout << "3. Zmien promocje" << endl;
+	cout << "4. Usun promocje" << endl;
 	cout << "0. exit" << endl;
 
 	while (open)
@@ -47,10 +48,13 @@ void menuPromo(SQL * &baze)
 			;
 			break;
 		case '2':
-			;
+			TabelaPromocji::zapisNew(baze);
 			break;
 		case '3':
-			;
+			TabelaPromocji::edytuj(baze);
+			break;
+		case '4':
+			TabelaPromocji::usunPromocje(baze);
 			break;
 			//...
 		case '0':
@@ -68,19 +72,19 @@ void menuRezer(SQL * &baze)
 	cout << "Menu" << endl;
 	cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 	cout << "1. Dokonaj rezerwacji" << endl;
-	cout << "2. Zarzadzaj rezerwacjami" << endl;
+	cout << "2. Edytuj rezerwacjami" << endl;
 	cout << "3. Anuluj rezerwacje" << endl;
 	cout << "0. exit" << endl;
 
 	while (open)
 	{
-		switch (_getch())		//
+		switch (_getch())		
 		{
 		case '1':
-			;
+			TabelaRezerwacji::zapisNew(baze);
 			break;
 		case '2':
-			;
+			TabelaRezerwacji::edytuj(baze);
 			break;
 		case '3':
 			;

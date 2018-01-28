@@ -1,4 +1,11 @@
 ﻿  SQL.cpp
   gui.cpp
   Generating Code...
+  Compiling...
+  TabelaRezerwacji.cpp
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(60): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\biuropodrozy\bp\projekt_po_2018\sql\tabelarezerwacji.cpp(190): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  TabelaPromocji.cpp
   Projekt_po_2018.vcxproj -> C:\Users\Marvi\Desktop\BiuroPodrozy\BP\x64\Debug\Projekt_po_2018.exe

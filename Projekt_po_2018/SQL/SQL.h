@@ -14,13 +14,14 @@
 class SQL
 {
 	sqlite3 *db;
-	TabelaKlient* klient;
+	TabelaKlient klient;
 	TabelaOfert *oferty;
 	TabelaPromocji *promocje;
 	TabelaRezerwacji* rezerwacje;
 	Filtr *filtr;
-public:
 	BazaDanych * wsk;
+public:
+	
 	//wszytkie g³ówne metody jak zadaj pytanie->po czym mam  szukac->zwroc szukana wartosc
 	//zwracaj wszytko string
 	//uogolnienie wszytkich baz
@@ -28,9 +29,13 @@ public:
 	SQL(const char* nazwaBazy_ = "BiuroPodrozy.db");
 	~SQL();
 
+	//=============================tabela klientuw
+	bool znajdz_klienta(string im, string naz);	//pyta po czym ma szukac
+	void addklient();
+	void editklient();
+	void showallklient();
 
 
-	bool znajdz_klienta();		//pyta po czym ma szukac
 
 };
 

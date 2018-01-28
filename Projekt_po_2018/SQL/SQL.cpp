@@ -6,6 +6,41 @@
 using namespace std;
 
 
+//=======================klienci
+
+
+bool SQL::znajdz_klienta(string im, string naz)
+{
+	if (klient.WyszukajKlienta(im, naz, db)) return true;
+	return false;
+}
+
+void SQL::addklient()
+{
+	klient.zerowanie();
+	klient.edytuj(db);
+}
+
+void SQL::editklient()
+{
+	string buf1, buf2;
+	cout << "podaj imie: "; cin >> buf1;
+	cout << "podaj nazwisko: "; cin >> buf2;
+	
+	if(this->znajdz_klienta(buf1, buf2)) 	klient.edytuj(db);
+	else cout << "nie ma takiego klienta" << endl;
+	system("pause");
+}
+
+void SQL::showallklient()
+{
+	klient.odczyt(db);
+}
+
+
+
+
+//===============================================SQL
 SQL::SQL(const char* nazwaBazy_)
 {
 
@@ -23,7 +58,6 @@ SQL::SQL(const char* nazwaBazy_)
 	wsk = nullptr;
 }
 
-
 SQL::~SQL()
 {
 	delete klient;
@@ -36,6 +70,7 @@ SQL::~SQL()
 void menuKlient(SQL * &baze)
 {
 	bool open = true;
+	string buf1 ,buf2;
 
 	while (open)
 	{
@@ -44,25 +79,26 @@ void menuKlient(SQL * &baze)
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Znajdz klienta" << endl;
 		cout << "2. Stworz klienta" << endl;
-		cout << "3. Zmien klienta" << endl;
-		cout << "4. Usun klienta" << endl;
+		cout << "3. edytuj danego klienta klienta" << endl;
+		cout << "4. wyswietl wszytskich" << endl;
 		cout << "0. exit" << endl;
 
 		switch (_getch())
 		{
 		case '1':
-			;
+			cout << "podja imie: "; cin >> buf1;
+			cout << "podja nazwisko: "; cin >> buf2;
+			baze->znajdz_klienta(buf1, buf2);
 			break;
 		case '2':
-			//zapisNew(baze);
+			baze->addklient();
 			break;
 		case '3':
-			//edytuj(baze);
+			baze->editklient();
 			break;
 		case '4':
-			//usunPromocje(baze);
+			baze->showallklient();
 			break;
-			//...
 		case '0':
 			open = false;
 			break;
@@ -110,12 +146,8 @@ void menuOfert(SQL * &baze)
 		default:
 			break;
 		}
-
 	}
-
 }
-
-
 
 void menuPromo(SQL * &baze)
 {
@@ -153,11 +185,8 @@ void menuPromo(SQL * &baze)
 		default:
 			break;
 		}
-
 	}
-
 }
-
 
 void menuRezer(SQL * &baze)
 {

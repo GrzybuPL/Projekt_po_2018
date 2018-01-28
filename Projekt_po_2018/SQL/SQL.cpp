@@ -11,14 +11,14 @@ using namespace std;
 
 bool SQL::znajdz_klienta(string im, string naz)
 {
-	if (klient.WyszukajKlienta(im, naz, db)) return true;
+	if (klient->WyszukajKlienta(im, naz, db)) return true;
 	return false;
 }
 
 void SQL::addklient()
 {
-	klient.zerowanie();
-	klient.edytuj(db);
+	klient->zerowanie();
+	klient->edytuj(db);
 }
 
 void SQL::editklient()
@@ -27,14 +27,14 @@ void SQL::editklient()
 	cout << "podaj imie: "; cin >> buf1;
 	cout << "podaj nazwisko: "; cin >> buf2;
 	
-	if(this->znajdz_klienta(buf1, buf2)) 	klient.edytuj(db);
+	if(this->znajdz_klienta(buf1, buf2)) 	klient->edytuj(db);
 	else cout << "nie ma takiego klienta" << endl;
 	system("pause");
 }
 
 void SQL::showallklient()
 {
-	klient.odczyt(db);
+	klient->odczyt(db);
 }
 //=========================oferty
 

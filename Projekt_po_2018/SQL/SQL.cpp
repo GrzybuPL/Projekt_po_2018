@@ -9,36 +9,37 @@ using namespace std;
 //=======================klienci
 
 
-bool SQL::znajdz_klienta(string im, string naz)
+bool SQL::znajdz_Klienta(string im, string naz)
 {
 	if (klient->WyszukajKlienta(im, naz, db)) return true;
 	return false;
 }
 
-void SQL::addklient()
+void SQL::addKlient()
 {
 	klient->zerowanie();
 	klient->edytuj(db);
 }
 
-void SQL::editklient()
+void SQL::editKlient()
 {
 	string buf1, buf2;
 	cout << "podaj imie: "; cin >> buf1;
 	cout << "podaj nazwisko: "; cin >> buf2;
 	
-	if(this->znajdz_klienta(buf1, buf2)) 	klient->edytuj(db);
+	if(this->znajdz_K
+		lienta(buf1, buf2)) 	klient->edytuj(db);
 	else cout << "nie ma takiego klienta" << endl;
 	system("pause");
 }
 
-void SQL::showallklient()
+void SQL::showAllKlient()
 {
 	klient->odczyt(db);
 }
 //=========================oferty
 
-void SQL::znajdz_oferte()
+void SQL::znajdz_Oferte()
 {
 	int id;
 
@@ -47,6 +48,11 @@ void SQL::znajdz_oferte()
 	if(id>0)oferty-> odczytPoId(id, db);
 }
 
+void SQL::showAllOferty()
+{
+
+	oferty->odczyt(db);
+}
 
 
 //===============================================SQL
@@ -97,19 +103,19 @@ void menuKlient(SQL * &baze)
 		case '1':
 			cout << "podja imie: "; cin >> buf1;
 			cout << "podja nazwisko: "; cin >> buf2;
-			baze->znajdz_klienta(buf1, buf2);
+			baze->znajdz_Klienta(buf1, buf2);
 			system("pause");
 			break;
 		case '2':
-			baze->addklient();
+			baze->addKlient();
 			system("pause");
 			break;
 		case '3':
-			baze->editklient();
+			baze->editKlient();
 			system("pause");
 			break;
 		case '4':
-			baze->showallklient();
+			baze->showAllKlient();
 			system("pause");
 			break;
 		case '0':
@@ -132,7 +138,7 @@ void menuOfert(SQL * &baze)
 		cout << "Menu" << endl;
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Znajdz oferte" << endl;
-		cout << "2. Stworz oferte" << endl;
+		cout << "2. pokaz wszystkie oferty" << endl;
 		cout << "3. Zmien oferte" << endl;
 		cout << "4. Usun oferte" << endl;
 		cout << "0. exit" << endl;
@@ -141,11 +147,11 @@ void menuOfert(SQL * &baze)
 		switch (_getch())
 		{
 		case '1':
-			baze->znajdz_oferte();
+			baze->znajdz_Oferte();
 			system("pause");
 			break;
 		case '2':
-			//zapisNew(baze);
+			baze->showAllOferty();
 			system("pause");
 			break;
 		case '3':

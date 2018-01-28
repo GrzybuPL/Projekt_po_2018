@@ -6,6 +6,16 @@
 #include "TabelaRezerwacji.h"
 #include "BazaDanych.h"
 
+
+TabelaRezerwacji::TabelaRezerwacji()
+{
+	idPromocji = -1;
+	idOferty = -1; 
+	idKlienta = -1;
+	czyZaplacone = false;
+	edycja = false;
+}
+
 void TabelaRezerwacji::zapisNew(int id_Klienta_, int id_Oferty_, bool czy_Zaplacone_, sqlite3 *db)
 {
 	sqlite3_stmt *stmt;

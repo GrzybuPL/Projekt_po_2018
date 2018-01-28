@@ -17,7 +17,16 @@ TabelaKlient::TabelaKlient()
 	edycja = false;
 }
 
-
+void TabelaKlient::zerowanie()
+{
+	idKlienta = -1;
+	imie = "";
+	nazwisko = "";
+	adresZamieszkania = "";
+	nr_Tel = "";
+	eMail = "";
+	edycja = false;
+}
 bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
 {
 	char *zErrMsg = 0;
@@ -39,12 +48,14 @@ bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
 	{
 		cerr << "Blad zapytania: " << zErrMsg << endl;
 		sqlite3_free(zErrMsg);
+		zerowanie();
 		return 0;
 	}
+
 	return 1;
 }
 
-static int callback(void *NotUsed, int argc, char **argv, char **azColName)
+static int TabelaKlient::callback(void *NotUsed, int argc, char **argv, char **azColName)
 {
 	int i;
 	cout << "Number of args= " << argc << endl;
@@ -53,8 +64,41 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 	{
 		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
 	}
+
+	idKlienta = argv[1];
+	imie = argv[2];
+	nazwisko = argv[3];
+	adresZamieszkania = argv[4];
+	nr_Tel = argv[5];
+	eMail = argv[6];
+
 	cout << endl;
 	return 0;
+}
+
+void TabelaKlient::odczytPoId(int id, sqlite3 *db)
+{
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
+	{
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
+	}
+
+	string quest = "SELECT * FORM klienci WHERE id_klienta = '" + id + "';";
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+		zerowanie();
+	}
 }
 
 void TabelaKlient::odczyt(sqlite3 *db)
@@ -137,7 +181,7 @@ void TabelaKlient::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE klienci SET Imie = 'noewImie', Nazwisko = 'noweNazwisko', AdresZamieszkania = 'nowyAdresZamieszkania', NrTel = 'nowyNrTel', EMail = 'nowyEMail' WHERE Imie = 'stareImie' ";
+		string quest = "UPDATE klienci SET Imie = 'noewImie', Nazwisko = 'noweNazwisko', AdresZamieszkania = 'nowyAdresZamieszkania', NrTel = 'nowyNrTel', EMail = 'nowyEMail' WHERE Imie = 'stareImie'; ";
 		const char * sql = quest.c_str();
 		
 		const char **Ogon = nullptr;

@@ -4,7 +4,6 @@
 #include "StrucktData.h"
 #include "BazaDanych.h"
 #include "TabelaKlient.h"
-#include "SQL.h"
 
 bool TabelaKlient::WyszukajKlienta(string imie, string nazwisko, sqlite3 *db)
 {

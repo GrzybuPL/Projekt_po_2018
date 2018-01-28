@@ -5,7 +5,6 @@
 #include "StrucktData.h"
 #include "TabelaRezerwacji.h"
 #include "BazaDanych.h"
-#include "SQL.h"
 
 void TabelaRezerwacji::pobierzDane(int id_Klienta, int id_Oferty, bool Czy_Zaplacone, sqlite3 *db)
 {

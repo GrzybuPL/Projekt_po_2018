@@ -8,7 +8,6 @@ class Filtr
 	float kosztOd;
 	float kosztDo;
 	Data dataPobytuOd;
-	Data dataPobytuDo;
 	int dlugoscPobytuOd;
 	int dlugoscPobytuDo;
 	bool czyAktywny;		//Informacja czy filtr zostal uzyty

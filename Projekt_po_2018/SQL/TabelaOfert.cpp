@@ -126,7 +126,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 void TabelaOfert::edytuj(sqlite3 *db)
 {
 	system("cls");
-	cout << "czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";
+	cout << "czy chcesz edytowac/dodac dane oferty " << imie << " " << nazwisko << "(y/n): ";
 	cout << endl;
 
 	if (_getch() == 'y')

@@ -124,45 +124,43 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 }
 
 
-
-
-
-
-/*	int idOferty;
-string nazwa;
-string koszt;
-string miejsce;
-string dlugoscPobytu;
-string transport;
-Data odDnia;
-bool edycja;
-int idPromocji;*/
-
-void Filtr::edytuj()
+void TabelaOfert::edytuj(sqlite3 *db)
 {
 	int d, m, y;
 
 	system("cls");
 	cout << "Obecny wyglad oferty:" << endl;
 	if (idOferty > -1) { cout << "id oferty: " << idOferty << endl; }
-	if (kosztOd > -1) { cout << "Koszt OD: " << kosztOd << endl; }
-	if (kosztDo > -1) { cout << "koszt DO: " << kosztDo << endl; }
-	if (dataPobytuOd.getDate() != "0-0-0") { cout << dataPobytuOd.getDate() << endl; }
+	if (nazwa != "") { cout << "nazwa: " << nazwa << endl; }
+	if (koszt != "") { cout << "koszt: " << koszt << endl; }
+	if (miejsce != "") { cout << "miejsce: " << miejsce << endl; }
+	if (dlugoscPobytu != "") { cout << "dlugosc pobytu: " << dlugoscPobytu << endl; }
+	if (transport != "") { cout << "transport: " << transport << endl; }
+	if (odDnia.getDate() != "0-0-0") { cout << odDnia.getDate() << endl; }
+	cout << "promocja: ";
+	if (idPromocji > -1)cout << "TAK" << endl;
+	else cout << "NIE" << endl;
 
-	cout << "Czy chcesz edytowaæ filtr?(y/n): ";
+	cout << "Czy chcesz edytowaæ Oferte?(y/n): ";
 	cout << endl;
 
 
 	if (getch() == 'y')
 	{
-		cout << "Edycja id oferty?(y/n): ";
-		if (getch() == 'y') { cin >> idOferty; czyAktywny = true; }
+		cout << "Edycja nazwa?(y/n): ";
+		if (getch() == 'y') { cin >> nazwa; edycja = true; }
 		cout << endl;
-		cout << "Edycja kosztow, od?(y/n): ";
-		if (getch() == 'y') { cin >> kosztOd; czyAktywny = true; }
+		cout << "Edycja ceny(y/n): ";
+		if (getch() == 'y') { cin >> koszt; edycja = true; }
 		cout << endl;
-		cout << "Edycja kosztow, do?(y/n): ";
-		if (getch() == 'y') { cin >> kosztDo; czyAktywny = true; }
+		cout << "Edycja miejsca?(y/n): ";
+		if (getch() == 'y') { cin >> miejsce; edycja = true; }
+		cout << endl;
+		cout << "Edycja dlugosci pobytu?(y/n): ";
+		if (getch() == 'y') { cin >> dlugoscPobytu; edycja = true; }
+		cout << endl;
+		cout << "Edycja transport?(y/n): ";
+		if (getch() == 'y') { cin >> transport; edycja = true; }
 		cout << endl;
 		cout << "Edycja daty pobytu, od?(y/n): ";
 		if (getch() == 'y')
@@ -173,49 +171,13 @@ void Filtr::edytuj()
 			cin >> m;
 			cout << "rok: ";
 			cin >> y;
-			dataPobytuOd.setData(d, m, y);
-			czyAktywny = true;
+			odDnia.setData(d, m, y);
+			edycja = true;
 		}
-		cout << endl;
-		cout << "Edycja daty pobytu, od?(y/n): ";
-		if (getch() == 'y') { cin >> dlugoscPobytuOd; czyAktywny = true; }
-		cout << endl;
-		cout << "Edycja dlugosci czasu pobytu, do?(y/n): ";
-		if (getch() == 'y') { cin >> dlugoscPobytuDo; czyAktywny = true; }
 		cout << endl;
 		cout << "Edycja zakonczona" << endl;
 		system("pause");
 	}
+	if (edycja)this->zapisAdd(db);
 }
 
-
-
-void TabelaOfert::edytuj(sqlite3 *db)
-{
-	system("cls");
-	cout << "czy chcesz edytowac/dodac dane oferty " << imie << " " << nazwisko << "(y/n): ";
-	cout << endl;
-
-	if (_getch() == 'y')
-	{
-		cout << "edycja imienia?(y/n): ";
-		if (_getch() == 'y') { cin >> imie; edycja = true; }
-		cout << endl;
-		cout << "edycja nazwiska?(y/n): ";
-		if (_getch() == 'y') { cin >> nazwisko; edycja = true; }
-		cout << endl;
-		cout << "edycja adres zamieszkania?(y/n): ";
-		if (_getch() == 'y') { cin >> adresZamieszkania; edycja = true; }
-		cout << endl;
-		cout << "edycja numeru telefonu?(y/n): ";
-		if (_getch() == 'y') { cin >> nr_Tel; edycja = true; }
-		cout << endl;
-		cout << "edycja eMail?(y/n): ";
-		if (_getch() == 'y') { cin >> eMail; edycja = true; }
-		cout << endl;
-		cout << "edycja zakonczona." << endl;
-		system("pause");
-	}
-
-	if (edycja) this->zapisAdd(db);//zapis po edycji
-}

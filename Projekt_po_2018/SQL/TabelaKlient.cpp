@@ -174,5 +174,5 @@ void TabelaKlient::edytuj(sqlite3 *db)
 		system("pause");
 	}
 
-	if (edycja) this->zapisAdd();//zapis po edycji
+	if (edycja) this->zapisAdd(db);//zapis po edycji
 }

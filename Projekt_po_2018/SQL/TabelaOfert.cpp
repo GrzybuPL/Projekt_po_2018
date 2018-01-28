@@ -177,6 +177,6 @@ void TabelaOfert::edytuj(sqlite3 *db)
 		cout << "Edycja zakonczona" << endl;
 		system("pause");
 	}
-	if (_edycja)this->zapisAdd(db);
+	if (edycja)this->zapisAdd(db);
 }
 

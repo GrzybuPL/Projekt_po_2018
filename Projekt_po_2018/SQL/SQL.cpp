@@ -29,11 +29,9 @@ SQL::~SQL()
 	//delete klient;
 	//delete oferty;
 	//delete promocje;
+	//delate rezerwacje
 	sqlite3_close(db);		//zamkniecie bazy danych
 }
-
-
-
 
 void menuPromo(SQL * &baze)
 {
@@ -81,7 +79,6 @@ void menuRezer(SQL * &baze)
 {
 	bool open = true;
 	
-
 	while (open)
 	{
 		system("cls");

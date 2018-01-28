@@ -22,6 +22,7 @@ bool menu(SQL* &baze)		//Glowne menu programu
 	while (open)
 	{
 		system("cls");
+		welcome();
 		cout << "Menu" << endl;
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Zarzadzaj klientami" << endl;
@@ -48,6 +49,7 @@ bool menu(SQL* &baze)		//Glowne menu programu
 		case '0':
 			cout << "Czy napewno chcesz wyjsc z programu (y/n): ";
 			if (_getch() == 'y') { open = false; cout << "Trwa wylaczanie systemu" << endl; return false; }
+			system("Pause");
 			break;			
 		default:
 			break;
@@ -67,19 +69,13 @@ void welcome()		//Przywitanie uzytkownika
 
 void loopProgram(const char* nazwa_)		//glowna petla programu
 {
-	bool strat = true;
+
 
 	SQL *baze=new SQL();  //obiekt bazy danych
 
-	while (strat)
-	{
-		welcome();		//funkcja powitanie
 
-		//funkcja  strat= menu(*baze)
-
-		if (menu(baze)) strat =false;
-	}
-	delete baze;
+	menu(baze);
+	
 }
 
 

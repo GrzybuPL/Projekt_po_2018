@@ -16,20 +16,20 @@ SQL::SQL(const char* nazwaBazy_)
 		cout << "Udalo sie otworzyc baze danych";
 	}
 
-	//klient = new TabelaKlient;
-	//oferty = new TabelaOfert;
-	//promocje = new TabelaPromocji;
-	//rezerwacje = new TabelaRezerwacji;
+	klient = new TabelaKlient;
+	oferty = new TabelaOfert;
+	promocje = new TabelaPromocji;
+	rezerwacje = new TabelaRezerwacji;
 	wsk = nullptr;
 }
 
 
 SQL::~SQL()
 {
-	//delete klient;
-	//delete oferty;
-	//delete promocje;
-	//delate rezerwacje
+	delete klient;
+	delete oferty;
+	delete promocje;
+	delete rezerwacje;
 	sqlite3_close(db);		//zamkniecie bazy danych
 }
 

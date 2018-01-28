@@ -14,10 +14,10 @@
 class SQL
 {
 	sqlite3 *db;
-	TabelaKlient klient;
-	TabelaOfert oferty;
-	TabelaPromocji promocje;
-	TabelaRezerwacji rezerwacje;
+	TabelaKlient* klient;
+	TabelaOfert *oferty;
+	TabelaPromocji *promocje;
+	TabelaRezerwacji* rezerwacje;
 	Filtr *filtr;
 public:
 	BazaDanych * wsk;

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "sqlite3.h"
 #include "StrucktData.h"
 #include "TabelaOfert.h"

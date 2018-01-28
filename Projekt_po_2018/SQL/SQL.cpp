@@ -27,8 +27,7 @@ void SQL::editKlient()
 	cout << "podaj imie: "; cin >> buf1;
 	cout << "podaj nazwisko: "; cin >> buf2;
 	
-	if(this->znajdz_K
-		lienta(buf1, buf2)) 	klient->edytuj(db);
+	if(this->znajdz_Klienta(buf1, buf2)) 	klient->edytuj(db);
 	else cout << "nie ma takiego klienta" << endl;
 	system("pause");
 }

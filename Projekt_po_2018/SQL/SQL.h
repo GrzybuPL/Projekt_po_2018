@@ -14,7 +14,7 @@
 class SQL
 {
 	sqlite3 *db;
-	TabelaKlient klient;
+	TabelaKlient *klient;
 	TabelaOfert *oferty;
 	TabelaPromocji *promocje;
 	TabelaRezerwacji* rezerwacje;

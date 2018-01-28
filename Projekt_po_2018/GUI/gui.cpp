@@ -15,6 +15,15 @@ void help(int i)			//Wyswietlanie pomocy
 	cout << "Podaj parametr -b aby wprowadziæ nazwê bazy danych" << endl;
 }
 
+
+void welcome()		//Przywitanie uzytkownika
+{
+	system("cls");
+	cout << endl << "================== System biura podrozy ==================" << endl;
+	cout << endl << "======================== Witamy ==========================" << endl << endl;
+}
+
+
 bool menu(SQL* &baze)		//Glowne menu programu
 {
 	bool open=true;
@@ -56,14 +65,6 @@ bool menu(SQL* &baze)		//Glowne menu programu
 		}
 	}
 	return true;
-}
-
-
-void welcome()		//Przywitanie uzytkownika
-{
-	system("cls");
-	cout << endl << "================== System biura podrozy ==================" << endl;
-	cout << endl << "======================== Witamy ==========================" << endl << endl;
 }
 
 

@@ -87,6 +87,7 @@ void menuOfert(SQL * &baze)
 		cout << "3. Zmien oferta" << endl;
 		cout << "4. Usun oferta" << endl;
 		cout << "0. exit" << endl;
+		cout << "----------------------------------------------------------" << endl;
 
 		switch (_getch())
 		{

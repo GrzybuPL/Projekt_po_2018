@@ -54,6 +54,26 @@ void SQL::showAllOferty()
 }
 
 
+void SQL::editOfert()
+{
+	int id;
+
+	cout << "podaj id: "; cin >> id;
+
+	if (id > 0)
+		if (oferty->odczytPoId(id, db)) oferty->edytuj(db);
+	else cout << "nie ma takiej oferty" << endl;
+	system("pause");
+
+}
+
+void SQL::addOfert()
+{
+	oferty->zerowanie();
+	oferty->edytuj(db);
+}
+
+
 //===============================================SQL
 SQL::SQL(const char* nazwaBazy_)
 {
@@ -80,7 +100,7 @@ SQL::~SQL()
 	delete rezerwacje;
 	sqlite3_close(db);		//zamkniecie bazy danych
 }
-
+//----klienci
 void menuKlient(SQL * &baze)
 {
 	bool open = true;
@@ -126,7 +146,7 @@ void menuKlient(SQL * &baze)
 
 	}
 }
-
+//-------------oferty
 void menuOfert(SQL * &baze)
 {
 	bool open = true;
@@ -136,10 +156,10 @@ void menuOfert(SQL * &baze)
 		system("cls");
 		cout << "Menu" << endl;
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
-		cout << "1. Znajdz oferte" << endl;
+		cout << "1. Wybierz oferte" << endl;
 		cout << "2. pokaz wszystkie oferty" << endl;
-		cout << "3. Zmien oferte" << endl;
-		cout << "4. Usun oferte" << endl;
+		cout << "3. Edytuj oferte" << endl;
+		cout << "4. stworz oferte" << endl;
 		cout << "0. exit" << endl;
 		cout << "----------------------------------------------------------" << endl;
 
@@ -154,14 +174,13 @@ void menuOfert(SQL * &baze)
 			system("pause");
 			break;
 		case '3':
-			//edytuj(baze);
+			baze->editOfert();
 			system("pause");
 			break;
 		case '4':
-			//usunPromocje(baze);
+			baze->addOfert();
 			system("pause");
 			break;
-			//...
 		case '0':
 			open = false;
 			system("pause");
@@ -171,7 +190,7 @@ void menuOfert(SQL * &baze)
 		}
 	}
 }
-
+//-----promocje
 void menuPromo(SQL * &baze)
 {
 	bool open = true;
@@ -210,7 +229,7 @@ void menuPromo(SQL * &baze)
 		}
 	}
 }
-
+//---------------rezerwacje
 void menuRezer(SQL * &baze)
 {
 	bool open = true;

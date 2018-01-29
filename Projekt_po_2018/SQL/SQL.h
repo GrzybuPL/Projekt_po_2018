@@ -39,6 +39,8 @@ public:
 
 	void znajdz_Oferte();
 	void showAllOferty();
+	void editOfert();
+	void addOfert();
 };
 
 void menuKlient(SQL * &baze);

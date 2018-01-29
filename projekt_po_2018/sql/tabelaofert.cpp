@@ -43,7 +43,7 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 	return 0;
 }
 
-void TabelaOfert::odczytPoId(int id, sqlite3 *db)
+bool TabelaOfert::odczytPoId(int id, sqlite3 *db)
 {
 	char *zErrMsg = 0;
 

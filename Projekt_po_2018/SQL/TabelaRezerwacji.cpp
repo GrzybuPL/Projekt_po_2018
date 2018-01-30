@@ -190,7 +190,7 @@ void TabelaRezerwacji::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_rezerwacji SET CzyZaplacone = '" + to_string(czyZaplacone) + "' WHERE id_rezerwacji = 'stareImie' AND Nazwisko = 'stareNazwisko' ;";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_rezerwacji SET CzyZaplacone = '" + to_string(czyZaplacone) + "' WHERE id_rezerwacji = '" + to_string(idRezerwacji) + "';";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;

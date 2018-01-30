@@ -56,7 +56,7 @@ bool TabelaOfert::odczytPoId(int id, sqlite3 *db)
 		exit(1);
 	}
 
-	string quest = "SELECT * FORM klienci WHERE id_klienta = '" + to_string(id) + "';";
+	string quest = "SELECT * FROM klienci WHERE id_klienta = '" + to_string(id) + "';";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
@@ -111,7 +111,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "INSERT INTO dane_oferty (id_oferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu) VALUES(NULL, '" + koszt + "', '" + miejsce + "', '" + odDnia.getDate() + "', '" + dlugoscPobytu + "', '" + transport + "');";
+		string quest = "INSERT INTO dane_oferty (id_oferty, NazwaOferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu, id_promocji) VALUES(NULL, ' ', '" + koszt + "', '" + miejsce + "', '" + odDnia.getDate() + "', '" + dlugoscPobytu + "', '" + transport + "', ' ');";
 		const char * sql = quest.c_str(); 
 
 		const char **Ogon = nullptr;
@@ -148,7 +148,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_dferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce + "', DataPobytuOd = '" + odDnia.getDate() + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE Imie = 'stareImie' AND Nazwisko = 'stareNazwisko' ";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_dferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce + "', DataPobytuOd = '" + odDnia.getDate() + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE id_oferty = '" + to_string(idOferty) + "' ";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;

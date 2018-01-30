@@ -16,6 +16,14 @@ TabelaRezerwacji::TabelaRezerwacji()
 	edycja = false;
 }
 
+void TabelaRezerwacji::zerowanie()
+{
+	idPromocji = -1;
+	idOferty = -1;
+	idKlienta = -1;
+	czyZaplacone = false;
+	edycja = false;
+}
 
 
 void TabelaRezerwacji::wpiszDaneDoRezerwacji(int idk, int ido,bool czyz)

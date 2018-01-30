@@ -72,6 +72,77 @@ void SQL::addOfert()
 	oferty->zerowanie();
 	oferty->edytuj(db);
 }
+//==============promocje
+
+void SQL::showAllPromocje()
+{
+	promocje->odczyt(db);
+}
+
+
+void SQL::znajdz_Promocje()
+{
+	int id;
+
+	cout << "podaj id: "; cin >> id;
+
+	//if (id>0)promocje->odczytPoId(id, db);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+}
+
+void SQL::addPromo()
+{
+	promocje->zerowanie();
+	promocje->edytuj(db);
+}
+
+
+void SQL::editPromo()
+{
+	int id;
+
+	cout << "podaj id: "; cin >> id;
+
+	if (id > 0)
+		//if (promocje->odczytPoId(id, db)) promocje->edytuj(db); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+		//else cout << "nie ma takiej promocji" << endl;
+		system("pause");
+
+}
+//===============rezerwacje
+
+void SQL::addRezer()
+{
+	rezerwacje->zerowanie();
+	rezerwacje->edytuj(db);
+}
+
+void SQL::showAllRezer()
+{
+	rezerwacje->odczyt(db);
+}
+
+void SQL::editRezer()
+{
+	int id;
+
+	cout << "podaj id: "; cin >> id;
+
+	if (id > 0)
+		//if (rezerwacje->odczytPoId(id, db)) rezerwacje->edytuj(db); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+		//else cout << "nie ma takiej rezerwacji" << endl;
+		system("pause");
+
+}
+
+void SQL::znajdz_Rezerwacje()
+{
+	int id;
+
+	cout << "podaj id: "; cin >> id;
+
+	//if (id>0)rezerwacje->odczytPoId(id, db);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+}
+
 
 
 //===============================================SQL
@@ -203,24 +274,23 @@ void menuPromo(SQL * &baze)
 		cout << "1. Znajdz promocje" << endl;
 		cout << "2. Stworz promocje" << endl;
 		cout << "3. Zmien promocje" << endl;
-		cout << "4. Usun promocje" << endl;
+		cout << "4. pokaz wszytskie promocje" << endl;
 		cout << "0. exit" << endl;
 
 		switch (_getch())
 		{
 		case '1':
-			;
+			baze->znajdz_Promocje();
 			break;
 		case '2':
-			//zapisNew(baze);
+			baze->addPromo();
 			break;
 		case '3':
-			//edytuj(baze);
+			baze->editPromo();
 			break;
 		case '4':
-			//usunPromocje(baze);
+			baze->showAllPromocje();
 			break;
-			//...
 		case '0':
 			open = false;
 			break;
@@ -241,21 +311,24 @@ void menuRezer(SQL * &baze)
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Dokonaj rezerwacji" << endl;
 		cout << "2. Edytuj rezerwacje" << endl;
-		cout << "3. Anuluj rezerwacje" << endl;
+		cout << "3. Znajdz rezerwacje" << endl;
+		cout << "4. pokaz wszystkie rezerwacje" << endl;
 		cout << "0. exit" << endl;
 
 		switch (_getch())
 		{
 		case '1':
-			//TabelaRezerwacji::zapisNew(baze);
+			baze->addRezer();
 			break;
 		case '2':
-			//TabelaRezerwacji::edytuj(baze);
+			baze->editRezer();
 			break;
 		case '3':
-			;
+			baze->znajdz_Rezerwacje();
 			break;
-			//...
+		case '4':
+			baze->showAllRezer();
+			break;
 		case '0':
 			open = false;
 			break;

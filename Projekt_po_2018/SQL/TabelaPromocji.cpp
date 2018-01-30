@@ -17,6 +17,16 @@ TabelaPromocji::TabelaPromocji()
 	edycja = false;
 }
 
+void TabelaPromocji::zerowanie()
+{
+	idPromocji = -1;
+	idOferty = -1;
+	nowaCena = "";
+	opis = "";
+	czasTrwania = "";
+	edycja = false;
+}
+
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja wyswietla dane pobrane z bazy
 {
 	int i;

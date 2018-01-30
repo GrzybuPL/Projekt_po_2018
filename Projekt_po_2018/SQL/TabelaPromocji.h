@@ -25,7 +25,7 @@ public:
 	virtual void zapisNew(sqlite3 *db);
 
 	bool usunPromocje(int id_Promocji, sqlite3 *db);
-
+	void zerowanie();
 
 };
 

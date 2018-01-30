@@ -41,6 +41,19 @@ public:
 	void showAllOferty();
 	void editOfert();
 	void addOfert();
+
+	//=============promocje
+
+	void znajdz_Promocje();	
+	void showAllPromocje();
+	void addPromo();
+	void editPromo();
+	//=====rezerwacje
+
+	void addRezer();
+	void showAllRezer();
+	void editRezer();
+	void znajdz_Rezerwacje();
 };
 
 void menuKlient(SQL * &baze);

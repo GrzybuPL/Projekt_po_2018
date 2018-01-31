@@ -1,2 +1,5 @@
-﻿  SQL.cpp
+﻿  TabelaPromocji.cpp
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelapromocji.cpp(61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelapromocji.cpp(128): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelapromocji.cpp(165): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Projekt_po_2018.vcxproj -> C:\Users\Marvi\Desktop\Projekt_po_2018\x64\Debug\Projekt_po_2018.exe

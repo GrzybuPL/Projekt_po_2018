@@ -92,7 +92,7 @@ void TabelaPromocji::odczyt(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "SELECT * FORM promocja";
+		string quest = "SELECT * FROM promocja";
 		const char * sql = quest.c_str();
 
 		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

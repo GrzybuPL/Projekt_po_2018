@@ -86,6 +86,8 @@ void SQL::znajdz_Promocje()
 
 	cout << "podaj id: "; cin >> id;
 
+	promocje->;
+
 	//if (id>0)promocje->odczytPoId(id, db);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 

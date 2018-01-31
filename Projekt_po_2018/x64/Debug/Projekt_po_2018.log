@@ -1,2 +1,6 @@
-﻿  SQL.cpp
+﻿  TabelaRezerwacji.cpp
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelarezerwacji.cpp(68): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelarezerwacji.cpp(196): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  SQL.cpp
+  Generating Code...
   Projekt_po_2018.vcxproj -> C:\Users\Marvi\Desktop\Projekt_po_2018\x64\Debug\Projekt_po_2018.exe

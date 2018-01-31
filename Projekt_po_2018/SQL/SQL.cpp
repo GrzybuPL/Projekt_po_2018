@@ -142,6 +142,8 @@ void SQL::znajdz_Rezerwacje()
 
 	cout << "podaj id: "; cin >> id;
 
+	rezerwacje->odczytPoId(id, db);
+
 	//if (id>0)rezerwacje->odczytPoId(id, db);!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 

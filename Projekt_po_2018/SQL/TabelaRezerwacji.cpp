@@ -108,28 +108,26 @@ static int callbackReturnedValues(void *NotUsed, int argc, char **argv, char **a
 
 void TabelaRezerwacji::odczyt(sqlite3 *db)
 {
-	if (edycja)
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
 	{
-		char *zErrMsg = 0;
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
+	}
 
-		int rc = sqlite3_open("BiuroPodrozy.db", &db);
+	string quest = "SELECT * FROM dane_rezerwacji;";
+	const char * sql = quest.c_str();
 
-		if (rc)
-		{
-			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-			sqlite3_close(db);
-			exit(1);
-		}
-
-		string quest = "SELECT * FROM dane_rezerwacji";
-		const char * sql = quest.c_str();
-
-		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-		if (rc != SQLITE_OK)
-		{
-			cerr << "Blad zapytania: " << zErrMsg << endl;
-			sqlite3_free(zErrMsg);
-		}
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+		zerowanie();
 	}
 
 }

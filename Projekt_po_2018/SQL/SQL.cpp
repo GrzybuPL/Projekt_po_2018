@@ -281,15 +281,19 @@ void menuPromo(SQL * &baze)
 		{
 		case '1':
 			baze->znajdz_Promocje();
+			system("pause");
 			break;
 		case '2':
 			baze->addPromo();
+			system("pause");
 			break;
 		case '3':
 			baze->editPromo();
+			system("pause");
 			break;
 		case '4':
 			baze->showAllPromocje();
+			system("pause");
 			break;
 		case '0':
 			open = false;
@@ -319,15 +323,19 @@ void menuRezer(SQL * &baze)
 		{
 		case '1':
 			baze->addRezer();
+			system("pause");
 			break;
 		case '2':
 			baze->editRezer();
+			system("pause");
 			break;
 		case '3':
 			baze->znajdz_Rezerwacje();
+			system("pause");
 			break;
 		case '4':
 			baze->showAllRezer();
+			system("pause");
 			break;
 		case '0':
 			open = false;

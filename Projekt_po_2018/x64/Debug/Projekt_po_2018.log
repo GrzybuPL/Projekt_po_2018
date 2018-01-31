@@ -1,5 +1,2 @@
-﻿  TabelaOfert.cpp
-c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaofert.cpp(117): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaofert.cpp(154): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaofert.cpp(69): warning C4715: 'TabelaOfert::odczytPoId': not all control paths return a value
+﻿  SQL.cpp
   Projekt_po_2018.vcxproj -> C:\Users\Marvi\Desktop\Projekt_po_2018\x64\Debug\Projekt_po_2018.exe

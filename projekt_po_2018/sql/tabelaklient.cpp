@@ -181,7 +181,7 @@ void TabelaKlient::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE klienci SET Imie = '" + Imie + "', Nazwisko = '" + Nazwisko + "', AdresZamieszkania = '" + adresZamieszkania + "', NrTel = '" + nrTel + "', EMail = '" + eMail + "' WHERE Imie = '" + Imie + "' ";
+		string quest = "UPDATE klienci SET Imie = 'Imie', Nazwisko = 'Nazwisko', AdresZamieszkania = '" + adresZamieszkania + "', NrTel = 'NrTel', EMail = 'eMail' WHERE Imie = 'Imie' ";
 		const char * sql = quest.c_str();
 		
 		const char **Ogon = nullptr;

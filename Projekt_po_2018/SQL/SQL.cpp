@@ -129,6 +129,8 @@ void SQL::editRezer()
 
 	cout << "podaj id: "; cin >> id;
 
+	//rezerwacje->edytuj(db);
+
 	if (id > 0)
 		//if (rezerwacje->odczytPoId(id, db)) rezerwacje->edytuj(db); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		//else cout << "nie ma takiej rezerwacji" << endl;

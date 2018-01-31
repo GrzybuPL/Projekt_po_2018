@@ -26,6 +26,7 @@ public:
 
 	bool usunPromocje(int id_Promocji, sqlite3 *db);
 	void zerowanie();
+	void odczytPoId(int id, sqlite3 *db);
 
 };
 

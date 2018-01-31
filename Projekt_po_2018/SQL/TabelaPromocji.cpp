@@ -180,6 +180,31 @@ void TabelaPromocji::zapisAdd(sqlite3 *db)
 
 }
 
+void TabelaPromocji::odczytPoId(int id, sqlite3 *db)
+{
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
+	{
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
+	}
+
+	string quest = "SELECT * FROM promocja WHERE id_promocji = '" + to_string(id) + "';";
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+		this->zerowanie();
+	}
+}
+
 void TabelaPromocji::edytuj(sqlite3 *db)
 {
 	system("cls");

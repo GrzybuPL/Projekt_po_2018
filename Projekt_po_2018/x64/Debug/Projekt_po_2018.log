@@ -1,5 +1,5 @@
-﻿  TabelaKlient.cpp
-c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaklient.cpp(152): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaklient.cpp(189): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  sqlite3.c
+﻿  TabelaOfert.cpp
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaofert.cpp(119): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaofert.cpp(156): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\marvi\desktop\projekt_po_2018\projekt_po_2018\sql\tabelaofert.cpp(69): warning C4715: 'TabelaOfert::odczytPoId': not all control paths return a value
   Projekt_po_2018.vcxproj -> C:\Users\Marvi\Desktop\Projekt_po_2018\x64\Debug\Projekt_po_2018.exe

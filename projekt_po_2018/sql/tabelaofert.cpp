@@ -110,7 +110,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 		}
 
 		string quest = "INSERT INTO dane_oferty (id_oferty, NazwaOferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu, id_promocji) VALUES(NULL, ' ', '" + koszt + "', '" + miejsce + "', '" + odDnia.getDate() + "', '" + dlugoscPobytu + "', '" + transport + "', ' ');";
-		const char * sql = quest.c_str(); 
+		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
 
@@ -120,7 +120,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 
 		if (stmt) {
 			sqlite3_step(stmt);
-			sqlite3_finalize(stmt); 
+			sqlite3_finalize(stmt);
 			sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
 		}
 		else {
@@ -172,58 +172,41 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 
 void TabelaOfert::edytuj(sqlite3 *db)
 {
-	int d, m, y;
+	char *zErrMsg = 0;
 
-	system("cls");
-	cout << "Obecny wyglad oferty:" << endl;
-	if (idOferty > -1) { cout << "id oferty: " << idOferty << endl; }
-	if (nazwa != "") { cout << "nazwa: " << nazwa << endl; }
-	if (koszt != "") { cout << "koszt: " << koszt << endl; }
-	if (miejsce != "") { cout << "miejsce: " << miejsce << endl; }
-	if (dlugoscPobytu != "") { cout << "dlugosc pobytu: " << dlugoscPobytu << endl; }
-	if (transport != "") { cout << "transport: " << transport << endl; }
-	if (odDnia.getDate() != "0-0-0") { cout << odDnia.getDate() << endl; }
-	cout << "promocja: ";
-	if (idPromocji > -1)cout << "TAK" << endl;
-	else cout << "NIE" << endl;
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
 
-	cout << "Czy chcesz edytowaæ Oferte?(y/n): ";
-	cout << endl;
-
-
-	if (_getch() == 'y')
+	if (rc)
 	{
-		cout << "Edycja nazwa?(y/n): ";
-		if (_getch() == 'y') { cin >> nazwa; edycja = true; }
-		cout << endl;
-		cout << "Edycja ceny(y/n): ";
-		if (_getch() == 'y') { cin >> koszt; edycja = true; }
-		cout << endl;
-		cout << "Edycja miejsca?(y/n): ";
-		if (_getch() == 'y') { cin >> miejsce; edycja = true; }
-		cout << endl;
-		cout << "Edycja dlugosci pobytu?(y/n): ";
-		if (_getch() == 'y') { cin >> dlugoscPobytu; edycja = true; }
-		cout << endl;
-		cout << "Edycja transport?(y/n): ";
-		if (_getch() == 'y') { cin >> transport; edycja = true; }
-		cout << endl;
-		cout << "Edycja daty pobytu, od?(y/n): ";
-		if (_getch() == 'y')
-		{
-			cout << "dzien: ";
-			cin >> d;
-			cout << "miesiac: ";
-			cin >> m;
-			cout << "rok: ";
-			cin >> y;
-			odDnia.setData(d, m, y);
-			edycja = true;
-		}
-		cout << endl;
-		cout << "Edycja zakonczona" << endl;
-		system("pause");
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
 	}
-	if (edycja)this->zapisAdd(db);
+
+	string q, w, e, r, t, z;
+
+	cout << "Podaj id promocji: ";
+	cin >> z;
+	cout << "Podaj nazwe oferty: ";
+	cin >> q;
+	cout << "Podaj koszt oferty: ";
+	cin >> w;
+	cout << "Podaj mejsce oferty: ";
+	cin >> e;
+	cout << "Podaj date pobytu : ";
+	cin >> r;
+	cout << "Podaj rodzaj transportu: ";
+	cin >> t;
+
+	string quest = "INSERT INTO dane_oferty (id_promocji, Nazwa, Koszt, Gdzie, DataPobytuOd, RodzajTransportu) VALUES ('" + z + "','" + q + "','" + w + "','" + e + "','" + r + "','" + t + "');";
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+		zerowanie();
+	}
 }
 

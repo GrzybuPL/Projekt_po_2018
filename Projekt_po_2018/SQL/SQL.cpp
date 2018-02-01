@@ -190,7 +190,7 @@ void menuKlient(SQL * &baze)
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Znajdz klienta" << endl;
 		cout << "2. Stworz klienta" << endl;
-		cout << "3. edytuj danego klienta klienta" << endl;
+		cout << "3. Dodawanie danego klienta klienta" << endl;
 		cout << "4. wyswietl wszytskich" << endl;
 		cout << "0. exit" << endl;
 

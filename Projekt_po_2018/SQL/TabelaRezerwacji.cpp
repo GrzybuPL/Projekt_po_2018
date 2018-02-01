@@ -244,7 +244,7 @@ bool czyZaplacone; **/
 void TabelaRezerwacji::edytuj(sqlite3 *db)
 {
 	system("cls");
-
+	//UPDATE dane_rezerwacji
 	cout << "id Oferty: " << idOferty << endl;
 	cout << "id Klienta: " << idKlienta << endl;
 	cout << "czy zaplacono:" << czyZaplacone << endl;

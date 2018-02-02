@@ -1,3 +1,4 @@
+//projekt stworzony przez Dominik Grzybowski, Marcin Zuber, Micha³ Szyl, Sebastian Przeliorz
 #include <iostream>
 #include "GUI/gui.h"
 using namespace std;

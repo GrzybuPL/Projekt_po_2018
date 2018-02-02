@@ -104,43 +104,6 @@ void TabelaPromocji::odczyt(sqlite3 *db)
 	}
 
 }
-/*
-void TabelaPromocji::zapisNew(sqlite3 *db)
-{
-	if (edycja)
-	{
-		sqlite3_stmt *stmt;
-		char * zErrMsg = 0;
-
-		int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-		if (rc)
-		{
-			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-			exit(1);
-		}
-
-		string quest = "INSERT INTO promocja (id_promocji, CenaPromocji, ZasadyPromocji, CzasTrwaniaPromocji) VALUES(NULL, '" + nowaCena + "', '" + opis + "', '" + czasTrwania.c_str() + "');";
-		const char * sql = quest.c_str();
-
-		const char **Ogon = nullptr;
-
-		if (sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, Ogon) != SQLITE_OK) {
-			cerr << "Blad przy otwieraniu bazy : " << sqlite3_errmsg(db) << endl;
-		}
-
-		if (stmt) {
-			sqlite3_step(stmt);
-			sqlite3_finalize(stmt);
-			sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
-		}
-		else {
-			cerr << "Blad stmt jest NULLem" << endl;
-		}
-
-		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	}
-}*/
 
 void TabelaPromocji::zapisNew(sqlite3 *db)
 {
@@ -154,17 +117,6 @@ void TabelaPromocji::zapisNew(sqlite3 *db)
 		sqlite3_close(db);
 		exit(1);
 	}
-	/*
-	cout << "Podaj imie klienta: ";
-	cin >> imie;
-	cout << "Podaj nazwisko klienta: ";
-	cin >> nazwisko;
-	cout << "Podaj adres zamieszkania klienta: ";
-	getline(cin, adresZamieszkania);
-	cout << "Podaj numer telefonu klienta: ";
-	cin >> nr_Tel;
-	cout << "Podaj email klienta: ";
-	cin >> eMail;*/
 
 	string quest = "INSERT INTO promocja (id_promocji, CenaPromocji, ZasadyPromocji, CzasTrwaniaPromocji) VALUES(NULL, '" + nowaCena + "', '" + opis + "', '" + czasTrwania.c_str() + "');";
 	const char * sql = quest.c_str();
@@ -253,19 +205,19 @@ void TabelaPromocji::dodaj(sqlite3 *db)
 		cout << " id Promocji: ";
 		 cin >> idPromocji;
 		cout << endl;
-		cout << "idOferty: ";
+		cout << "id Oferty: ";
 		 cin >> idOferty;
 		cout << endl;
-		cout << " nowaCena: ";
+		cout << "Nowa cena: ";
 		cin >> nowaCena; 
 		cout << endl;
-		cout << " opis: ";
+		cout << "Opis: ";
 		 getline(cin , opis);
 		cout << endl;
-		cout << " czasTrwania: ";
+		cout << "Czas trwania: ";
 		cin >> czasTrwania; 
 		cout << endl;
-		cout << "dodawanie zakonczona." << endl;
+		cout << "Dodawanie zakonczone" << endl;
 		system("pause");
 		this->zapisNew(db);
 	}

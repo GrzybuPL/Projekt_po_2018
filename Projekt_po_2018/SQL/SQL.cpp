@@ -28,7 +28,7 @@ void SQL::editKlient()
 	cout << "podaj nazwisko: "; cin >> buf2;
 	
 	if(this->znajdz_Klienta(buf1, buf2)) 	klient->dodaj(db);
-	else cout << "nie ma takiego klienta" << endl;
+	else cout << "Nie ma takiego klienta" << endl;
 	system("pause");
 }
 
@@ -190,15 +190,15 @@ void menuKlient(SQL * &baze)
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Znajdz klienta" << endl;
 		cout << "2. Stworz klienta" << endl;
-		cout << "3. Dodawanie danego klienta klienta" << endl;
-		cout << "4. wyswietl wszytskich" << endl;
+		cout << "3. Dodawanie danego klienta" << endl;
+		cout << "4. Wyswietl wszystkich klientow" << endl;
 		cout << "0. exit" << endl;
 
 		switch (_getch())
 		{
 		case '1':
-			cout << "podja imie: "; cin >> buf1;
-			cout << "podja nazwisko: "; cin >> buf2;
+			cout << "Podaj imie: "; cin >> buf1;
+			cout << "Podaj nazwisko: "; cin >> buf2;
 			baze->znajdz_Klienta(buf1, buf2);
 			system("pause");
 			break;
@@ -234,9 +234,9 @@ void menuOfert(SQL * &baze)
 		cout << "Menu" << endl;
 		cout << "Wybierz jedna z opcji co chcesz zrobic:" << endl;
 		cout << "1. Wybierz oferte" << endl;
-		cout << "2. pokaz wszystkie oferty" << endl;
+		cout << "2. Pokaz wszystkie oferty" << endl;
 		cout << "3. Edytuj oferte" << endl;
-		cout << "4. stworz oferte" << endl;
+		cout << "4. Stworz nowa oferte" << endl;
 		cout << "0. exit" << endl;
 		cout << "----------------------------------------------------------" << endl;
 
@@ -280,7 +280,7 @@ void menuPromo(SQL * &baze)
 		cout << "1. Znajdz promocje" << endl;
 		cout << "2. Stworz promocje" << endl;
 		cout << "3. Zmien promocje" << endl;
-		cout << "4. pokaz wszytskie promocje" << endl;
+		cout << "4. pokaz wszystkie promocje" << endl;
 		cout << "0. exit" << endl;
 
 		switch (_getch())
@@ -322,7 +322,7 @@ void menuRezer(SQL * &baze)
 		cout << "1. Dokonaj rezerwacji" << endl;
 		cout << "2. Edytuj rezerwacje" << endl;
 		cout << "3. Znajdz rezerwacje" << endl;
-		cout << "4. pokaz wszystkie rezerwacje" << endl;
+		cout << "4. Pokaz wszystkie rezerwacje" << endl;
 		cout << "0. exit" << endl;
 
 		switch (_getch())

@@ -34,7 +34,7 @@ void TabelaRezerwacji::wpiszDaneDoRezerwacji(int idk, int ido,bool czyz)
 		cin >> idk;
 		cout << "Podaj id Oferty: ";
 		cin >> ido;
-		cout << "czy zaplacono(y/n): ";
+		cout << "Czy zaplacono(y/n): ";
 		if (_getch() == 'y')czyz = true;
 		else czyz = false;
 		idKlienta = idk;
@@ -44,43 +44,8 @@ void TabelaRezerwacji::wpiszDaneDoRezerwacji(int idk, int ido,bool czyz)
 
 
 }
-/*
-void TabelaRezerwacji::zapisNew(sqlite3 *db)
-{
-	wpiszDaneDoRezerwacji();
 
-	sqlite3_stmt *stmt;
-	char * zErrMsg = 0;
 
-	int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-	if (rc)
-	{
-		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-		exit(1);
-	}
-
-	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "','" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
-	const char * sql = quest.c_str();
-
-	const char **Ogon = nullptr;
-
-	if (sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, Ogon) != SQLITE_OK) {
-		cerr << "Blad przy otwieraniu bazy : " << sqlite3_errmsg(db) << endl;
-	}
-
-	if (stmt) {
-		sqlite3_step(stmt);
-		sqlite3_finalize(stmt);
-		sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
-	}
-	else {
-		cerr << "Blad stmt jest NULLem" << endl;
-	}
-
-	sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
-}
-*/
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja wyswietla dane pobrane z bazy
 {
 	int i;
@@ -93,18 +58,7 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName) //Fu
 	cout << endl;
 	return 0;
 }
-/*
-static int callbackReturnedValues(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja pobiera idKlienta i idOferty
-{
-	int i;
-	cout << "Number of args= " << argc << endl;
 
-	TabelaRezerwacji::idKlienta = argv[3];
-	TabelaRezerwacji::idOferty = argv[4];
-	
-	cout << endl;
-	return 0;
-}*/
 
 void TabelaRezerwacji::odczyt(sqlite3 *db)
 {
@@ -131,47 +85,6 @@ void TabelaRezerwacji::odczyt(sqlite3 *db)
 	}
 
 }
-/*
-void TabelaRezerwacji::zapisNew(sqlite3 *db)
-{
-	if (edycja)
-	{
-		sqlite3_stmt *stmt;
-		char * zErrMsg = 0;
-
-		int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-		if (rc)
-		{
-			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-			exit(1);
-		}
-		//Trzeba wywolac funkcje pobierajaca id klienta. Oraz funkcje pobierajaca id_oferty+++++++++++++++++==================+++++++++++++++++================
-		int idklienta_=
-		int idoferty_=
-
-
-		string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + CzyZaplacone + "');";
-		const char * sql = quest.c_str();
-
-		const char **Ogon = nullptr;
-
-		if (sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, Ogon) != SQLITE_OK) {
-			cerr << "Blad przy otwieraniu bazy : " << sqlite3_errmsg(db) << endl;
-		}
-
-		if (stmt) {
-			sqlite3_step(stmt);
-			sqlite3_finalize(stmt);
-			sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
-		}
-		else {
-			cerr << "Blad stmt jest NULLem" << endl;
-		}
-
-		sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
-	}
-}*/
 
 void TabelaRezerwacji::zapisNew(sqlite3 *db)
 {
@@ -185,17 +98,6 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 		sqlite3_close(db);
 		exit(1);
 	}
-	/*
-	cout << "Podaj imie klienta: ";
-	cin >> imie;
-	cout << "Podaj nazwisko klienta: ";
-	cin >> nazwisko;
-	cout << "Podaj adres zamieszkania klienta: ";
-	getline(cin, adresZamieszkania);
-	cout << "Podaj numer telefonu klienta: ";
-	cin >> nr_Tel;
-	cout << "Podaj email klienta: ";
-	cin >> eMail;*/
 	
 	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
 
@@ -225,7 +127,7 @@ void TabelaRezerwacji::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_rezerwacji SET CzyZaplacone = '" + to_string(czyZaplacone) + "' WHERE id_rezerwacji = '" + to_string(idRezerwacji) + "';";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_rezerwacji SET CzyZaplacone = '" + to_string(czyZaplacone) + "' WHERE id_rezerwacji = '" + to_string(idRezerwacji) + "';";		//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -288,7 +190,7 @@ void TabelaRezerwacji::dodaj(sqlite3 *db)
 		cout << "Oferty: "<<endl;
 				do
 				{
-					cout << "podaj numer id: ";
+					cout << "Podaj numer id: ";
 
 					cin >> idOferty;
 
@@ -298,14 +200,14 @@ void TabelaRezerwacji::dodaj(sqlite3 *db)
 		cout << "id Klienta: "<<endl;
 			do
 			{
-				cout << "podaj numer id: ";
+				cout << "Podaj numer id: ";
 
 				cin >> idKlienta;
 
 			} while (idKlienta<0);
 			edycja = true;
 		
-		cout << "dodawanie zakonczona." << endl;
+		cout << "Dodawanie zakonczone" << endl;
 		system("pause");
 		this->zapisNew(db);
 	}

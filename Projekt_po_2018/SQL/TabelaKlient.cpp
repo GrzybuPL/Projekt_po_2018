@@ -38,13 +38,6 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 		cout << azColName[i] << " = " << (argv[i] ? argv[i] : "NULL") << endl;
 	}
 
-	//idKlienta = atoi(argv[1]);
-	//imie = argv[2];
-	//nazwisko = argv[3];
-	//adresZamieszkania = argv[4];
-	//nr_Tel = argv[5];
-	//eMail = argv[6];
-
 	cout << endl;
 	return 0;
 }
@@ -127,44 +120,6 @@ void TabelaKlient::odczyt(sqlite3 *db)
 	}
 }
 
-/*
-void TabelaKlient::zapisNew(sqlite3 *db)
-{
-	if (edycja)
-	{
-		sqlite3_stmt *stmt;
-		char * zErrMsg = 0;
-
-		int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-		if (rc)
-		{
-			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-			exit(1);
-		}
-
-		string quest = "INSERT INTO klienci VALUES(NULL, " + imie + ", " + nazwisko + ", " + adresZamieszkania + ", " + nr_Tel + ", " + eMail + ");";
-		const char * sql = quest.c_str();
-
-		const char **Ogon = nullptr;
-
-		if (sqlite3_prepare_v2(db, sql, strlen(sql) + 1, &stmt, Ogon) != SQLITE_OK) {
-			cerr << "Blad bazy: " << sqlite3_errmsg(db) << endl;
-		}
-
-		if (stmt) {
-			sqlite3_step(stmt);
-			sqlite3_finalize(stmt);
-			sqlite3_exec(db, "COMMIT", NULL, NULL, NULL);
-		}
-		else {
-			cerr << "Blad stmt jest NULLem" << endl;
-		}
-
-		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	}
-}*/
-
 void TabelaKlient::zapisAdd(sqlite3 *db)
 {
 	if (edycja)
@@ -214,17 +169,6 @@ void TabelaKlient::zapisNew(sqlite3 *db)
 		sqlite3_close(db);
 		exit(1);
 	}
-	/*
-	cout << "Podaj imie klienta: ";
-	cin >> imie;
-	cout << "Podaj nazwisko klienta: ";
-	cin >> nazwisko;
-	cout << "Podaj adres zamieszkania klienta: ";
-	getline(cin, adresZamieszkania);
-	cout << "Podaj numer telefonu klienta: ";
-	cin >> nr_Tel;
-	cout << "Podaj email klienta: ";
-	cin >> eMail;*/
 
 	string quest = "INSERT INTO klienci (imie, nazwisko, adresZamieszkania, NrTel, eMail) VALUES ('" + imie + "','" + nazwisko + "','" + adresZamieszkania + "','" + nr_Tel + "','" + eMail + "');";
 	const char * sql = quest.c_str();
@@ -241,27 +185,27 @@ void TabelaKlient::zapisNew(sqlite3 *db)
 void TabelaKlient::dodaj(sqlite3 *db)
 {
 	system("cls");
-	cout << "czy chcesz dodac klienta " << imie << " " << nazwisko << "(y/n): ";
+	cout << "Czy chcesz dodac klienta " << imie << " " << nazwisko << "(y/n): ";
 	cout << endl;
 
 	if (_getch() == 'y')
 	{
-		cout << " imie: ";
+		cout << "Imie: ";
 		cin >> imie;
 		cout << endl;
-		cout << "nazwisko: ";
+		cout << "Nazwisko: ";
 		cin >> nazwisko; 
 		cout << endl;
-		cout << "adres zamieszkania: ";
-		getline(cin, adresZamieszkania); 
+		cout << "Adres zamieszkania: ";
+		cin >> adresZamieszkania; 
 		cout << endl;
-		cout << " numer telefonu: ";
+		cout << "Numer telefonu: ";
 		cin >> nr_Tel;
 		cout << endl;
 		cout << "eMail: ";
 		cin >> eMail;
 		cout << endl;
-		cout << "dodawanie  zakonczona." << endl;
+		cout << "Dodawanie  zakonczone" << endl;
 		system("pause");
 		this->zapisNew(db);
 	}

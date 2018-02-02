@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <string>
 #include <conio.h>
 #include "sqlite3.h"
@@ -98,9 +98,8 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 		sqlite3_close(db);
 		exit(1);
 	}
-	
-	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
 
+	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

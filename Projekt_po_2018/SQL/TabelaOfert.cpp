@@ -14,7 +14,7 @@ TabelaOfert::TabelaOfert()
 	koszt = "";
 	miejsce = "";
 	transport = "";
-	odDnia = "";
+	odDnia.setData(-1, -1, -1);
 	edycja = false;
 	idPromocji = -1;
 }
@@ -25,7 +25,7 @@ void TabelaOfert::zerowanie()
 	koszt = "";
 	miejsce = "";
 	transport = "";
-	odDnia = "";
+	odDnia.setData(-1, -1, -1);
 	edycja = false;
 	idPromocji = -1;
 }
@@ -109,7 +109,7 @@ void TabelaOfert::zapisNew(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "INSERT INTO dane_oferty (id_oferty, Nazwa, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytuOd, RodzajTransportu, id_promocji) VALUES(NULL, ' ', '" + koszt + "', '" + miejsce + "', '" + odDnia + "', '" + dlugoscPobytu + "', '" + transport + "', ' ');";
+		string quest = "INSERT INTO dane_oferty (id_oferty, NazwaOferty, Koszt, Gdzie, DaatPobytuOd, DlugoscPobytu, RodzajTransportu, id_promocji) VALUES(NULL, ' ', '" + koszt + "', '" + miejsce + "', '" + odDnia.getDate() + "', '" + dlugoscPobytu + "', '" + transport + "', ' ');";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -146,7 +146,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_oferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce + "', DataPobytuOd = '" + odDnia + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE id_oferty = '" + to_string(idOferty) + "' ";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE dane_dferty SET Koszt = '" + koszt + "', Gdzie = '" + miejsce + "', DataPobytuOd = '" + odDnia.getDate() + "', DlugoscPobytu = '" + dlugoscPobytu + "', RodzajTransportu = '" + transport + "' WHERE id_oferty = '" + to_string(idOferty) + "' ";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -188,17 +188,23 @@ void TabelaOfert::dodaj(sqlite3 *db)
 	cout << "Podaj id promocji: ";
 	cin >> idPromocji;
 	cout << "Podaj nazwe oferty: ";
-	cin >> nazwa;
+	getline(cin, nazwa);
 	cout << "Podaj koszt oferty: ";
 	cin >> koszt;
 	cout << "Podaj mejsce oferty: ";
 	cin >> miejsce;
-	cout << "Podaj date pobytu od [rrrr-mm-dd]: ";
-	cin >> odDnia;
+	cout << "Podaj date pobytu od : ";
+	cout << "dzien: ";
+	cin >> d;
+	cout << "miesiac: ";
+	cin >> m;
+	cout << "rok:" ;
+	cin >> y;
+	odDnia.setData(d, m, y);
 	cout << "Podaj rodzaj transportu: ";
 	cin >> transport;
 
-	string quest = "INSERT INTO dane_oferty (id_oferty, Nazwa, Koszt, Gdzie, DataPobytuOd, DlugoscPobytu, RodzajTransportu, id_promocji) VALUES (NULL, '" + nazwa + "', '" + koszt + "', '" + miejsce + "', '" + odDnia + "', '" + dlugoscPobytu + "', '" + transport + "', '" + to_string(idPromocji) + "');";
+	string quest = "INSERT INTO dane_oferty (id_promocji, Nazwa, Koszt, Gdzie, DataPobytuOd, RodzajTransportu) VALUES ('" + to_string(idPromocji) + "','" + nazwa + "','" + koszt + "','" + miejsce + "','" + odDnia.getDate() + "','" + transport + "');";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

@@ -13,7 +13,7 @@ class TabelaOfert : public BazaDanych {
 	string miejsce;
 	string dlugoscPobytu;
 	string transport;
-	Data odDnia;
+	string odDnia;
 	bool edycja;
 	int idPromocji;		//-1 dla braku promocji
 public:

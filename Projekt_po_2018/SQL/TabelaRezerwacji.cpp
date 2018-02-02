@@ -44,7 +44,7 @@ void TabelaRezerwacji::wpiszDaneDoRezerwacji(int idk, int ido,bool czyz)
 
 
 }
-
+/*
 void TabelaRezerwacji::zapisNew(sqlite3 *db)
 {
 	wpiszDaneDoRezerwacji();
@@ -80,7 +80,7 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 
 	sqlite3_exec(db, sql, NULL, 0, &zErrMsg);
 }
-
+*/
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) //Funkcja wyswietla dane pobrane z bazy
 {
 	int i;

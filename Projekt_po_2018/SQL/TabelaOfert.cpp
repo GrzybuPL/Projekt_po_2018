@@ -170,7 +170,7 @@ void TabelaOfert::zapisAdd(sqlite3 *db)
 }
 
 
-void TabelaOfert::edytuj(sqlite3 *db)
+void TabelaOfert::dodaj(sqlite3 *db)
 {
 	char *zErrMsg = 0;
 
@@ -183,20 +183,26 @@ void TabelaOfert::edytuj(sqlite3 *db)
 		exit(1);
 	}
 
-	string q, w, e, r, t, z;
+	int d, m, y;
 
 	cout << "Podaj id promocji: ";
-	cin >> z;
+	cin >> idPromocji;
 	cout << "Podaj nazwe oferty: ";
-	cin >> q;
+	getline(cin, nazwa);
 	cout << "Podaj koszt oferty: ";
-	cin >> w;
+	cin >> koszt;
 	cout << "Podaj mejsce oferty: ";
-	cin >> e;
-	cout << "Podaj date pobytu : ";
-	cin >> r;
+	cin >> miejsce;
+	cout << "Podaj date pobytu od : ";
+	cout << "dzien: ";
+	cin >> d;
+	cout << "miesiac: ";
+	cin >> m;
+	cout << "rok:" ;
+	cin >> y;
+	odDnia.setData(d, m, y);
 	cout << "Podaj rodzaj transportu: ";
-	cin >> t;
+	cin >> transport;
 
 	string quest = "INSERT INTO dane_oferty (id_promocji, Nazwa, Koszt, Gdzie, DataPobytuOd, RodzajTransportu) VALUES ('" + z + "','" + q + "','" + w + "','" + e + "','" + r + "','" + t + "');";
 	const char * sql = quest.c_str();

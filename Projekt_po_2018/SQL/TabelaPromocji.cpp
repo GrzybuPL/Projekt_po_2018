@@ -241,41 +241,32 @@ void TabelaPromocji::odczytPoId(int id, sqlite3 *db)
 	}
 }
 
-void TabelaPromocji::edytuj(sqlite3 *db)
+void TabelaPromocji::dodaj(sqlite3 *db)
 {
 	system("cls");
 
-	cout << "id Promocji: " << idPromocji << endl;
-	cout << "id Oferty: " << idOferty << endl;
-	cout << "nowa Cena: " << nowaCena << endl;
-	cout << "opis:  " << opis << endl;
-	cout << "czasTrwania: " << czasTrwania << endl;
-
-
-	cout << "czy chcesz edytowac/dodac dane oferty (y/n): ";
+	cout << "czy chcesz dodac oferty (y/n): ";
 	cout << endl;
 
 	if (_getch() == 'y')
 	{
-		cout << "edycja id Promocji?(y/n): ";
-		if (_getch() == 'y') { cin >> idPromocji; edycja = true; }
+		cout << " id Promocji: ";
+		 cin >> idPromocji;
 		cout << endl;
-		cout << "edycja idOferty?(y/n): ";
-		if (_getch() == 'y') { cin >> idOferty; edycja = true; }
+		cout << "idOferty: ";
+		 cin >> idOferty;
 		cout << endl;
-		cout << "edycja nowaCena?(y/n): ";
-		if (_getch() == 'y') { cin >> nowaCena; edycja = true; }
+		cout << " nowaCena: ";
+		cin >> nowaCena; 
 		cout << endl;
-		cout << "edycja  opis?(y/n): ";
-		if (_getch() == 'y') { cin >> opis; edycja = true; }
+		cout << " opis: ";
+		 getline(cin , opis);
 		cout << endl;
-		cout << "edycja czasTrwania?(y/n): ";
-		if (_getch() == 'y') { cin >> czasTrwania; edycja = true; }
+		cout << " czasTrwania: ";
+		cin >> czasTrwania; 
 		cout << endl;
-		cout << "edycja zakonczona." << endl;
+		cout << "dodawanie zakonczona." << endl;
 		system("pause");
+		this->zapisNew(db);
 	}
-
-	if (idPromocji!=-1 && edycja) this->zapisAdd(db);//zapis po edycji
-	else zapisNew(db);
 }

@@ -20,7 +20,7 @@ public:
 	TabelaOfert();
 	virtual void odczyt(sqlite3 *db);
 	virtual void zapisAdd(sqlite3 *db) ;
-	virtual void edytuj(sqlite3 *db);
+	virtual void dodaj(sqlite3 *db);
 	virtual void zapisNew(sqlite3 *db) ;
 	bool odczytPoId(int id, sqlite3 *db);
 	void zerowanie();

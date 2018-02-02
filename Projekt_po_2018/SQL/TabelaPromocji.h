@@ -21,7 +21,7 @@ public:
 
 	virtual void odczyt(sqlite3 *db);
 	virtual void zapisAdd(sqlite3 *db);
-	virtual void edytuj(sqlite3 *db);
+	virtual void dodaj(sqlite3 *db);
 	virtual void zapisNew(sqlite3 *db);
 
 	bool usunPromocje(int id_Promocji, sqlite3 *db);

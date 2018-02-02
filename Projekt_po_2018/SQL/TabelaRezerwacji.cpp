@@ -278,30 +278,20 @@ int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczen
 int idKlienta;
 bool czyZaplacone; **/
 
-void TabelaRezerwacji::edytuj(sqlite3 *db)
+void TabelaRezerwacji::dodaj(sqlite3 *db)
 {
 	system("cls");
-	//UPDATE dane_rezerwacji
-	cout << "id Oferty: " << idOferty << endl;
-	cout << "id Klienta: " << idKlienta << endl;
-	cout << "czy zaplacono:" << czyZaplacone << endl;
-	cout << "czy chcesz edytowac dane(y/n): ";
-	cout << endl;
+
 	
 	if (_getch() == 'y')
 	{
-		cout << "edycja Op³aty?(y/n): ";
-		if (_getch() == 'y') {
-			
+		cout << "Op³aty: \n";
+				
 			cout << "Zaplacono(y/n): " << endl;
 				if (_getch() == 'y') czyZaplacone = true;
 				else czyZaplacone = false;	
-				edycja = true;
-		}
 		cout << endl;
-		cout << "edycja id Oferty?(y/n): ";
-		if (_getch() == 'y') { 
-		
+		cout << "Oferty: "<<endl;
 				do
 				{
 					cout << "podaj numer id: ";
@@ -309,12 +299,9 @@ void TabelaRezerwacji::edytuj(sqlite3 *db)
 					cin >> idOferty;
 
 				} while (idOferty<0);		
-			edycja = true;
-		}
+		
 		cout << endl;
-		cout << "edycja id Klienta?(y/n): ";
-		if (_getch() == 'y') {
-
+		cout << "id Klienta: "<<endl;
 			do
 			{
 				cout << "podaj numer id: ";
@@ -323,11 +310,10 @@ void TabelaRezerwacji::edytuj(sqlite3 *db)
 
 			} while (idKlienta<0);
 			edycja = true;
-		}
-		cout << "edycja zakonczona." << endl;
+		
+		cout << "dodawanie zakonczona." << endl;
 		system("pause");
+		this->zapisNew(db);
 	}
 
-
-	if (edycja) this->zapisAdd(db);//zapis po edycji
 }

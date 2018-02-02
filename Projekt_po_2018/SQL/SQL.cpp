@@ -115,8 +115,7 @@ void SQL::editPromo()
 void SQL::addRezer()
 {
 	rezerwacje->zerowanie();
-	rezerwacje->dodaj
-	(db);
+	rezerwacje->dodaj(db);
 }
 
 void SQL::showAllRezer()

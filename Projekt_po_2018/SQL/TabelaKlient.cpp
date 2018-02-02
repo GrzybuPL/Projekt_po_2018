@@ -127,6 +127,7 @@ void TabelaKlient::odczyt(sqlite3 *db)
 	}
 }
 
+/*
 void TabelaKlient::zapisNew(sqlite3 *db)
 {
 	if (edycja)
@@ -162,7 +163,7 @@ void TabelaKlient::zapisNew(sqlite3 *db)
 
 		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 	}
-}
+}*/
 
 void TabelaKlient::zapisAdd(sqlite3 *db)
 {
@@ -179,7 +180,7 @@ void TabelaKlient::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE klienci SET Imie = 'Imie', Nazwisko = 'Nazwisko', AdresZamieszkania = '" + adresZamieszkania + "', NrTel = 'NrTel', EMail = 'eMail' WHERE Imie = 'Imie' ";
+		string quest = "UPDATE klienci SET Imie = '" + imie + "', Nazwisko = '" + nazwisko + "', AdresZamieszkania = '" + adresZamieszkania + "', NrTel = '" + nr_Tel + "', EMail = '" + eMail + "' WHERE id_klienta  = '" + to_string(idKlienta) + "' ";
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -201,7 +202,7 @@ void TabelaKlient::zapisAdd(sqlite3 *db)
 	}
 }
 
-void TabelaKlient::edytuj(sqlite3 *db)
+void TabelaKlient::zapisNew(sqlite3 *db)
 {
 	char *zErrMsg = 0;
 
@@ -213,21 +214,19 @@ void TabelaKlient::edytuj(sqlite3 *db)
 		sqlite3_close(db);
 		exit(1);
 	}
-
-	string a, b, c, e, d;
-
+	/*
 	cout << "Podaj imie klienta: ";
-	cin >> a;
+	cin >> imie;
 	cout << "Podaj nazwisko klienta: ";
-	cin >> b;
+	cin >> nazwisko;
 	cout << "Podaj adres zamieszkania klienta: ";
-	cin >> c;
+	getline(cin, adresZamieszkania);
 	cout << "Podaj numer telefonu klienta: ";
-	cin >> d;
+	cin >> nr_Tel;
 	cout << "Podaj email klienta: ";
-	cin >> e;
+	cin >> eMail;*/
 
-	string quest = "INSERT INTO klienci (imie, nazwisko, adresZamieszkania, NrTel, eMail) VALUES ('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "');";
+	string quest = "INSERT INTO klienci (imie, nazwisko, adresZamieszkania, NrTel, eMail) VALUES ('" + imie + "','" + nazwisko + "','" + adresZamieszkania + "','" + nr_Tel + "','" + eMail + "');";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
@@ -238,3 +237,35 @@ void TabelaKlient::edytuj(sqlite3 *db)
 		zerowanie();
 	}
 }
+
+void TabelaKlient::edytuj(sqlite3 *db)
+{
+	system("cls");
+	cout << "czy chcesz edytowac/dodac dane klienta " << imie << " " << nazwisko << "(y/n): ";
+	cout << endl;
+
+	if (_getch() == 'y')
+	{
+		cout << "edycja imienia?(y/n): ";
+		if (_getch() == 'y') { cin >> imie; edycja = true; }
+		cout << endl;
+		cout << "edycja nazwiska?(y/n): ";
+		if (_getch() == 'y') { cin >> nazwisko; edycja = true; }
+		cout << endl;
+		cout << "edycja adres zamieszkania?(y/n): ";
+		if (_getch() == 'y') { getline(cin, adresZamieszkania); edycja = true; }
+		cout << endl;
+		cout << "edycja numeru telefonu?(y/n): ";
+		if (_getch() == 'y') { cin >> nr_Tel; edycja = true; }
+		cout << endl;
+		cout << "edycja eMail?(y/n): ";
+		if (_getch() == 'y') { cin >> eMail; edycja = true; }
+		cout << endl;
+		cout << "edycja zakonczona." << endl;
+		system("pause");
+	}
+
+	if (idKlienta != -1 &&edycja) this->zapisAdd(db);//zapis po edycji
+	else this->zapisNew(db);
+}
+

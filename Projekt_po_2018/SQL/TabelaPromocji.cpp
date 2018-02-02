@@ -104,7 +104,7 @@ void TabelaPromocji::odczyt(sqlite3 *db)
 	}
 
 }
-
+/*
 void TabelaPromocji::zapisNew(sqlite3 *db)
 {
 	if (edycja)
@@ -139,6 +139,42 @@ void TabelaPromocji::zapisNew(sqlite3 *db)
 		}
 
 		sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	}
+}*/
+
+void TabelaPromocji::zapisNew(sqlite3 *db)
+{
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
+	{
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
+	}
+	/*
+	cout << "Podaj imie klienta: ";
+	cin >> imie;
+	cout << "Podaj nazwisko klienta: ";
+	cin >> nazwisko;
+	cout << "Podaj adres zamieszkania klienta: ";
+	getline(cin, adresZamieszkania);
+	cout << "Podaj numer telefonu klienta: ";
+	cin >> nr_Tel;
+	cout << "Podaj email klienta: ";
+	cin >> eMail;*/
+
+	string quest = "INSERT INTO promocja (id_promocji, CenaPromocji, ZasadyPromocji, CzasTrwaniaPromocji) VALUES(NULL, '" + nowaCena + "', '" + opis + "', '" + czasTrwania.c_str() + "');";
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+		zerowanie();
 	}
 }
 
@@ -240,5 +276,6 @@ void TabelaPromocji::edytuj(sqlite3 *db)
 		system("pause");
 	}
 
-	if (edycja) this->zapisAdd(db);//zapis po edycji
+	if (idPromocji!=-1 && edycja) this->zapisAdd(db);//zapis po edycji
+	else zapisNew(db);
 }

@@ -173,6 +173,43 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 	}
 }*/
 
+void TabelaRezerwacji::zapisNew(sqlite3 *db)
+{
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
+	{
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
+	}
+	/*
+	cout << "Podaj imie klienta: ";
+	cin >> imie;
+	cout << "Podaj nazwisko klienta: ";
+	cin >> nazwisko;
+	cout << "Podaj adres zamieszkania klienta: ";
+	getline(cin, adresZamieszkania);
+	cout << "Podaj numer telefonu klienta: ";
+	cin >> nr_Tel;
+	cout << "Podaj email klienta: ";
+	cin >> eMail;*/
+	
+	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
+
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+		zerowanie();
+	}
+}
+
 void TabelaRezerwacji::zapisAdd(sqlite3 *db)
 {
 	if (edycja)

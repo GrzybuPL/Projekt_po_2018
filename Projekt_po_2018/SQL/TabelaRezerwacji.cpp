@@ -273,11 +273,6 @@ void TabelaRezerwacji::odczytPoId(int id, sqlite3 *db)
 	}
 }
 
-/* int idPromocji;
-int idOferty;		//id oferty danej promocji by ³atwo znaleœæ -1 dla braku po³aczenia
-int idKlienta;
-bool czyZaplacone; **/
-
 void TabelaRezerwacji::dodaj(sqlite3 *db)
 {
 	system("cls");
@@ -315,5 +310,4 @@ void TabelaRezerwacji::dodaj(sqlite3 *db)
 		system("pause");
 		this->zapisNew(db);
 	}
-
 }

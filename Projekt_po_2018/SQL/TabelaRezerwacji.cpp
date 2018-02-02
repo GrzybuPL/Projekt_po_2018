@@ -99,7 +99,7 @@ void TabelaRezerwacji::zapisNew(sqlite3 *db)
 		exit(1);
 	}
 	
-	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_Klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
+	string quest = "INSERT INTO dane_rezerwacji (id_rezerwacji, id_klienta, id_Oferty, CzyZaplacone) VALUES(NULL, '" + to_string(idKlienta) + "', '" + to_string(idOferty) + "', '" + to_string(czyZaplacone) + "');";
 
 	const char * sql = quest.c_str();
 

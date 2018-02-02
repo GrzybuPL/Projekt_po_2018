@@ -32,14 +32,12 @@ public:
 	//=============================tabela klientuw
 	bool znajdz_Klienta(string im, string naz);	//pyta po czym ma szukac
 	void addKlient();
-	void editKlient();
 	void showAllKlient();
 
 	//===================tabela ofert
 
 	void znajdz_Oferte();
 	void showAllOferty();
-	void editOfert();
 	void addOfert();
 
 	//=============promocje
@@ -47,12 +45,10 @@ public:
 	void znajdz_Promocje();	
 	void showAllPromocje();
 	void addPromo();
-	void editPromo();
 	//=====rezerwacje
 
 	void addRezer();
 	void showAllRezer();
-	void editRezer();
 	void znajdz_Rezerwacje();
 };
 

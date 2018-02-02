@@ -135,7 +135,6 @@ void SQL::editRezer()
 		//if (rezerwacje->odczytPoId(id, db)) rezerwacje->edytuj(db); !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		//else cout << "nie ma takiej rezerwacji" << endl;
 		system("pause");
-
 }
 
 void SQL::znajdz_Rezerwacje()
@@ -177,6 +176,7 @@ SQL::~SQL()
 	delete rezerwacje;
 	sqlite3_close(db);		//zamkniecie bazy danych
 }
+
 //----klienci
 void menuKlient(SQL * &baze)
 {

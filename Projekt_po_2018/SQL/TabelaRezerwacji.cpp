@@ -328,5 +328,6 @@ void TabelaRezerwacji::edytuj(sqlite3 *db)
 		system("pause");
 	}
 
+
 	if (edycja) this->zapisAdd(db);//zapis po edycji
 }

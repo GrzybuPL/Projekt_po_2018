@@ -79,29 +79,27 @@ bool TabelaPromocji::usunPromocje(int id_Promocji, sqlite3 *db)
 
 void TabelaPromocji::odczyt(sqlite3 *db)
 {
-	if (edycja)
+	char *zErrMsg = 0;
+
+	int rc = sqlite3_open("BiuroPodrozy.db", &db);
+
+	if (rc)
 	{
-		char *zErrMsg = 0;
-
-		int rc = sqlite3_open("BiuroPodrozy.db", &db);
-
-		if (rc)
-		{
-			cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
-			sqlite3_close(db);
-			exit(1);
-		}
-
-		string quest = "SELECT * FROM promocja";
-		const char * sql = quest.c_str();
-
-		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-		if (rc != SQLITE_OK)
-		{
-			cerr << "Blad zapytania: " << zErrMsg << endl;
-			sqlite3_free(zErrMsg);
-		}
+		cerr << "Blad przy otwieraniu bazy: " << sqlite3_errmsg(db) << endl;
+		sqlite3_close(db);
+		exit(1);
 	}
+
+	string quest = "SELECT * FROM promocja";
+	const char * sql = quest.c_str();
+
+	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+	if (rc != SQLITE_OK)
+	{
+		cerr << "Blad zapytania: " << zErrMsg << endl;
+		sqlite3_free(zErrMsg);
+	}
+
 
 }
 
@@ -118,7 +116,7 @@ void TabelaPromocji::zapisNew(sqlite3 *db)
 		exit(1);
 	}
 
-	string quest = "INSERT INTO promocja (id_promocji, CenaPromocji, ZasadyPromocji, CzasTrwaniaPromocji) VALUES(NULL, '" + nowaCena + "', '" + opis + "', '" + czasTrwania.c_str() + "');";
+	string quest = "INSERT INTO promocja (id_promocji, id_oferty, Cena, Opis, CzasTrwania) VALUES(NULL, '" + to_string(idOferty) + "', '" + nowaCena + "', '" + opis + "', '" + czasTrwania.c_str() + "');";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
@@ -145,7 +143,7 @@ void TabelaPromocji::zapisAdd(sqlite3 *db)
 			exit(1);
 		}
 
-		string quest = "UPDATE dane_promocji SET CenaPromocji = '" + nowaCena + "', ZasadyPromocji = '" + opis + "' CzasTrwaniaPromocji = '" + czasTrwania + "' WHERE id_promocji = '" + to_string(idPromocji) + "';";//Aktualizacja calosci danych, nie wybiorczo
+		string quest = "UPDATE promocja SET Cena = '" + nowaCena + "', Opis = '" + opis + "' CzasTrwania = '" + czasTrwania + "' WHERE id_promocji = '" + to_string(idPromocji) + "';";//Aktualizacja calosci danych, nie wybiorczo
 		const char * sql = quest.c_str();
 
 		const char **Ogon = nullptr;
@@ -202,8 +200,8 @@ void TabelaPromocji::dodaj(sqlite3 *db)
 
 	if (_getch() == 'y')
 	{
-		cout << " id Promocji: ";
-		 cin >> idPromocji;
+		//cout << " id Promocji: ";
+		 //cin >> idPromocji;
 		cout << endl;
 		cout << "id Oferty: ";
 		 cin >> idOferty;
@@ -212,7 +210,7 @@ void TabelaPromocji::dodaj(sqlite3 *db)
 		cin >> nowaCena; 
 		cout << endl;
 		cout << "Opis: ";
-		 getline(cin , opis);
+		cin >> opis;
 		cout << endl;
 		cout << "Czas trwania: ";
 		cin >> czasTrwania; 

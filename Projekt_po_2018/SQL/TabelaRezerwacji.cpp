@@ -178,8 +178,7 @@ void TabelaRezerwacji::dodaj(sqlite3 *db)
 {
 	system("cls");
 
-	if (_getch() == 'y')
-	{
+
 		cout << "Op³aty: \n";
 				
 			cout << "Zaplacono(y/n): " << endl;
@@ -209,5 +208,5 @@ void TabelaRezerwacji::dodaj(sqlite3 *db)
 		cout << "Dodawanie zakonczone" << endl;
 		system("pause");
 		this->zapisNew(db);
-	}
+	
 }

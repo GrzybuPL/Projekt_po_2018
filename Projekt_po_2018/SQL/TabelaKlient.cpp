@@ -185,7 +185,7 @@ void TabelaKlient::zapisNew(sqlite3 *db)
 void TabelaKlient::dodaj(sqlite3 *db)
 {
 	system("cls");
-	cout << "Czy chcesz dodac klienta " << imie << " " << nazwisko << "(y/n): ";
+	cout << "Czy chcesz dodac klienta " << imie << " " << nazwisko << " (y/n): ";
 	cout << endl;
 
 	if (_getch() == 'y')

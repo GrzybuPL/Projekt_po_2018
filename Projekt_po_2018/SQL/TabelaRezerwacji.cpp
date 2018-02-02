@@ -34,7 +34,7 @@ void TabelaRezerwacji::wpiszDaneDoRezerwacji(int idk, int ido,bool czyz)
 		cin >> idk;
 		cout << "Podaj id Oferty: ";
 		cin >> ido;
-		cout << "Czy zaplacono(y/n): ";
+		cout << "Czy zaplacono (y/n): ";
 		if (_getch() == 'y')czyz = true;
 		else czyz = false;
 		idKlienta = idk;
@@ -179,9 +179,9 @@ void TabelaRezerwacji::dodaj(sqlite3 *db)
 	system("cls");
 
 
-		cout << "Op³aty: \n";
+		cout << "Oplaty: \n";
 				
-			cout << "Zaplacono(y/n): " << endl;
+			cout << "Zaplacono (y/n): " << endl;
 				if (_getch() == 'y') czyZaplacone = true;
 				else czyZaplacone = false;	
 		cout << endl;

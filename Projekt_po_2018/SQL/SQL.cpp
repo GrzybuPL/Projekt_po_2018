@@ -18,7 +18,7 @@ bool SQL::znajdz_Klienta(string im, string naz)
 void SQL::addKlient()
 {
 	klient->zerowanie();
-	klient->edytuj(db);
+	klient->dodaj(db);
 }
 
 void SQL::editKlient()
@@ -27,7 +27,7 @@ void SQL::editKlient()
 	cout << "podaj imie: "; cin >> buf1;
 	cout << "podaj nazwisko: "; cin >> buf2;
 	
-	if(this->znajdz_Klienta(buf1, buf2)) 	klient->edytuj(db);
+	if(this->znajdz_Klienta(buf1, buf2)) 	klient->dodaj(db);
 	else cout << "nie ma takiego klienta" << endl;
 	system("pause");
 }
@@ -61,7 +61,7 @@ void SQL::editOfert()
 	cout << "podaj id: "; cin >> id;
 
 	if (id > 0)
-		if (oferty->odczytPoId(id, db)) oferty->edytuj(db);
+		if (oferty->odczytPoId(id, db)) oferty->dodaj(db);
 	else cout << "nie ma takiej oferty" << endl;
 	system("pause");
 
@@ -70,7 +70,7 @@ void SQL::editOfert()
 void SQL::addOfert()
 {
 	oferty->zerowanie();
-	oferty->edytuj(db);
+	oferty->dodaj(db);
 }
 //==============promocje
 
@@ -94,7 +94,7 @@ void SQL::znajdz_Promocje()
 void SQL::addPromo()
 {
 	promocje->zerowanie();
-	promocje->edytuj(db);
+	promocje->dodaj(db);
 }
 
 
@@ -115,7 +115,8 @@ void SQL::editPromo()
 void SQL::addRezer()
 {
 	rezerwacje->zerowanie();
-	rezerwacje->edytuj(db);
+	rezerwacje->dodaj
+	(db);
 }
 
 void SQL::showAllRezer()

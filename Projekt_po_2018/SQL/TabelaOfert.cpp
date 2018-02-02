@@ -204,7 +204,7 @@ void TabelaOfert::dodaj(sqlite3 *db)
 	cout << "Podaj rodzaj transportu: ";
 	cin >> transport;
 
-	string quest = "INSERT INTO dane_oferty (id_promocji, Nazwa, Koszt, Gdzie, DataPobytuOd, RodzajTransportu) VALUES ('" + z + "','" + q + "','" + w + "','" + e + "','" + r + "','" + t + "');";
+	string quest = "INSERT INTO dane_oferty (id_promocji, Nazwa, Koszt, Gdzie, DataPobytuOd, RodzajTransportu) VALUES ('" + to_string(idPromocji) + "','" + nazwa + "','" + koszt + "','" + miejsce + "','" + odDnia.getDate() + "','" + transport + "');";
 	const char * sql = quest.c_str();
 
 	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);

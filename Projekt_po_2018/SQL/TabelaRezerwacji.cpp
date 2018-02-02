@@ -277,7 +277,6 @@ void TabelaRezerwacji::dodaj(sqlite3 *db)
 {
 	system("cls");
 
-	
 	if (_getch() == 'y')
 	{
 		cout << "Op³aty: \n";
